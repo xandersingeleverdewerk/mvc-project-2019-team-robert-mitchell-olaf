@@ -5,7 +5,7 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
 <h2>HappyLand lokaal krijgen</h2>
 <ol>
     <li>Typ in de terminal <code>git clone https://github.com/ZadkineICT/mvc-project-2019-team-robert-mitchell-olaf.git</code> op de plek waar je het project wilt hebben</li>
-    <li>Typ in de terminal <code>mvc-project-2019-team-robert-mitchell-olaf</code> om naar het project te gaan</li
+    <li>Typ in de terminal <code>mvc-project-2019-team-robert-mitchell-olaf</code> om naar het project te gaan</li>
     <li>Typ daarna in de terminal <code>lando start</code> en je hebt de website online</li>
 </ol>
 
