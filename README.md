@@ -17,12 +17,12 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
 <h2>Database vullen</h2>
 <ol>
     <li>Voordat je gaat proberen om de database werkend te krijgen moet eerst bij de .env bestand de volgende dingen de volgende waardes           krijgen</li>
-    <ol>
+    <ul>
         <li> DB_HOST=database </li>
         <li> DB_DATABASE=laravel </li>
         <li> DB_USERNAME=root</li>
         <li> DB_PASSWORD=</li>
-    </ol>
+    </ul>
 </ol>
 
 <h2>Regels</h2>
