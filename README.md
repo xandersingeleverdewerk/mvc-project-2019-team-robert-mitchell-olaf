@@ -9,7 +9,7 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
     <li>Typ in de terminal <code>cd mvc-project-2019-team-robert-mitchell-olaf</code> om naar het project te gaan</li>
     <li>Vervolgens moet je <code>composer install</code> doen om de vendor map te krijgen</li>
     <li>Daarna moet je de <code>.env.example</code> kopiëren en de naam veranderen naar <code>.env</code>. Dit bestand is te vinden in de root van het project, dus niet in de mappen gaan zoeken</li>
-    <li>Verder moet je <code>lando init</code> doen en de vragen beantwoorden. Het antwoord op de eerste vraag is <code>current directory</code>. Op de tweede vraag is het antwoord <code>Laravel</code>. Om naar de antwoorden te navigeren doe je met de pijltjestoetsen en het antwoord te bevestigen met enter. De laatste vraag moet je zelf intypen en dat antwoord is <code>public</code></li>
+    <li>Verder moet je <code>lando init</code> doen en de vragen beantwoorden. Het antwoord op de eerste vraag is <code>current directory</code>. Op de tweede vraag is het antwoord <code>Laravel</code>. Om naar de antwoorden te navigeren doe je met de pijltjestoetsen en het antwoord te bevestigen met enter. De laatste vraag moet je zelf intypen en dat antwoord is <code>public</code>. Verder is er nog een vraag over heo je app wilt noemen. Deze noemen we <code>Happyland</code></li>
     <li>Ga vervolgens een key generaten met <code>lando artsan key:generate</code></li>
     <li>Typ daarna in de terminal <code>lando start</code> en je hebt de website is aangemaakt en het werkt lokaal</li>
 </ol>
