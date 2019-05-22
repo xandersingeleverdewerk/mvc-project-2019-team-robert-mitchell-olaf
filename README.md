@@ -14,6 +14,16 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
     <li>Typ daarna in de terminal <code>lando start</code> en je hebt de website is aangemaakt en het werkt lokaal</li>
 </ol>
 
+<h2>Database vullen</h2>
+<ol>
+    <li>Voordat je gaat proberen om de database werkend te krijgen moet eerst bij de .env bestand de volgende dingen de volgende waardes           krijgen
+    <li> DB_HOST=database </li>
+    <li> DB_DATABASE=laravel </li>
+    <li> DB_USERNAME=root</li>
+    <li> DB_PASSWORD=</li>
+    </li>
+</ol>
+
 <h2>Regels</h2>
 <ul>
     <li>Merge nooit naar de masterbranch zonder overleg</li>
