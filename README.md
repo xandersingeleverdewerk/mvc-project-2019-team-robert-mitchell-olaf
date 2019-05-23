@@ -29,7 +29,7 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
 
 <h2>Regels</h2>
 <ul>
-    <li>Merge nooit naar de masterbranch zonder overleg</li>
-    <li>Laat je user-story controleren door ieder teamlid voordat het naar development gaat</li>
+    <li>Merge nooit naar de <code>master</code> zonder overleg</li>
+    <li>Laat je user-story controleren door ieder teamlid voordat het naar <code>development</code> gaat</li>
     <li>Push nooit in <code>master</code></li>
 </ul>
