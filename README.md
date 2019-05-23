@@ -23,6 +23,8 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
         <li> DB_USERNAME=root</li>
         <li> DB_PASSWORD=</li>
     </ul>
+    <li>Nadat de .env bestand de juiste waardes heeft gekregen moet er bij de terminal lando artisan migrate:fresh ingevuld worden.</li>
+    <li>Als laatst moet er bij de terminal lando artisan php db:seed ingevuld worden.</li>  
 </ol>
 
 <h2>Regels</h2>
