@@ -16,19 +16,20 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
 
 <h2>Database vullen</h2>
 <ol>
-    <li>Voordat je gaat proberen om de database werkend te krijgen moet eerst bij de .env bestand de volgende dingen de volgende waardes           krijgen</li>
+    <li>Voordat je gaat proberen om de database werkend te krijgen moet eerst bij de <code>.env</code> bestand de volgende dingen de volgende waardes krijgen</li>
     <ul>
         <li> DB_HOST=database </li>
         <li> DB_DATABASE=laravel </li>
         <li> DB_USERNAME=root</li>
         <li> DB_PASSWORD=</li>
     </ul>
-    <li>Nadat de .env bestand de juiste waardes heeft gekregen moet er bij de terminal lando artisan migrate:fresh ingevuld worden.</li>
-    <li>Als laatst moet er bij de terminal lando artisan php db:seed ingevuld worden.</li>  
+    <li>Nadat de <code>.env</code> bestand de juiste waardes heeft gekregen moet er bij de terminal <code>lando artisan migrate</code> ingevuld worden.</li>
+    <li>Als laatst moet er bij de terminal <code>lando artisan db:seed</code> ingevuld worden. Soms werkt dit niet in een keer en moet je composer nog upgedate worden. Dan doe je voor het seeden <code>Composer update</code></li>  
 </ol>
 
 <h2>Regels</h2>
 <ul>
     <li>Merge nooit naar de masterbranch zonder overleg</li>
     <li>Laat je user-story controleren door ieder teamlid voordat het naar development gaat</li>
+    <li>Push nooit in <code>master</code></li>
 </ul>
