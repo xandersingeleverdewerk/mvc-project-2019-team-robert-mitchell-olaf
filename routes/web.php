@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/master', function () {
     return view('master');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
