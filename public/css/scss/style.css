@@ -1,0 +1,72 @@
+body {
+  height: 100%;
+  min-height: 100%; }
+
+.important-links {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px; }
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: -80px; }
+
+.fa {
+  display: flex;
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%; }
+
+.fa-facebook {
+  background: #3B5998;
+  color: white; }
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white; }
+
+.fa-instagram {
+  background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+  color: white; }
+
+.fa-youtube {
+  background: #bb0000;
+  color: white; }
+
+nav {
+  display: flex;
+  width: 100%; }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-image: linear-gradient(to bottom right, red, yellow); }
+
+li.nav-item {
+  color: white; }
+
+a.nav-link {
+  color: orange; }
+
+footer h2 {
+  display: flex;
+  justify-content: center;
+  color: orange; }
+
+footer {
+  clear: both;
+  position: absolute;
+  background-color: #e2e2e2;
+  width: 100%;
+  height: 200px;
+  bottom: 0; }
+
+.map {
+  float: right;
+  margin-top: -80px;
+  margin-right: 10px; }
+
+/*# sourceMappingURL=style.css.map */
