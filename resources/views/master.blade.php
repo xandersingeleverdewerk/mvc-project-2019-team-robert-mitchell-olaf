@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/scss/style.scss')}}">
 </head>
 <body>
-<h2>Pretpark HappyLand</h2>
+<h1 class="title">Pretpark HappyLand</h1>
 <br>
 <nav>
     <div class="container">
@@ -26,7 +26,7 @@
                 <a class="nav-link" data-toggle="pill" href="#menu1">Het Park</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#menu2">Contact</a>
+                <a class="nav-link" data-toggle="pill" href="#menu3">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="pill" href="#menu2">Mijn Pagina</a>
@@ -34,7 +34,8 @@
         </ul>
     </div>
 </nav>
+@yield('content')
 
-    @extends('layout.footer')
+@extends('layout.footer')
 </body>
 </html>
