@@ -1,6 +1,13 @@
-.travelJourney {
+.openingTimes {
   padding: 100px 0;
   width: 100%;
+  background-color: white;
+  color: #111;
+}
+
+
+.travelJourney {
+  @extend .openingTimes;
   background-image: linear-gradient(to bottom right, red, yellow);
 }
 
@@ -10,4 +17,12 @@
 
 .btn {
   margin-bottom: 15px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.openingTimesImg {
+  margin-bottom: 20px;
 }
