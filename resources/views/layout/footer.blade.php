@@ -1,7 +1,5 @@
 <footer>
-    <h2>
-        Footer
-    </h2>
+
 <div class="important-links">
     <a href="#" class="link1">important link</a>
     <a href="#" class="link2">important link</a>

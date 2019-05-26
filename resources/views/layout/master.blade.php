@@ -9,32 +9,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/scss/style.scss')}}">
+    <link rel="stylesheet" href="{{ asset('css/scss/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/scss/main.css') }}">
 </head>
 <body>
-<h2>Pretpark HappyLand</h2>
+<h1 class="title">Pretpark HappyLand</h1>
 <br>
-<nav>
+<nav class="nav">
     <div class="container">
         <br>
         <!-- Nav pills -->
         <ul class="nav nav-pills nav-justified" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                <a class="nav-link active" data-toggle="pill" href="{{ url('/master') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#menu1">Het Park</a>
+                <a class="nav-link" data-toggle="pill" href="{{ url('/park') }}">Het Park</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#menu2">Contact</a>
+                <a class="nav-link" data-toggle="pill" href="{{ url('/contact') }}">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#menu2">Mijn Pagina</a>
+                <a class="nav-link" data-toggle="pill" href="{{ url('/mijnpagina') }}">Mijn Pagina</a>
             </li>
         </ul>
     </div>
 </nav>
+@yield('content')
 
-    @extends('layout.footer')
+@extends('layout.footer')
 </body>
 </html>

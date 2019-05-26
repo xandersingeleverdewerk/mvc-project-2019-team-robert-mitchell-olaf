@@ -1,6 +1,23 @@
-body {
-  height: 100%;
-  min-height: 100%; }
+.openingTimes, .travelJourney {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111; }
+
+.travelJourney {
+  background-image: linear-gradient(to bottom right, red, yellow); }
+
+.location {
+  border-radius: 5px; }
+
+.btn {
+  margin-bottom: 15px; }
+
+.table {
+  margin-top: 20px; }
+
+.openingTimesImg {
+  margin-bottom: 20px; }
 
 .important-links {
   display: flex;
@@ -38,9 +55,10 @@ body {
   background: #bb0000;
   color: white; }
 
-nav {
+.nav {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 50px; }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-image: linear-gradient(to bottom right, red, yellow); }
@@ -57,16 +75,16 @@ footer h2 {
   color: orange; }
 
 footer {
-  clear: both;
-  position: absolute;
   background-color: #e2e2e2;
   width: 100%;
-  height: 200px;
-  bottom: 0; }
+  height: 200px; }
+
+.title {
+  text-align: center; }
 
 .map {
   float: right;
   margin-top: -80px;
   margin-right: 10px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
