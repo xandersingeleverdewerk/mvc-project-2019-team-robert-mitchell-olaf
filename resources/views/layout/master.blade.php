@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="{{ asset('css/scss/main.css') }}">
 </head>
 <body>
-<h1 class="title">Pretpark HappyLand</h1>
-<br>
 <nav class="nav">
+    <div class="logo">
+
+    </div>
     <div class="container">
         <br>
         <!-- Nav pills -->
