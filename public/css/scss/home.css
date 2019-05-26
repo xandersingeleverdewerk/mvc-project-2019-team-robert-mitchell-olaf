@@ -1,0 +1,11 @@
+section {
+  width: 75%; }
+
+#more {
+  display: none; }
+
+button {
+  background-image: linear-gradient(to bottom right, red, yellow);
+  color: white; }
+
+/*# sourceMappingURL=home.css.map */
