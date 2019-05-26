@@ -21,16 +21,16 @@
         <!-- Nav pills -->
         <ul class="nav nav-pills nav-justified" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="{{ url('/master') }}">Home</a>
+                <a class="nav-link {{ Request::url() == url('/master') ? 'active' : '' }}" href="{{ url('/master') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="{{ url('/park') }}">Het Park</a>
+                <a class="nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" href="{{ url('/park') }}">Het Park</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="{{ url('/contact') }}">Contact</a>
+                <a class="nav-link {{ Request::url() == url('/contact') ? 'active' : '' }}" href="{{ url('/contact') }}">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="{{ url('/mijnpagina') }}">Mijn Pagina</a>
+                <a class="nav-link" {{ Request::url() == url('/mijnpagina') ? 'active' : '' }} href="{{ url('/mijnpagina') }}">Mijn Pagina</a>
             </li>
         </ul>
     </div>
