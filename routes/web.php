@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/attractions/{attraction}/delete', 'attractionsController@delete')
+    ->name('attractions.delete');
+Route::resource('/attractions' , 'AttractionsController');
+
+Route::get('/categories/{category}/delete', 'categoriesController@delete')
+                            ->name('categories.delete');
+Route::resource('/categories', 'CategoriesController');
