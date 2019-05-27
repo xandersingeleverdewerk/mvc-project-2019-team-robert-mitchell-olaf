@@ -12,15 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/master', function () {
     return view('master');
-});
-
-Route::get('/home', function () {
-    return view('home');
 });
 
 Route::get('/contact', function () {
