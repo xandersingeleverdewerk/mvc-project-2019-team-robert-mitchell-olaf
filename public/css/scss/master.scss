@@ -1,3 +1,46 @@
+.navigation {
+  padding: 20px 0;
+  background: linear-gradient(to bottom right, #ffffff, #f2f2f2);
+}
+
+.nav {
+  padding-top: 20px;
+
+  &-link {
+    color: orange;
+    border: 1px solid orange;
+    margin: 10px;
+
+    &:hover {
+      background: linear-gradient(to bottom right, red , yellow);
+      color: white;
+    }
+  }
+}
+
+.navbar-toggler {
+  border-color: orange;
+
+  & .fa-bars {
+    color: orange;
+  }
+}
+
+.search {
+  margin: auto 0;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom right, red , yellow);
+  color: white;
+  border: none;
+}
+
+.logoImg {
+  width: 45%;
+  height: auto;
+}
+
 .important-links{
   display: flex;
   flex-direction: column;
@@ -10,7 +53,7 @@
   margin-top: -80px;
 }
 
-.fa{
+.fa {
   display: flex;
   padding: 20px;
   font-size: 30px;
@@ -19,44 +62,30 @@
   text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
-}
 
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
+  &-facebook {
+    background: #3B5998;
+    color: white;
+  }
 
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
+  &-twitter {
+    background: #55ACEE;
+    color: white;
+  }
 
-.fa-instagram {
-  background-image:linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80 );
-  color: white;
-}
+  &-instagram {
+    background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+    color: white;
+  }
 
-.fa-youtube {
-  background: #bb0000;
-  color: white;
-}
-
-.nav {
-  display: flex;
-  width:100%;
-  margin-bottom: 50px;
+  &-youtube {
+    background: #bb0000;
+    color: white;
+  }
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
   background-image:linear-gradient(to bottom right, red , yellow);
-}
-
-li.nav-item{
-  color:white;
-}
-
-a.nav-link{
-  color:orange;
 }
 
 footer h2 {
@@ -69,10 +98,6 @@ footer{
   background-color: #e2e2e2;
   width: 100%;
   height:200px;
-}
-
-.title {
-  text-align: center;
 }
 
 .map {

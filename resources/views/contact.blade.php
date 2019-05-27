@@ -14,14 +14,12 @@
                 <a target="_blank" href="https://www.google.nl/maps/dir//Happyland,+3400+Klosterneuburg,+Oostenrijk/@48.3095117,16.3272682,17z/data=!4m17!1m7!3m6!1s0x476d0f035c8a624d:0x3300bbdf9986a3ed!2sHappyland!3b1!8m2!3d48.3094917!4d16.3293934!4m8!1m0!1m5!1m1!1s0x476d0f035c8a624d:0x3300bbdf9986a3ed!2m2!1d16.3293935!2d48.3094917!3e3">
                     <button class="btn btn-light">Plan uw route</button>
                 </a>
-                <ul>
-                    <h3 class="text-white">Adres</h3>
-                    <ul class="text-white">
-                        <li>Happystraat 5</li>
-                        <li>1234 HL</li>
-                        <li>Happyplaats</li>
-                        <li>Nederland</li>
-                    </ul>
+                <h3 class="text-white">Adres</h3>
+                <ul class="text-white">
+                    <li>Happystraat 5</li>
+                    <li>1234 HL</li>
+                    <li>Happyplaats</li>
+                    <li>Nederland</li>
                 </ul>
             </div>
             <div class="col-md-1"></div>
