@@ -3,6 +3,12 @@
 .navigation {
   padding: 20px 0;
   background: linear-gradient(to bottom right, #ffffff, #f2f2f2);
+
+  & .search {
+    @include sm {
+      order: 4;
+    }
+  }
 }
 
 .nav {
@@ -38,7 +44,7 @@
   border: none;
 }
 
-.hamburger {
+.navButton {
   display: none;
 
   @include sm {
@@ -51,14 +57,6 @@
     display: flex;
   }
 }
-
-.search {
-  @include sm-up {
-    display: block;
-  }
-}
-
-
 
 .logoImg {
   width: 45%;

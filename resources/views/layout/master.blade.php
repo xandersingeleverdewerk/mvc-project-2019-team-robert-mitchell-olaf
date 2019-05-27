@@ -17,10 +17,15 @@
 <nav class="navigation">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4 col-md-3 logo">
+            <div class="col-3 navButton">
+                <button class="hamburger btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#navigation">
+                    <span class="fas fa-bars"></span>
+                </button>
+            </div>
+            <div class="col-4 col-sm-6 col-md-3 logo">
                 <img alt="logo" class="logoImg mx-auto d-block rounded-circle" src="{{asset('images/happy.jpg')}}">
             </div>
-            <div class="col-sm-4 col-md-6 search">
+            <div class="col-12 col-md-6 search">
                 <form id="search" action="#" method="POST">
                     @csrf
                     <div class="input-group">
@@ -31,12 +36,10 @@
                     </div>
                 </form>
             </div>
-            <div class="col-sm-4 col-md-3 register">
-                <button class="hamburger btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#navigation, #search, #auth">
-                    <span class="fas fa-bars"></span>
-                </button>
+            <div class="col-4 col-sm-6 col-md-3 register">
+                Hallo allemaal
                 @if (Route::has('login'))
-                    <div id="auth" class="top-right links">
+                    <div class="top-right links">
                         @auth
                             <a href="{{ url('/home') }}">Home</a>
                         @else
@@ -52,7 +55,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <ul class="nav-pills nav-justified collapse navbar-collapse" id="navigation">
+        <ul class="nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/master') ? 'active' : '' }}" href="{{ url('/master') }}">Home</a>
             </li>

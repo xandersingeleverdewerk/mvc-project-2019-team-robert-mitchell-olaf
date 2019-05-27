@@ -22,6 +22,9 @@
 .navigation {
   padding: 20px 0;
   background: linear-gradient(to bottom right, #ffffff, #f2f2f2); }
+  @media (max-width: 576px) {
+    .navigation .search {
+      order: 4; } }
 
 .nav {
   padding-top: 20px; }
@@ -46,19 +49,15 @@
   color: white;
   border: none; }
 
-.hamburger {
+.navButton {
   display: none; }
   @media (max-width: 576px) {
-    .hamburger {
+    .navButton {
       display: block; } }
 
 @media (min-width: 576px) {
   #navigation {
     display: flex; } }
-
-@media (min-width: 576px) {
-  .search {
-    display: block; } }
 
 .logoImg {
   width: 45%;
