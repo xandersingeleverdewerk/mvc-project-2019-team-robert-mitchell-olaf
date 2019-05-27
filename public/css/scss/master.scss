@@ -1,12 +1,27 @@
 @import "standardStyling";
 
+#navigation {
+  & .nav-item {
+    @include md {
+      width: 100%;
+    }
+  }
+
+  @include md-up {
+    display: flex;
+  }
+}
+
 .navigation {
   padding: 20px 0;
   background: linear-gradient(to bottom right, #ffffff, #f2f2f2);
 
   & .search {
-    @include sm {
+    margin: auto 0;
+
+    @include md {
       order: 4;
+      margin-top: 30px;
     }
   }
 }
@@ -24,43 +39,44 @@
       color: white;
     }
   }
-}
 
-.navbar-toggler {
-  border-color: orange;
-
-  & .fa-bars {
+  &Title {
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
     color: orange;
+    margin-bottom: 30px;
+
+    @include md {
+      font-size: 27px;
+    }
+  }
+
+  &Button {
+    display: none;
+
+    @include md {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 55px;
+    }
+  }
+
+  &Img {
+    width: 45%;
+    height: auto;
+    min-height: 50px;
+    min-width: 50px;
+
+    .register & {
+      cursor: pointer;
+    }
   }
 }
 
-.search {
-  margin: auto 0;
-}
-
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red , yellow);
-  color: white;
-  border: none;
-}
-
-.navButton {
-  display: none;
-
-  @include sm {
-    display: block;
-  }
-}
-
-#navigation {
-  @include sm-up {
-    display: flex;
-  }
-}
-
-.logoImg {
-  width: 45%;
-  height: auto;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-image:linear-gradient(to bottom right, red , yellow);
 }
 
 .important-links{
@@ -104,10 +120,6 @@
     background: #bb0000;
     color: white;
   }
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-  background-image:linear-gradient(to bottom right, red , yellow);
 }
 
 footer h2 {

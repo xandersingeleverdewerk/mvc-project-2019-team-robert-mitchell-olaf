@@ -17,15 +17,16 @@
 <nav class="navigation">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 navButton">
+            <div class="col-4 navButton">
                 <button class="hamburger btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#navigation">
                     <span class="fas fa-bars"></span>
                 </button>
             </div>
-            <div class="col-4 col-sm-6 col-md-3 logo">
-                <img alt="logo" class="logoImg mx-auto d-block rounded-circle" src="{{asset('images/happy.jpg')}}">
+            <div class="col-4 col-md-3 logo">
+                <img alt="logo" class="navImg mx-auto d-block rounded-circle" src="{{asset('images/happy.jpg')}}">
             </div>
             <div class="col-12 col-md-6 search">
+                <h1 class="navTitle">Pretpark HappyLand</h1>
                 <form id="search" action="#" method="POST">
                     @csrf
                     <div class="input-group">
@@ -36,26 +37,21 @@
                     </div>
                 </form>
             </div>
-            <div class="col-4 col-sm-6 col-md-3 register">
-                Hallo allemaal
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
+            <div class="col-4 col-md-3 register">
+                <div class="dropdown dropleft">
+                    <img alt="portaal" data-toggle="dropdown" class="navImg mx-auto d-block rounded-circle" src="{{asset('images/login.png')}}">
+                    <div class="dropdown-menu">
+                        {{--hier komen de linkjes voor de authenticate--}}
+                        <a class="dropdown-item" href="#">Register</a>
+                        <a class="dropdown-item" href="#">Log in</a>
                     </div>
-                @endif
+                </div>
+            </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <ul class="nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
+        <ul class="flex-column flex-md-row nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/master') ? 'active' : '' }}" href="{{ url('/master') }}">Home</a>
             </li>

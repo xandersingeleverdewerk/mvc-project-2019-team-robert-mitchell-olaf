@@ -1,13 +1,19 @@
-$sm: 576px;
+$md: 768px;
 
-@mixin sm {
-  @media (max-width: $sm) {
+@mixin md {
+  @media (max-width: $md) {
     @content;
   }
 }
 
-@mixin sm-up {
-  @media (min-width: $sm ) {
+@mixin md-up {
+  @media (min-width: $md ) {
     @content;
   }
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom right, red , yellow);
+  color: white;
+  border: none;
 }

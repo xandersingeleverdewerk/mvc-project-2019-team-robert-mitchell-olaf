@@ -19,12 +19,27 @@
 .openingTimesImg {
   margin-bottom: 20px; }
 
+.btn-primary {
+  background-image: linear-gradient(to bottom right, red, yellow);
+  color: white;
+  border: none; }
+
+@media (max-width: 768px) {
+  #navigation .nav-item {
+    width: 100%; } }
+@media (min-width: 768px) {
+  #navigation {
+    display: flex; } }
+
 .navigation {
   padding: 20px 0;
   background: linear-gradient(to bottom right, #ffffff, #f2f2f2); }
-  @media (max-width: 576px) {
-    .navigation .search {
-      order: 4; } }
+  .navigation .search {
+    margin: auto 0; }
+    @media (max-width: 768px) {
+      .navigation .search {
+        order: 4;
+        margin-top: 30px; } }
 
 .nav {
   padding-top: 20px; }
@@ -35,33 +50,33 @@
     .nav-link:hover {
       background: linear-gradient(to bottom right, red, yellow);
       color: white; }
+  .navTitle {
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    color: orange;
+    margin-bottom: 30px; }
+    @media (max-width: 768px) {
+      .navTitle {
+        font-size: 27px; } }
+  .navButton {
+    display: none; }
+    @media (max-width: 768px) {
+      .navButton {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 55px; } }
+  .navImg {
+    width: 45%;
+    height: auto;
+    min-height: 50px;
+    min-width: 50px; }
+    .register .navImg {
+      cursor: pointer; }
 
-.navbar-toggler {
-  border-color: orange; }
-  .navbar-toggler .fa-bars {
-    color: orange; }
-
-.search {
-  margin: auto 0; }
-
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red, yellow);
-  color: white;
-  border: none; }
-
-.navButton {
-  display: none; }
-  @media (max-width: 576px) {
-    .navButton {
-      display: block; } }
-
-@media (min-width: 576px) {
-  #navigation {
-    display: flex; } }
-
-.logoImg {
-  width: 45%;
-  height: auto; }
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-image: linear-gradient(to bottom right, red, yellow); }
 
 .important-links {
   display: flex;
@@ -94,9 +109,6 @@
   .fa-youtube {
     background: #bb0000;
     color: white; }
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  background-image: linear-gradient(to bottom right, red, yellow); }
 
 footer h2 {
   display: flex;

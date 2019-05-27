@@ -39,7 +39,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-6">
                 <h2>Openings Tijden</h2>
-                <table class="table table-hover">
+                <table class="table table-hover table-responsive">
                     <thead>
                         <tr>
                             <th>Dag</th>
