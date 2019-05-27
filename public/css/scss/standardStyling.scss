@@ -1,0 +1,13 @@
+$sm: 576px;
+
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media (min-width: $sm ) {
+    @content;
+  }
+}

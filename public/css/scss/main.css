@@ -46,6 +46,20 @@
   color: white;
   border: none; }
 
+.hamburger {
+  display: none; }
+  @media (max-width: 576px) {
+    .hamburger {
+      display: block; } }
+
+@media (min-width: 576px) {
+  #navigation {
+    display: flex; } }
+
+@media (min-width: 576px) {
+  .search {
+    display: block; } }
+
 .logoImg {
   width: 45%;
   height: auto; }

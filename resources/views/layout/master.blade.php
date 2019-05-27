@@ -21,7 +21,7 @@
                 <img alt="logo" class="logoImg mx-auto d-block rounded-circle" src="{{asset('images/happy.jpg')}}">
             </div>
             <div class="col-sm-4 col-md-6 search">
-                <form action="#" method="POST">
+                <form id="search" action="#" method="POST">
                     @csrf
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
@@ -32,8 +32,11 @@
                 </form>
             </div>
             <div class="col-sm-4 col-md-3 register">
+                <button class="hamburger btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#navigation, #search, #auth">
+                    <span class="fas fa-bars"></span>
+                </button>
                 @if (Route::has('login'))
-                    <div class="top-right links">
+                    <div id="auth" class="top-right links">
                         @auth
                             <a href="{{ url('/home') }}">Home</a>
                         @else
@@ -49,10 +52,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <button class="btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#navigation">
-            <span class="fas fa-bars"></span>
-        </button>
-        <ul class="nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
+        <ul class="nav-pills nav-justified collapse navbar-collapse" id="navigation">
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/master') ? 'active' : '' }}" href="{{ url('/master') }}">Home</a>
             </li>
