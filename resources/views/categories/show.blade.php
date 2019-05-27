@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 
 @section('content')
 
@@ -14,14 +14,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active"> href="{{ route('categories.show',
-                                        ['category' => $category->id]) }}">Category Details</a>
+                                        ['categorie' => $categorie->id]) }}">Categorie Details</a>
             </li>
         </ul>
     </nav>
 
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">{{ $category->name }}</h2>
+            <h2 class="card-title">{{ $categorie->name }}</h2>
         </div>
     </div>
 

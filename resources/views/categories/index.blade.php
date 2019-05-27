@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 
 @section('content')
 
@@ -26,22 +26,22 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">name</th>
-            <th scope="col">Category Details</th>
+            <th scope="col">Categorie Details</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($categories as $category)
+        @foreach($categories as $categorie)
             <tr>
-                <td Scope="row">{{ $category->id }}</td>
-                <td>{{ $category->name }}</td>
+                <td Scope="row">{{ $categorie->id }}</td>
+                <td>{{ $categorie->name }}</td>
                 <td><a href="{{ route('categories.show',
-                                         ['category' => $category->id]) }}">Details</a></td>
+                                         ['categorie' => $categorie->id]) }}">Details</a></td>
                 <td><a href="{{ route('categories.edit',
-                                         ['category' => $category->id]) }}">Edit</a></td>
+                                         ['categorie' => $categorie->id]) }}">Edit</a></td>
                 <td><a href="{{ route('categories.delete',
-                                         ['category' => $category->id]) }}">Delete</a></td>
+                                         ['categorie' => $categorie->id]) }}">Delete</a></td>
             </tr>
         @endforeach
         </tbody>

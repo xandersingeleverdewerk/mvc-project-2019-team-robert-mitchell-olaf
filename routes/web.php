@@ -19,6 +19,6 @@ Route::get('/attractions/{attraction}/delete', 'attractionsController@delete')
     ->name('attractions.delete');
 Route::resource('/attractions' , 'AttractionsController');
 
-Route::get('/categories/{category}/delete', 'categoriesController@delete')
+Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
                             ->name('categories.delete');
 Route::resource('/categories', 'CategoriesController');

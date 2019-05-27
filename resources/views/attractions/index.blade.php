@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 
 @section('content')
     <h1 class="mt-5">Attractions</h1>
@@ -27,7 +27,6 @@
             <th scope="col">Wait time</th>
             <th scope="col">Minimal age</th>
             <th scope="col">Minimal length</th>
-            <th scope="col">Attraction Details</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>

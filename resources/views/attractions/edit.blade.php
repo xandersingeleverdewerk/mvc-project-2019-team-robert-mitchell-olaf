@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 @section('content')
     <h1 class="mt-5">Attractions</h1>
 
@@ -26,24 +26,22 @@
         </ul>
     </nav>
 
-    {!! Form::open(['url' => '/attractions/'.$attraction->id, 'method' => 'PATCH']) !!}
-
-    <div class="form-group">
-        {!! Form::label('waitTime', 'WaitTime') !!}
-        {!! Form::text('waitTime', $attraction->waitTime, ['class' => 'form-control',
-                                                           'id' => 'waitTime']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('minAge', 'MinAge') !!}
-        {!! Form::text('minAge', $attraction->minAge, ['class' => 'form-control',
-                                                       'id' => 'minAge']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('minLength', 'Minlength') !!}
-        {!! Form::text('minLength', $attraction->minLength, ['class' => 'form-control',
-                                                             'id' => 'minLength']) !!}
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-    {!! Form::close() !!}
+    <form class="form" action="{{route('attractions.update', $attraction) }}" method="POST">
+        @csrf
+        @method('PATCH')
+        <div class="form-group">
+            <label for="WaitTime">waitTime</label>
+            <input type="time" name="waitTime" class="form-control" placeholder="Enter Time" value="<?php echo $attraction->waitTime;?>"/>
+        </div>
+        <div class="form-group">
+            <label for="minAge">minAge</label>
+            <input type="number" name="minAge" class="form-control" placeholder="Enter age" value="<?php echo $attraction->minAge;?>"/>
+        </div>
+        <div class="form-group">
+            <label for="minlength">minlength</label>
+            <input type="number" step="any" name="minLength" class="form-control" placeholder="Enter length" value="<?php echo $attraction->minLength;?>"/>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
 @endsection
+

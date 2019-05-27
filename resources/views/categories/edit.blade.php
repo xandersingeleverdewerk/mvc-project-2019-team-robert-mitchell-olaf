@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 
 @section('content')
 
@@ -24,16 +24,16 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('categories.edit',
-                                        ['category' => $category->id]) }}">Edit Category</a>
+                                        ['categorie' => $categorie->id]) }}">Edit Categorie</a>
             </li>
         </ul>
     </nav>
 
-    {!! Form::open(['url' => route('categories.update' , $category->id), 'method' => 'PATCH']) !!}
+    {!! Form::open(['url' => route('categories.update' , $categorie->id), 'method' => 'PATCH']) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', $category->name, ['class' => 'form-control', 'id' => 'name']) !!}
+        {!! Form::text('name', $categorie->name, ['class' => 'form-control', 'id' => 'name']) !!}
     </div>
     <button type="submit" class="btn btn-primary">Wijzig</button>
 

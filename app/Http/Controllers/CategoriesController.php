@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Http\Requests\StoreCategoryRequest;
+use App\Categorie;
+use App\Http\Requests\StoreCategorieRequest;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -16,9 +16,9 @@ class CategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
+        $categories = Categorie::all();
 
-        // een view returnen en de variabele $category meesturen naar de view
+        // een view returnen en de variabele $categorie meesturen naar de view
         return view('categories.index', compact('categories'));
     }
 
@@ -39,80 +39,80 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(StoreCategorieRequest $request)
     {
-        // aanmaken van een nieuwe category (met behulp van de Model)
-        $category = new Category();
+        // aanmaken van een nieuwe categorie (met behulp van de Model)
+        $categorie = new Categorie();
         // attribuut
-        $category->name = $request->name;
-        // category bewaren in de database (insert uitvoeren)
-        $category->save();
+        $categorie->name = $request->name;
+        // categorie bewaren in de database (insert uitvoeren)
+        $categorie->save();
 
-        return redirect()->route('categories.index')->with('message', 'Category aangemaakt');
+        return redirect()->route('categories.index')->with('message', 'Categorie aangemaakt');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Categorie $categorie)
     {
         //
-        return view('categories.show', compact('category'));
+        return view('categories.show', compact('categorie'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Categorie $categorie)
     {
         //
-        return view ('categories.edit', compact('category'));
+        return view ('categories.edit', compact('categorie'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Categorie $categorie)
     {
         //attributen
-        $category->name = $request->name;
-        // category bewaren in de database (update uitvoeren)
-        $category->save();
+        $categorie->name = $request->name;
+        // categorie bewaren in de database (update uitvoeren)
+        $categorie->save();
 
-        return redirect()->route('categories.index')->with('message', 'Category geüpdate');
+        return redirect()->route('categories.index')->with('message', 'Categorie geüpdate');
     }
 
     /**
      * Show the form for deleting the specific resource.
      *
-     * @param \App\Category $category
+     * @param \App\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function delete(Category $category)
+    public function delete(Categorie $categorie)
     {
-        return view('categories.delete', compact('category'));
+        return view('categories.delete', compact('categorie'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Categorie $categorie)
     {
         //
-        $category->delete();
-        return redirect()->route('categories.index')->with('message', 'category verwijderd');
+        $categorie->delete();
+        return redirect()->route('categories.index')->with('message', 'categorie verwijderd');
     }
 }

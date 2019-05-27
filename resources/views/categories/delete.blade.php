@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.master')
 
 @section('content')
 
@@ -24,16 +24,16 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('categories.delete',
-                                        ['category' => $category->id]) }}">Delete Category</a>
+                                        ['categorie' => $categorie->id]) }}">Delete Categorie</a>
             </li>
         </ul>
     </nav>
 
-    {!! Form::open(['url' => route('categories.destroy' , $category->id), 'method' => 'DELETE']) !!}
+    {!! Form::open(['url' => route('categories.destroy' , $categorie->id), 'method' => 'DELETE']) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', $category->name, ['class' => 'form-control',
+        {!! Form::text('name', $categorie->name, ['class' => 'form-control',
                                                   'id' => 'name',
                                                   'disabled' => 'disabled']) !!}
     </div>

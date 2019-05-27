@@ -30,7 +30,6 @@ class AttractionsController extends Controller
      */
     public function create()
     {
-        //
         return view('attractions.create');
     }
 
