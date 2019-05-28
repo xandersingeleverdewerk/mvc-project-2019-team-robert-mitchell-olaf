@@ -32,7 +32,7 @@
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Zoeken</button>
+                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
                         </div>
                     </div>
                 </form>
@@ -46,7 +46,6 @@
                         <a class="dropdown-item" href="#">Log in</a>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -70,6 +69,56 @@
 
 @yield('content')
 
-@extends('layout.footer')
+<footer class="footer text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 links">
+                <h3>Belangrijke Links</h3>
+                <ul class="footerList">
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 1</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 2</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 3</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 4</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 5</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 6</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <form id="search" action="#" method="POST">
+                    @csrf
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Zoeken voor iets">
+                        <div class="input-group-append">
+                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="social-media d-flex justify-content-around flex-wrap">
+                    <a href="https://www.facebook.com"><span class="fa fa-facebook"></span></a>
+                    <a href="https://twitter.com"><span class="fa fa-twitter"></span></a>
+                    <a href="https://www.instagram.com"><span class="fa fa-instagram"></span></a>
+                    <a href="mailto:happyland@gmail.com"><span class="fa fa-envelope"></span></a>
+                    <a href="https://www.youtube.com/?gl=NL&hl=nl"><span class="fa fa-youtube"></span></a>
+                </div>
+                <ul class="phone d-flex justify-content-around flex-wrap">
+                    <li>
+                        <span class="fa fa-phone"></span>
+                        + 31 6 123 45 678
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span>
+                        happyland@gmail.com
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 map">
+                <iframe class="mx-auto d-block map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2653.653681114115!2d16.327268215534342!3d48.30951172923757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0f035c8a624d%3A0x3300bbdf9986a3ed!2sHappyland!5e0!3m2!1snl!2snl!4v1558811216565!5m2!1snl!2snl" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col-12 copyright">
+                &copy; Mitchell, Robert, Xander, Olaf 2019
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

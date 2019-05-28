@@ -1,6 +1,5 @@
 .openingTimes, .travelJourney {
   padding: 100px 0;
-  width: 100%;
   background-color: white;
   color: #111; }
 
@@ -24,6 +23,9 @@
   color: white;
   border: none; }
 
+ul {
+  list-style: none; }
+
 @media (max-width: 768px) {
   #navigation .nav-item {
     width: 100%; } }
@@ -33,7 +35,7 @@
 
 .navigation {
   padding: 20px 0;
-  background: linear-gradient(to bottom right, #ffffff, #f2f2f2); }
+  background: linear-gradient(to bottom right, #ffffff, #f4f4f4); }
   .navigation .search {
     margin: auto 0; }
     @media (max-width: 768px) {
@@ -78,51 +80,52 @@
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-image: linear-gradient(to bottom right, red, yellow); }
 
-.important-links {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px; }
-
-.social-media {
-  display: flex;
-  justify-content: center;
-  margin-top: -80px; }
-
-.fa {
-  display: flex;
-  padding: 20px;
-  font-size: 30px;
-  width: 70px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%; }
-  .fa-facebook {
-    background: #3B5998;
-    color: white; }
-  .fa-twitter {
-    background: #55ACEE;
-    color: white; }
-  .fa-instagram {
-    background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
-    color: white; }
-  .fa-youtube {
-    background: #bb0000;
-    color: white; }
-
-footer h2 {
-  display: flex;
-  justify-content: center;
-  color: orange; }
-
-footer {
-  background-color: #e2e2e2;
-  width: 100%;
-  height: 200px; }
-
-.map {
-  float: right;
-  margin-top: -80px;
-  margin-right: 10px; }
+.footer {
+  padding: 100px 0 50px;
+  background: linear-gradient(to top left, #111, #444); }
+  .footerLink {
+    color: white;
+    text-align: center;
+    margin-left: -15px; }
+    .footerLink:hover {
+      color: orange; }
+  .footer .links {
+    width: 100%; }
+    .footer .links h3, .footer .links ul {
+      text-align: center; }
+  .footer .phone {
+    margin-top: 10px; }
+    .footer .phone .fa {
+      margin-right: 5px;
+      color: orange; }
+  .footer .copyright {
+    border-top: 1px solid orange;
+    padding-top: 10px;
+    margin-top: 20px;
+    text-align: center; }
+  .footer .social-media .fa {
+    font-size: 28px;
+    padding: 18px;
+    margin: 15px 5px;
+    background-color: orange;
+    background-image: linear-gradient(to bottom right, red, yellow);
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s all; }
+    .footer .social-media .fa-facebook:hover {
+      background: #3B5998;
+      color: white; }
+    .footer .social-media .fa-twitter:hover {
+      background: #55ACEE;
+      color: white; }
+    .footer .social-media .fa-instagram:hover {
+      background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+      color: white; }
+    .footer .social-media .fa-youtube:hover {
+      background: #bb0000;
+      color: white; }
+    .footer .social-media .fa-envelope:hover {
+      background: blue;
+      color: white; }
 
 /*# sourceMappingURL=main.css.map */
