@@ -22,3 +22,7 @@ Route::resource('/attractions' , 'AttractionsController');
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
                             ->name('categories.delete');
 Route::resource('/categories', 'CategoriesController');
+
+Route::get('/contact', function () {
+    return view('contact');
+});
