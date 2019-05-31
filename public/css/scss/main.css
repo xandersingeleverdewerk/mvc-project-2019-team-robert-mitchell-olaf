@@ -18,6 +18,9 @@
 .openingTimesImg {
   margin-bottom: 20px; }
 
+.dropdown {
+  cursor: pointer; }
+
 .btn-primary {
   background-image: linear-gradient(to bottom right, red, yellow);
   color: white;
@@ -150,5 +153,17 @@ ul {
   text-shadow: 1px 1px white;
   color: #ff5325;
   background: rgba(0, 0, 0, 0.3); }
+
+.restaurantSection {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111; }
+
+.block {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin: 25px; }
 
 /*# sourceMappingURL=main.css.map */
