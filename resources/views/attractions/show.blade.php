@@ -35,6 +35,8 @@
             <h2 class="card-title">{{ $attraction->waitTime }}</h2>
             <p class="card-text">{{ $attraction->minAge }}</p>
             <p class="card-text">{{ $attraction->minLength }}</p>
+            <p class="card-text">{{ $attraction->categorie_id }}</p>
+            <p class="card-text">{{ $attraction->facility_id }}</p>
         </div>
     </div>
 @endsection

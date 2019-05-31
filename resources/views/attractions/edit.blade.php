@@ -29,6 +29,7 @@
     <form class="form" action="{{route('attractions.update', $attraction) }}" method="POST">
         @csrf
         @method('PATCH')
+
         <div class="form-group">
             <label for="WaitTime">waitTime</label>
             <input type="time" name="waitTime" class="form-control" placeholder="Enter Time" value="<?php echo $attraction->waitTime;?>"/>
@@ -40,6 +41,14 @@
         <div class="form-group">
             <label for="minlength">minlength</label>
             <input type="number" step="any" name="minLength" class="form-control" placeholder="Enter length" value="<?php echo $attraction->minLength;?>"/>
+        </div>
+        <div class="form-group">
+            <label for="categorie_id">categorie_id</label>
+            <input type="number" step="any" name="categorie_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->categorie_id;?>"/>
+        </div>
+        <div class="form-group">
+            <label for="facility_id">facility_id</label>
+            <input type="number" step="any" name="facility_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->facility_idu;?>"/>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
     </form>

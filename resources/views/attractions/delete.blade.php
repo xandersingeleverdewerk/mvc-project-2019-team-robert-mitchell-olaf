@@ -41,6 +41,14 @@
             <label for="minlength">minlength</label>
             <input type="number" step="any" name="minLength" class="form-control" value="<?php echo $attraction->minLength;?>" disabled/>
         </div>
+        <div class="form-group">
+            <label for="category_id">categorie_id</label>
+            <input type="number" step="any" name="categorie_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->categorie_id;?>" disabled/>
+        </div>
+        <div class="form-group">
+            <label for="facility_id">facility_id</label>
+            <input type="number" step="any" name="facility_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->facility_idu;?>" disabled/>
+        </div>
         <input type="submit" value="Submit" class="btn btn-primary">
     </form>
 @endsection
