@@ -128,4 +128,27 @@ ul {
       background: blue;
       color: white; }
 
+.information {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111; }
+
+.btn-primary {
+  background-image: linear-gradient(to bottom right, red, yellow);
+  color: white;
+  border-style: none; }
+
+.rounded {
+  border-radius: 3.25px; }
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%; }
+
+.carousel-caption {
+  text-shadow: 1px 1px white;
+  color: #ff5325;
+  background: rgba(0, 0, 0, 0.3); }
+
 /*# sourceMappingURL=main.css.map */
