@@ -1,0 +1,23 @@
+$md: 768px;
+
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: $md ) {
+    @content;
+  }
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom right, red , yellow);
+  color: white;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
