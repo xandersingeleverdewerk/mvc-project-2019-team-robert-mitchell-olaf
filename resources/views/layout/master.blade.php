@@ -52,7 +52,7 @@
     <div class="container-fluid">
         <ul class="flex-column flex-md-row nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
             <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/master') ? 'active' : '' }}" href="{{ url('/master') }}">Home</a>
+                <a class="nav-link {{ Request::url() == url('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" href="{{ url('/park') }}">Het Park</a>
