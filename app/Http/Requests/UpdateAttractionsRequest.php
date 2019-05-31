@@ -26,8 +26,9 @@ class UpdateAttractionsRequest extends FormRequest
         return [
             //
             'waitTime' => 'required',
-            'minAge' => 'integer|between:1,18',
-            'minLength' => 'numeric'
+            'minAge' => 'integer|between:0,18',
+            'minLength' => 'numeric',
+            'facility_id' => 'required|exists:facilities,id',
         ];
     }
 }

@@ -19,31 +19,19 @@
             </li>
         </ul>
     </nav>
+    <br>
 
-    <table class="table .table-striped">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Wait time</th>
-            <th scope="col">Minimal age</th>
-            <th scope="col">Minimal length</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="container" style=" display: flex; flex-direction: column; justify-content: flex-start;">
         @foreach($attractions as $attraction)
-            <tr>
-                <td scope="row">{{ $attraction->id }}</td>
-                <td>{{ $attraction->waitTime }}</td>
-                <td>{{ $attraction->minAge }}</td>
-                <td>{{ $attraction->minLength }}</td>
-                <td><a href="{{ url('/attractions/'.$attraction->id.'/edit') }}">Edit</a></td>
-                <td><a href="{{ url('/attractions/'.$attraction->id.'/delete') }}">Delete</a></td>
-            </tr>
+            <div style="background-color:black; color:white; margin-bottom: 20px; width: 9rem; margin-left: 20px">
+                <h2 style="width: 150px" scope="row">attractie {{$attraction->id }}</h2>
+                <p>Wait time = {{ $attraction->waitTime }}</p>
+                <p>Minimal age = {{ $attraction->minAge }}</p>
+                <p>Min length = {{ $attraction->minLength }}</p>
+                <a href="{{ url('/attractions/'.$attraction->id.'/edit') }}">Edit</a><br>
+                <a href="{{ url('/attractions/'.$attraction->id.'/delete') }}">Delete</a>
+            </div>
         @endforeach
-
-        </tbody>
-    </table>
+    </div>
 
 @endsection
