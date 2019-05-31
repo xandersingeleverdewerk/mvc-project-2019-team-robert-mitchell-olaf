@@ -4,12 +4,12 @@
 
     <div class="container">
 
-    <div id="demo" class="carousel slide" data-ride="carousel">
+    <div id="idCarousel" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
+            <li data-target="slide0" data-slide-to="0" class="active"></li>
+            <li data-target="slide1" data-slide-to="1"></li>
+            <li data-target="slide2" data-slide-to="2"></li>
+            <li data-target="slide3" data-slide-to="3"></li>
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -34,19 +34,14 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('images/ferris_wheel.jpg')}}" alt="waterattractie" width="900" height="300">
+                <img src="{{asset('images/ferris_wheel.jpg')}}" alt="ferris_wheel" width="900" height="300">
                 <div class="carousel-caption">
                     <h3>Beter overzicht?</h3>
                     <p>Stap in het reuzenrad voor een mooi uitzicht</p>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+
     </div>
     </div>
 
@@ -77,8 +72,4 @@
             </div>
         </div>
     </section>
-
-
-
-
 @endsection
