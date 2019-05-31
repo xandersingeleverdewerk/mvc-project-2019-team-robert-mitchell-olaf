@@ -12,6 +12,10 @@ class FacilitiesTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Facility::class, 100)->create();
+        factory(App\Facility::class, 100)->create()
+            ->each(function($restaurant) {
+                $restaurant->facility()->saveOne(factory(\App\Restaurant::class, intValue())
+               ->create(['restaurant_id' => $restaurant->id]));
+            });
     }
 }
