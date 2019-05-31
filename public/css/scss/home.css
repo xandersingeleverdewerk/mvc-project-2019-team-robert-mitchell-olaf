@@ -1,0 +1,14 @@
+section {
+  width: 75%; }
+
+.information {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111; }
+
+button {
+  background-image: linear-gradient(to bottom right, red, yellow);
+  color: white; }
+
+/*# sourceMappingURL=home.css.map */
