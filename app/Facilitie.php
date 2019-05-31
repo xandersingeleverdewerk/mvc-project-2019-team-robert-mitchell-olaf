@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Facility extends Model
+class Facilitie extends Model
 {
     public function restaurant() {
-        return $this->belongsTo('App\Restaurant');
+        return $this->hasMany('App\Restaurant');
     }
 }
