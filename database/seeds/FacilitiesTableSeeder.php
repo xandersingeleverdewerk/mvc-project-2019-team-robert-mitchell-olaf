@@ -11,7 +11,7 @@ class FacilitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Facilitie::class, 50)->create()
+        factory(App\Facilitie::class, 20)->create()
             ->each(function($facilitie) {
                 $facilitie->restaurant()->saveMany(factory(\App\Restaurant::class, 1)
                ->create(['facilitie_id' => $facilitie->id]));

@@ -6,11 +6,11 @@
         <div class="container">
             <h2>Restaurants</h2>
 
-            <div class="row">
+            <div class="d-flex justify-content-around row">
             @foreach($restaurants as $restaurant)
-                <div class="block col-sm-3">
-                    <h3 class="blockTitle">{{$restaurant->facilitie->name}}</h3>
-                </div>
+                <a class="block" href="{{ url('park/restaurants/'.$restaurant->id) }}">
+                    <h3 class="blockTitle">{{ $restaurant->facilitie->name }}</h3>
+                </a>
             @endforeach
             </div>
         </div>
