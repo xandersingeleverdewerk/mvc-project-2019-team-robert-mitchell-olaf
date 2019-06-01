@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Facility;
+use App\Facilitie;
 use App\Http\Requests\StoreAttractionsRequest;
 use App\Http\Requests\UpdateAttractionsRequest;
 use App\Attraction;
@@ -31,7 +31,7 @@ class AttractionsController extends Controller
      */
     public function create()
     {
-        $facilities = Facility::pluck('name', 'id');
+        $facilities = Facilitie::pluck('name', 'id');
         return view('attractions.create', compact('facilities'));
     }
 
@@ -44,7 +44,6 @@ class AttractionsController extends Controller
     public function store(storeAttractionsRequest $request)
     {
         $validated = $request->validated();
-
         // aanmaken van een nieuw attractie (met behulp van de Model)
         $attraction = new Attraction();
         // attributen
@@ -52,7 +51,7 @@ class AttractionsController extends Controller
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->categorie_id = $request->categorie_id;
-        $attraction->facility_id = $request->facility_id;
+        $attraction->facilitie_id = $request->facilitie_id;
         // attractie bewaren in de database (insert uitvoeren)
         $attraction->save();
 
@@ -68,7 +67,7 @@ class AttractionsController extends Controller
     public function show(Attraction $attraction)
     {
         //
-        $facilities = Facility::pluck('name', 'id');
+        $facilities = Facilitie::pluck('name', 'id');
         return view('attractions.show', compact('attraction', 'facilities'));
     }
 
@@ -99,7 +98,7 @@ class AttractionsController extends Controller
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->categorie_id = $request->categorie_id;
-        $attraction->facility_id = $request->facility_id;
+        $attraction->facilitie_id = $request->facilitie_id;
         // attractie bewaren in de database (update uitvoeren)
         $attraction->save();
 

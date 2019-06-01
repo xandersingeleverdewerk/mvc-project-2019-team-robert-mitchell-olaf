@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{ url('/attractions/create') }}">Create</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="{{ url('/attractions/'.$review->id)}}">Show</a>
+                <a class="nav-link active" href="{{ url('/attractions/'.$attraction->id)}}">Show</a>
             </li>
         </ul>
     </nav>

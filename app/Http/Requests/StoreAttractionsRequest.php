@@ -28,7 +28,7 @@ class StoreAttractionsRequest extends FormRequest
             'waitTime' => 'required',
             'minAge' => 'integer|between:0,18',
             'minLength' => 'numeric',
-            'facility_id' => 'required|exits:facility_id'
+            'facilitie_id' => 'required|exists:facilities,id',
         ];
     }
 }

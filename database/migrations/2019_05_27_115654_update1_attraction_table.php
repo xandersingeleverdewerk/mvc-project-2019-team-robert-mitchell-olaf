@@ -15,8 +15,8 @@ class Update1AttractionTable extends Migration
     {
         Schema::table('attractions', function (Blueprint $table) {
             //
-            $table->unsignedInteger('facility_id');
-            $table->foreign('facility_id')
+            $table->unsignedInteger('facilitie_id');
+            $table->foreign('facilitie_id')
                 ->references('id')->on('facilities')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
@@ -39,7 +39,7 @@ class Update1AttractionTable extends Migration
     {
         Schema::table('attractions', function (Blueprint $table) {
             //
-            $table->dropForeign(['facility_id']);
+            $table->dropForeign(['facilitie_id']);
             $table->dropForeign(['categorie_id']);
         });
     }

@@ -11,7 +11,7 @@ $factory->define(App\Attraction::class, function (Faker $faker) {
         'waitTime' => $faker->time('I:s'),
         'minAge' => $faker->randomFloat(0, 0, 18),
         'minLength' => $faker->randomfloat(2, 0, 1.50),
-        'facility_id' => \App\Facility::all()->random()->id,
+        'facilitie_id' => \App\Facilitie::all()->random()->id,
         'created_at' => $faker->dateTimeThisDecade ('now', null),
         'updated_at' => $faker->dateTimeThisDecade ('now', null)
     ];

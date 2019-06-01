@@ -40,13 +40,13 @@
             <input type="number" step="any" name="minLength" class="form-control" placeholder="Enter length"/>
         </div>
         <div class="form-group">
-            <label for="category_id">categorie_id</label>
+            <label for="categorie_id">categorie_id</label>
             <input type="number" step="any" name="categorie_id" class="form-control" placeholder="Enter id"/>
         </div>
         <div class="form-group">
-            <label for="facility_id">facility_id</label>
-            <input type="number" step="any" name="facility_id" class="form-control" placeholder="Enter id"/>
+            <label for="faciltie_id">facilitie_id</label>
+            <input type="number" step="any" name="facilitie_id" class="form-control" placeholder="Enter id"/>
         </div>
-        <input   type="submit" value="Submit" class="btn btn-primary">
+        <input type="submit" value="Submit" class="btn btn-primary">
     </form>
 @endsection

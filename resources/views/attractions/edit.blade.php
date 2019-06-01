@@ -47,8 +47,8 @@
             <input type="number" step="any" name="categorie_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->categorie_id;?>"/>
         </div>
         <div class="form-group">
-            <label for="facility_id">facility_id</label>
-            <input type="number" step="any" name="facility_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->facility_idu;?>"/>
+            <label for="facilitie_id">facilitie_id</label>
+            <input type="number" step="any" name="facilitie_id" class="form-control" placeholder="Enter id" value="<?php echo $attraction->facilitie_id;?>"/>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
     </form>

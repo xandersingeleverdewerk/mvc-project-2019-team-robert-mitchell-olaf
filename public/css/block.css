@@ -1,14 +1,17 @@
-div {
-    display: flex;
+div.block {
     background-color:black;
     color:white;
-    padding:20px;
     margin-bottom: 20px;
-    width: 20%;
+    width: 22rem;
+    margin-left: 20px;
 }
 
-div #container {
+div.container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
+}
+
+h2#facilitieName {
+    width: 350px;
 }

@@ -9,8 +9,8 @@ class Attraction extends Model
     //
     protected $fillable = ['waitTime', 'minAge', 'minLength'];
 
-    public function facility() {
-        return $this->belongsTo('App\Facility');
+    public function facilitie() {
+        return $this->belongsTo('App\Facilitie');
     }
 
     public function categorie() {

@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/block.css') }}" />
+
 @section('content')
     <h1 class="mt-5">Attractions</h1>
 
@@ -21,10 +23,11 @@
     </nav>
     <br>
 
-    <div class="container" style=" display: flex; flex-direction: column; justify-content: flex-start;">
+    <div class="container">
         @foreach($attractions as $attraction)
-            <div style="background-color:black; color:white; margin-bottom: 20px; width: 9rem; margin-left: 20px">
-                <h2 style="width: 150px" scope="row">attractie {{$attraction->id }}</h2>
+            <div class="block">
+                <h2 id = "facilitieName" scope="row"> {{$attraction->facilitie->name }}</h2>
+                <p>Description = {{ $attraction->facilitie->description }}</p>
                 <p>Wait time = {{ $attraction->waitTime }}</p>
                 <p>Minimal age = {{ $attraction->minAge }}</p>
                 <p>Min length = {{ $attraction->minLength }}</p>
