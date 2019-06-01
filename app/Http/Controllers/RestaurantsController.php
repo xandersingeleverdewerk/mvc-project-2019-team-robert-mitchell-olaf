@@ -49,9 +49,7 @@ class RestaurantsController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        $restaurants = Restaurant::all();
-
-        return view('park.restaurants.show', compact('restaurants'));
+        return view('park.restaurants.show', compact('restaurant'));
     }
 
     /**
