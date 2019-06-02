@@ -2,18 +2,19 @@
 
 @section('content')
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <section class="restaurantSection">
         <div class="container">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <h2>{{ $restaurant->facilitie->name }} aanpassen</h2>
 
             <form class="form" action="{{route('restaurants.update', $restaurant)}}" method="POST">

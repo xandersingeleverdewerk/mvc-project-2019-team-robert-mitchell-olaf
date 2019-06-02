@@ -74,7 +74,6 @@ class RestaurantsController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-
         return view('park.restaurants.edit', compact('restaurant'));
     }
 
@@ -102,8 +101,17 @@ class RestaurantsController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
+
+    public function delete(Restaurant $restaurant)
+    {
+        return view('park.restaurants.delete', compact('restaurant'));
+    }
+
     public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+        $restaurant->facilitie->delete();
+
+        return redirect()->route('restaurants.index')->with('message','Restaurant is aangepast');
     }
 }
