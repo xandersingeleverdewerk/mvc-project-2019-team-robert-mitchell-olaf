@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-            <h2>{{ $restaurant->facilitie->name }} verwijderen</h2>
+            <h2>{{ $store->facilitie->name }} verwijderen</h2>
 
             <form class="form" action="{{route('stores.destroy', $store)}}" method="POST">
                 @csrf
