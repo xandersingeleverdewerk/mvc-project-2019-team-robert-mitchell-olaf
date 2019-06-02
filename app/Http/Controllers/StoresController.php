@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStoresRequest;
 use App\Store;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,9 @@ class StoresController extends Controller
     public function index()
     {
         //
+        $stores = Store::all();
+
+        return view('park.stores.index', compact('stores'));
     }
 
     /**
@@ -25,6 +29,7 @@ class StoresController extends Controller
     public function create()
     {
         //
+        return view('park.stores.create');
     }
 
     /**
@@ -33,9 +38,22 @@ class StoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreStoresRequest $request)
     {
         //
+        $store = new Store();
+        $facilitie = new Facilitie();
+
+        $facilitie->name = $request->name;
+        $facilitie->description = $request->description;
+        $facilitie->opening_time = $request->opening_time;
+        $facilitie->closing_time = $request->closing_time;
+        $facilitie->save();
+
+        $store->facilitie_id = $facilitie->id;
+        $store->save();
+
+        return redirect()->route('stores.index')->with('message','Winkel is toegevoegd');
     }
 
     /**
@@ -47,6 +65,7 @@ class StoresController extends Controller
     public function show(Store $store)
     {
         //
+        return view('park.stores.show', compact('store'));
     }
 
     /**
@@ -58,6 +77,7 @@ class StoresController extends Controller
     public function edit(Store $store)
     {
         //
+        return view('park.stores.edit', compact('store'));
     }
 
     /**
@@ -67,9 +87,16 @@ class StoresController extends Controller
      * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Store $store)
+    public function update(StoreStoresRequest $request, Store $store)
     {
         //
+        $store->facilitie->name = $request->name;
+        $store->facilitie->description = $request->description;
+        $store->facilitie->opening_time = $request->opening_time;
+        $store->facilitie->closing_time = $request->closing_time;
+        $store->facilitie->save();
+
+        return redirect()->route('stores.index')->with('message','Winkel is aangepast');
     }
 
     /**
@@ -81,5 +108,9 @@ class StoresController extends Controller
     public function destroy(Store $store)
     {
         //
+        $store->delete();
+        $store->facilitie->delete();
+
+        return redirect()->route('stores.index')->with('message','Winkel is aangepast');
     }
 }
