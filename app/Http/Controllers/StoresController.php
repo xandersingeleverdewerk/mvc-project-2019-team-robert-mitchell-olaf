@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStoresRequest;
 use App\Store;
+use App\Facilitie;
 use Illuminate\Http\Request;
 
 class StoresController extends Controller
@@ -105,6 +106,12 @@ class StoresController extends Controller
      * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
+
+    public function delete(Store $store)
+    {
+        return view('park.stores.delete', compact('store'));
+    }
+
     public function destroy(Store $store)
     {
         //
