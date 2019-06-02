@@ -2,9 +2,17 @@
 
 @section('content')
 
+    @if (session('message'))
+        <div class='alert alert-success'>
+            {{ session('message') }}
+        </div>
+    @endif
+
     <section class="restaurantSection">
         <div class="container">
             <h2>Restaurants</h2>
+
+            <a href="{{ url('/park/restaurants/create') }}" class="btn btn-success">Maak een restaurant</a>
 
             <div class="d-flex justify-content-around row">
             @foreach($restaurants as $restaurant)

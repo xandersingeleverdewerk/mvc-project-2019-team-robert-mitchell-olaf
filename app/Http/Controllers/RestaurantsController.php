@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRestaurantsRequest;
 use App\Restaurant;
 use App\Facilitie;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
-
+        return view('park.restaurants.create');
     }
 
     /**
@@ -36,9 +37,22 @@ class RestaurantsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantsRequest $request)
     {
+        $restaurant = new Restaurant();
+        $facilitie = new Facilitie();
 
+        $facilitie->name = $request->name;
+        $facilitie->description = $request->description;
+        $facilitie->opening_time = $request->opening_time;
+        $facilitie->closing_time = $request->closing_time;
+        $facilitie->save();
+
+        $restaurant->facilitie_id = $facilitie->id;
+        $restaurant->save();
+
+
+        return redirect()->route('restaurants.index')->with('message','Restaurant is toegevoegd');
     }
 
     /**
@@ -60,7 +74,8 @@ class RestaurantsController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        //
+
+        return view('park.restaurants.edit', compact('restaurant'));
     }
 
     /**
@@ -70,9 +85,15 @@ class RestaurantsController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Restaurant $restaurant)
+    public function update(StoreRestaurantsRequest $request, Restaurant $restaurant)
     {
+        $restaurant->facilitie->name = $request->name;
+        $restaurant->facilitie->description = $request->description;
+        $restaurant->facilitie->opening_time = $request->opening_time;
+        $restaurant->facilitie->closing_time = $request->closing_time;
+        $restaurant->facilitie->save();
 
+        return redirect()->route('restaurants.index')->with('message','Restaurant is aangepast');
     }
 
     /**

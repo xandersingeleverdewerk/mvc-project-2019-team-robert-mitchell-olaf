@@ -10,11 +10,11 @@
                 {{ $restaurant->facilitie->description }}
             </p>
 
-                <a href="{{$restaurant->id.'/edit'}}" class="btn btn-success">Aanpassen</a>
+                <a href="{{$restaurant->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
                 <a href="{{$restaurant->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
                 <a href="#" class="btn btn-dark">Bekijk welke gerechten dit restaurant heeft</a>
 
-            <h3>Extra gegevens</h3>
+            <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
                 <tr>
                     <th>Openingstijd</th>
