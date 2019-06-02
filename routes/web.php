@@ -19,3 +19,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete')
+    ->name('park.restaurants.delete');
+Route::resource('/park/restaurants', 'RestaurantsController');

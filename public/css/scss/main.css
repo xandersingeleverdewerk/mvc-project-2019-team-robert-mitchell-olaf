@@ -18,6 +18,9 @@
 .openingTimesImg {
   margin-bottom: 20px; }
 
+.dropdown {
+  cursor: pointer; }
+
 .btn-primary {
   background-image: linear-gradient(to bottom right, red, yellow);
   color: white;
@@ -150,5 +153,54 @@ ul {
   text-shadow: 1px 1px white;
   color: #ff5325;
   background: rgba(0, 0, 0, 0.3); }
+
+.restaurantSection {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111; }
+
+.block {
+  display: flex;
+  background-color: yellow;
+  color: #111;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s all;
+  cursor: pointer; }
+  .block h3 {
+    font-size: 22px; }
+  .block:hover {
+    border: 2px solid yellow;
+    background-color: whitesmoke;
+    color: yellow;
+    text-decoration: none; }
+  .block:nth-of-type(2n + 1) {
+    background-color: orange;
+    color: white; }
+    .block:nth-of-type(2n + 1):hover {
+      border: 2px solid orange;
+      background-color: whitesmoke;
+      color: orange; }
+  .block:nth-of-type(4n + 2) {
+    background-color: red;
+    color: white; }
+    .block:nth-of-type(4n + 2):hover {
+      border: 2px solid red;
+      background-color: whitesmoke;
+      color: red; }
+  .block:nth-of-type(3n + 1) {
+    background-color: #111;
+    color: white; }
+    .block:nth-of-type(3n + 1):hover {
+      border: 2px solid #111;
+      background-color: whitesmoke;
+      color: #111; }
 
 /*# sourceMappingURL=main.css.map */
