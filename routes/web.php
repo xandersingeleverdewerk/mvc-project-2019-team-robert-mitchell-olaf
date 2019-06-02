@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/master', function () {
-    return view('layout.master');
+    return view('home');
 });
 
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete')
+    ->name('park.restaurants.delete');
+Route::resource('/park/restaurants', 'RestaurantsController');

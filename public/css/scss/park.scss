@@ -1,0 +1,66 @@
+.restaurantSection {
+  padding: 100px 0;
+  width: 100%;
+  background-color: white;
+  color: #111;
+}
+
+.block {
+  display: flex;
+  background-color: yellow;
+  color: #111;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s all;
+  cursor: pointer;
+
+  & h3 {
+    font-size: 22px;
+  }
+
+  &:hover {
+    border: 2px solid yellow;
+    background-color: whitesmoke;
+    color: yellow;
+    text-decoration: none;
+  }
+
+  &:nth-of-type(2n + 1) {
+    background-color: orange;
+    color: white;
+
+    &:hover {
+      border: 2px solid orange;
+      background-color: whitesmoke;
+      color: orange;
+    }
+  }
+
+  &:nth-of-type(4n + 2) {
+    background-color: red;
+    color: white;
+
+    &:hover {
+      border: 2px solid red;
+      background-color: whitesmoke;
+      color: red;
+    }
+  }
+
+  &:nth-of-type(3n + 1) {
+    background-color: #111;
+    color: white;
+
+    &:hover {
+      border: 2px solid #111;
+      background-color: whitesmoke;
+      color: #111;
+    }
+  }
+}
