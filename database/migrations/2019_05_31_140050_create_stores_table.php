@@ -15,7 +15,11 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('facilitie_id');
+            $table->unsignedInteger('facilitie_id')->unique();
+            $table->foreign('facilitie_id')
+                ->references('id')->on('facilities')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
