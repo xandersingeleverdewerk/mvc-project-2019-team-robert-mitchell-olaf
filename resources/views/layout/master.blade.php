@@ -60,7 +60,7 @@
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{url('/park/attracties') }}">Attracties</a>
                 <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
-                <a class="dropdown-item" href="{{url('/park/winkels') }}">Winkels</a>
+                <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
             </div>
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/contact') ? 'active' : '' }}" href="{{ url('/contact') }}">Contact</a>

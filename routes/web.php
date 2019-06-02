@@ -23,6 +23,6 @@ Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete
     ->name('park.restaurants.delete');
 Route::resource('/park/restaurants', 'RestaurantsController');
 
-Route::get('park/winkels/{store}/delete', 'StoresController@delete')
+Route::get('park/stores/{store}/delete', 'StoresController@delete')
     ->name('park.stores.delete');
-Route::resource('/park/winkels', 'StoresController');
+Route::resource('/park/stores', 'StoresController');

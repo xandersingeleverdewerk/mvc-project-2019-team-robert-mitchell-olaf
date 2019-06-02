@@ -154,7 +154,7 @@ ul {
   color: #ff5325;
   background: rgba(0, 0, 0, 0.3); }
 
-.restaurantSection {
+.restaurantSection, .storeSection {
   padding: 100px 0;
   width: 100%;
   background-color: white;

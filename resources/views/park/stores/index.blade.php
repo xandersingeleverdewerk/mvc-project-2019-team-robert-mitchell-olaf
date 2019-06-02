@@ -11,13 +11,13 @@
                 </div>
             @endif
 
-            <h2>Restaurants</h2>
+            <h2>Winkels</h2>
 
             <a href="{{ url('/park/stores/create') }}" class="btn btn-success">Maak een winkel</a>
 
             <div class="d-flex justify-content-around row">
             @foreach($stores as $store)
-                <a class="block" href="{{ url('park/restaurants/'.$store->id) }}">
+                <a class="block" href="{{ url('park/stores/'.$store->id) }}">
                     <h3 class="blockTitle">{{ $store->facilitie->name }}</h3>
                 </a>
             @endforeach
