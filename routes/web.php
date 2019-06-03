@@ -20,7 +20,7 @@ Route::get('/attractions/{attraction}/delete', 'attractionsController@delete')
 Route::resource('/attractions' , 'AttractionsController');
 
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
-                            ->name('categories.delete');
+    ->name('categories.delete');
 Route::resource('/categories', 'CategoriesController');
     
 

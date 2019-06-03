@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Categorie;
 use App\Http\Requests\StoreCategorieRequest;
+use App\Http\Requests\UpdateAttractionsRequest;
+use App\Http\Requests\UpdateCategoriesRequest;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -15,13 +17,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
         $categories = Categorie::all();
-
         // een view returnen en de variabele $categorie meesturen naar de view
         return view('categories.index', compact('categories'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +31,6 @@ class CategoriesController extends Controller
         //
         return view('categories.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -41,6 +39,7 @@ class CategoriesController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
+        $validated = $request->validated();
         // aanmaken van een nieuwe categorie (met behulp van de Model)
         $categorie = new Categorie();
         // attribuut
@@ -48,9 +47,8 @@ class CategoriesController extends Controller
         // categorie bewaren in de database (insert uitvoeren)
         $categorie->save();
 
-        return redirect()->route('categories.index')->with('message', 'Categorie aangemaakt');
+        return redirect('/categories')->with('message', 'Categorie aangemaakt');
     }
-
     /**
      * Display the specified resource.
      *
@@ -62,7 +60,6 @@ class CategoriesController extends Controller
         //
         return view('categories.show', compact('categorie'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -74,7 +71,6 @@ class CategoriesController extends Controller
         //
         return view ('categories.edit', compact('categorie'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -82,16 +78,16 @@ class CategoriesController extends Controller
      * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(UpdateCategoriesRequest $request, Categorie $categorie)
     {
+        $validated = $request->validated();
         //attributen
         $categorie->name = $request->name;
         // categorie bewaren in de database (update uitvoeren)
         $categorie->save();
 
-        return redirect()->route('categories.index')->with('message', 'Categorie geüpdate');
+        return redirect ('/categories')->with('message', 'Categorie gewijzigd');
     }
-
     /**
      * Show the form for deleting the specific resource.
      *
@@ -102,7 +98,6 @@ class CategoriesController extends Controller
     {
         return view('categories.delete', compact('categorie'));
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -113,6 +108,6 @@ class CategoriesController extends Controller
     {
         //
         $categorie->delete();
-        return redirect()->route('categories.index')->with('message', 'categorie verwijderd');
+        return redirect ('/categories')->with('message', 'Categorie verwijderd');
     }
 }

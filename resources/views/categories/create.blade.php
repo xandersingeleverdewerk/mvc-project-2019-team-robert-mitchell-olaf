@@ -25,13 +25,13 @@
         </ul>
     </nav>
 
-    {!! Form::open(['route' => 'categories.store']) !!}
+    <form action="{{action('CategoriesController@store')}}" method="post">
+        @csrf
 
-    <div class="form-group">
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', '', ['class' => 'form-control', 'id' => 'name']) !!}
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-    {!! Form::close() !!}
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="name" name="name" class="form-control" placeholder="Enter name"/>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
 @endsection

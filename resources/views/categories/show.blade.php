@@ -7,7 +7,7 @@
     <nav class="nav">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                 <a class="nav-link" href="{{ route('categories.index') }}">Index</a>
+                <a class="nav-link" href="{{ route('categories.index') }}">Index</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('categories.create') }}">Create</a>

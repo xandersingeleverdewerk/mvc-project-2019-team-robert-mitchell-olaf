@@ -29,13 +29,14 @@
         </ul>
     </nav>
 
-    {!! Form::open(['url' => route('categories.update' , $categorie->id), 'method' => 'PATCH']) !!}
+    <form class="form" action="{{route('categories.update', $categorie) }}" method="POST">
+        @csrf
+        @method('POST')
 
-    <div class="form-group">
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', $categorie->name, ['class' => 'form-control', 'id' => 'name']) !!}
-    </div>
-    <button type="submit" class="btn btn-primary">Wijzig</button>
-
-    {!! Form::close() !!}
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form-control" placeholder="Enter Name" value="<?php echo $categorie->name;?>"/>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
 @endsection

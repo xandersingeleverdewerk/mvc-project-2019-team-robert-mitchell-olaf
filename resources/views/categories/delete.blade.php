@@ -29,15 +29,14 @@
         </ul>
     </nav>
 
-    {!! Form::open(['url' => route('categories.destroy' , $categorie->id), 'method' => 'DELETE']) !!}
+    <form class="form" action="{{route('categories.destroy', $categorie) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form-control" value="<?php echo $categorie->name;?>"disabled/>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
 
-    <div class="form-group">
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', $categorie->name, ['class' => 'form-control',
-                                                  'id' => 'name',
-                                                  'disabled' => 'disabled']) !!}
-    </div>
-    <button type="submit" class="btn btn-primary">Delete</button>
-
-    {!! Form::close() !!}
 @endsection
