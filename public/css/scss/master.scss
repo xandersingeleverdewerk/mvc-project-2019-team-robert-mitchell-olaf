@@ -81,15 +81,15 @@
 
 .footer {
     padding: 100px 0 50px;
-    background: linear-gradient(to top left, #111, #444);
+    background: $black-gradient;
 
   &Link {
-    color: white;
+    color: $white;
     text-align: center;
     margin-left: -15px;
 
     &:hover {
-      color: orange;
+      color: $orange;
     }
   }
 
@@ -106,12 +106,12 @@
 
     & .fa {
       margin-right: 5px;
-      color: orange;
+      color: $orange;
     }
   }
 
   & .copyright {
-    border-top: 1px solid orange;
+    border-top: 1px solid $orange;
     padding-top: 10px;
     margin-top: 20px;
     text-align: center;
@@ -121,35 +121,35 @@
     font-size: 28px;
     padding: 18px;
     margin: 15px 5px;
-    background-color: orange;
-    background-image:linear-gradient(to bottom right, red , yellow);
-    color: white;
+    background-color: $orange;
+    background-image: $red-to-yellow;
+    color: $white;
     border-radius: 50%;
     transition: 0.5s all;
 
     &-facebook:hover {
       background: #3B5998;
-      color: white;
+      color: $white;
     }
 
     &-twitter:hover {
       background: #55ACEE;
-      color: white;
+      color: $white;
     }
 
     &-instagram:hover {
       background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
-      color: white;
+      color: $white;
     }
 
     &-youtube:hover {
       background: #bb0000;
-      color: white;
+      color: $white;
     }
 
     &-envelope:hover {
       background: blue;
-      color: white;
+      color: $white;
     }
   }
 }
