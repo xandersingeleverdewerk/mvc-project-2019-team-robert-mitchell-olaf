@@ -54,9 +54,14 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" href="{{ url('/park') }}">Het Park</a>
+            <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
+                Het park
             </li>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{url('/park/attracties') }}">Attracties</a>
+                <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
+                <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
+            </div>
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/contact') ? 'active' : '' }}" href="{{ url('/contact') }}">Contact</a>
             </li>
