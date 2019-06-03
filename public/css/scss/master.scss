@@ -30,13 +30,11 @@
   padding-top: 20px;
 
   &-link {
-    color: $orange;
-    border: 1px solid $orange;
+    @include block($orange, $white);
     margin: 10px;
 
     &:hover {
-      background: $red-to-yellow;
-      color: $white;
+      @include block($white, $red-to-yellow);
     }
   }
 
@@ -57,8 +55,10 @@
 
     @include md {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: {
+        left: auto;
+        right: auto;
+      }
       width: 55px;
     }
   }
@@ -118,38 +118,30 @@
   }
 
   & .social-media .fa {
+    @include block($white, $red-to-yellow);
     font-size: 28px;
     padding: 18px;
     margin: 15px 5px;
-    background-color: $orange;
-    background-image: $red-to-yellow;
-    color: $white;
     border-radius: 50%;
-    transition: 0.5s all;
 
     &-facebook:hover {
-      background: #3B5998;
-      color: $white;
+      @include block($white, $facebook)
     }
 
     &-twitter:hover {
-      background: #55ACEE;
-      color: $white;
+      @include block($white, $twitter)
     }
 
     &-instagram:hover {
-      background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
-      color: $white;
-    }
-
-    &-youtube:hover {
-      background: #bb0000;
-      color: $white;
+      @include block($white, $instagram)
     }
 
     &-envelope:hover {
-      background: blue;
-      color: $white;
+      @include block($white, $email)
+    }
+
+    &-youtube:hover {
+      @include block($white, $youtube)
     }
   }
 }

@@ -32,7 +32,7 @@
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
                         <div class="input-group-append">
-                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
+                            <button class="btn btn-primary" type="submit">Zoeken</button>
                         </div>
                     </div>
                 </form>
@@ -94,7 +94,7 @@
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
                         <div class="input-group-append">
-                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
+                            <button class="btn btn-primary" type="submit">Zoeken</button>
                         </div>
                     </div>
                 </form>

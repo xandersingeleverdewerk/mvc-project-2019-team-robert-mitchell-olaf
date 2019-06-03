@@ -25,25 +25,32 @@ $red-to-yellow: linear-gradient(to bottom right, $red , $yellow);
 $black-gradient: linear-gradient(to bottom right, #444 , $black);
 $white-gradient: linear-gradient(to bottom right, #f3f3f3, $white);
 
+$facebook: #3B5998;
+$twitter: #55ACEE;
+$instagram: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+$email: #009999;
+$youtube: #bb0000;
+
+// Mixins
+
+@mixin block($accentColor, $backgroundColor) {
+  border: 1px solid $accentColor;
+  background: $backgroundColor;
+  color: $accentColor;
+  transition: 0.2s all;
+}
+
+
 // standardStyling
 
 .btn {
   margin-bottom: 15px;
 
   &-primary {
-    background-image: $red-to-yellow;
-    background-color: $orange;
-    transition: 0.5s all;
-    border: 2px solid $orange;
-    color: $white;
+    @include block($white, $red-to-yellow);
 
     &:hover {
-      background: {
-        image: none;
-        color: $white;
-      }
-      border: 2px solid $orange;
-      color: $orange;
+      @include block($orange, $white);
     }
   }
 }
