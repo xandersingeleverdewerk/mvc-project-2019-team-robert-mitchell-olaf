@@ -1,3 +1,5 @@
+// Responsive media queries
+
 $md: 768px;
 
 @mixin md {
@@ -12,10 +14,38 @@ $md: 768px;
   }
 }
 
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red , yellow);
-  color: white;
-  border: none;
+// colors
+
+$white: #ffffff;
+$black: #111;
+$red: #ff0000;
+$yellow: #ffcc00;
+$orange: #ffa31a;
+$red-to-yellow: linear-gradient(to bottom right, $red , $yellow);
+$black-gradient: linear-gradient(to bottom right, #444 , $black);
+$white-gradient: linear-gradient(to bottom right, #f3f3f3, $white);
+
+// standardStyling
+
+.btn {
+  margin-bottom: 15px;
+
+  &-primary {
+    background-image: $red-to-yellow;
+    background-color: $orange;
+    transition: 0.5s all;
+    border: 2px solid $orange;
+    color: $white;
+
+    &:hover {
+      background: {
+        image: none;
+        color: $white;
+      }
+      border: 2px solid $orange;
+      color: $orange;
+    }
+  }
 }
 
 ul {

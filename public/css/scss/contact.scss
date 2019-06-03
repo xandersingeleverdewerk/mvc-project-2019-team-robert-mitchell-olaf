@@ -1,28 +1,26 @@
+@import "standardStyling";
+
 .openingTimes {
   padding: 100px 0;
-  background-color: white;
-  color: #111;
+  background-color: $white;
+  color: $black;
+
+  &Img {
+    margin-bottom: 20px;
+  }
 }
 
 .travelJourney {
   @extend .openingTimes;
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-image: $red-to-yellow;
 }
 
 .location {
   border-radius: 5px;
 }
 
-.btn {
-  margin-bottom: 15px;
-}
-
 .table {
   margin-top: 20px;
-}
-
-.openingTimesImg {
-  margin-bottom: 20px;
 }
 
 .dropdown {
