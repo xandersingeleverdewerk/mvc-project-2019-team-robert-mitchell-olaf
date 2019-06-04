@@ -58,7 +58,7 @@
                 Het park
             </li>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('/park/attracties') }}">Attracties</a>
+                <a class="dropdown-item" href="{{url('/park/attractions') }}">Attracties</a>
                 <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
                 <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
             </div>
