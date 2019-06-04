@@ -48,14 +48,6 @@
                     <label for="minLength">Minimale grootte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" value="{{ $attraction->minLength }}" />
                 </div>
-                <div class="form-group">
-                    <label for="categorie_id">Id van categorie</label>
-                    <input id="categorie_id" name="categorie_id" class="form-control" type="number" value="{{ $attraction->categorie_id }}" />
-                </div>
-                <div class="form-group">
-                    <label for="facilitie_id">Id van faciliteit</label>
-                    <input id="facilitie_id" name="facilitie_id" class="form-control" type="number" value="{{ $attraction->facilitie_id }}" />
-                </div>
                 <button class="btn btn-primary" type="submit">Pas Attractie Aan</button>
             </form>
         </div>

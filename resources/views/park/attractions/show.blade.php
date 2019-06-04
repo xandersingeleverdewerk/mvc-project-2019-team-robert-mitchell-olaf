@@ -12,7 +12,6 @@
 
             <a href="{{$attraction->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
             <a href="{{$attraction->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
-            <a href="#" class="btn btn-dark">Bekijk van welk categorie dit attractie is</a>
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
@@ -33,7 +32,7 @@
                     <td>{{ $attraction->minAge }}</td>
                 </tr>
                 <tr>
-                    <th>minimale grootte</th>
+                    <th>Minimale lengte</th>
                     <td>{{ $attraction->minLength }}</td>
                 </tr>
                 <tr>

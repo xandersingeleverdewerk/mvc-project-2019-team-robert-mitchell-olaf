@@ -54,8 +54,7 @@ class AttractionsController extends Controller
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
-        $attraction->categorie_id = $request->categorie_id;
-        $attraction->facilitie_id = $request->facilitie_id;
+        $attraction->facilitie_id = $facilitie->id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is toegevoegd');
@@ -101,8 +100,6 @@ class AttractionsController extends Controller
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
-        $attraction->categorie_id = $request->categorie_id;
-        $attraction->facilitie_id = $request->facilitie_id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is aangepast');
@@ -128,6 +125,7 @@ class AttractionsController extends Controller
     public function destroy(Attraction $attraction)
     {
         $attraction->delete();
+        $attraction->facilitie->delete();
 
         return redirect()->route('attractions.index')->with('message','Attractie is verwijderd');
     }

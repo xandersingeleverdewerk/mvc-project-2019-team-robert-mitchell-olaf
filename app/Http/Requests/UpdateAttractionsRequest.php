@@ -24,11 +24,13 @@ class UpdateAttractionsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:45',
+            'description' => 'required',
+            'opening_time' => 'required',
+            'closing_time' => 'required',
             'waitTime' => 'required',
-            'minAge' => 'integer|between:0,18',
-            'minLength' => 'numeric',
-            'facilitie_id' => 'required|exists:facilities,id',
+            'minAge' => 'nullable|integer|between:0,18',
+            'minLength' => 'nullable|numeric',
         ];
     }
 }

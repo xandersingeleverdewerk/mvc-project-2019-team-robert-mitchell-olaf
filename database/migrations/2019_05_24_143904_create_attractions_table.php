@@ -16,8 +16,8 @@ class CreateAttractionsTable extends Migration
         Schema::create('attractions', function (Blueprint $table) {
             $table->increments('id');
             $table->time('waitTime');
-            $table->float('minAge');
-            $table->float('minLength');
+            $table->float('minAge')->nullable();
+            $table->float('minLength')->nullable();
             $table->timestamps();
         });
     }
