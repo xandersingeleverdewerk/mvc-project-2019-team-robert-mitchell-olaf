@@ -31,6 +31,10 @@ $instagram: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
 $email: #009999;
 $youtube: #bb0000;
 
+// margin and paddings
+
+$standard-block-padding: 100px 0;
+
 // Mixins
 
 @mixin block($accentColor, $backgroundColor) {
@@ -39,7 +43,6 @@ $youtube: #bb0000;
   color: $accentColor;
   transition: 0.2s all;
 }
-
 
 // standardStyling
 

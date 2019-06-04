@@ -1,7 +1,7 @@
 @import "standardStyling";
 
 .restaurantSection, .storeSection, .attractionSection {
-  padding: 100px 0;
+  padding: $standard-block-padding;
   width: 100%;
   background-color: $white;
   color: $black;
