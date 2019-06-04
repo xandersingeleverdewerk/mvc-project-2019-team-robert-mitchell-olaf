@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Facilitie;
 use App\Http\Requests\StoreAttractionsRequest;
 use App\Http\Requests\UpdateAttractionsRequest;
 use App\Attraction;
+use App\Facilitie;
 use Illuminate\Http\Request;
 
 class AttractionsController extends Controller
@@ -21,7 +21,7 @@ class AttractionsController extends Controller
         $attractions = Attraction::all();
 
         // een view returnen en de variabele $attractions meesturen naar de view
-        return view('attractions.index', compact('attractions'));
+        return view('park.attractions.index', compact('attractions'));
     }
 
     /**
@@ -31,8 +31,7 @@ class AttractionsController extends Controller
      */
     public function create()
     {
-        $facilities = Facilitie::pluck('name', 'id');
-        return view('attractions.create', compact('facilities'));
+        return view('park.attractions.create');
     }
 
     /**
@@ -43,19 +42,23 @@ class AttractionsController extends Controller
      */
     public function store(storeAttractionsRequest $request)
     {
-        $validated = $request->validated();
-        // aanmaken van een nieuw attractie (met behulp van de Model)
         $attraction = new Attraction();
-        // attributen
+        $facilitie = new Facilitie();
+
+        $facilitie->name = $request->name;
+        $facilitie->description = $request->description;
+        $facilitie->opening_time = $request->opening_time;
+        $facilitie->closing_time = $request->closing_time;
+        $facilitie->save();
+
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->categorie_id = $request->categorie_id;
         $attraction->facilitie_id = $request->facilitie_id;
-        // attractie bewaren in de database (insert uitvoeren)
         $attraction->save();
 
-        return redirect('/attractions')->with('status', 'Attractie aangemaakt');
+        return redirect()->route('attractions.index')->with('message','Attractie is toegevoegd');
     }
 
     /**
@@ -66,9 +69,7 @@ class AttractionsController extends Controller
      */
     public function show(Attraction $attraction)
     {
-        //
-        $facilities = Facilitie::pluck('name', 'id');
-        return view('attractions.show', compact('attraction', 'facilities'));
+        return view('park.attractions.show', compact('attraction'));
     }
 
     /**
@@ -79,8 +80,7 @@ class AttractionsController extends Controller
      */
     public function edit(Attraction $attraction)
     {
-        //
-        return view ('attractions.edit', compact('attraction'));
+        return view ('park.attractions.edit', compact('attraction'));
     }
 
     /**
@@ -92,17 +92,20 @@ class AttractionsController extends Controller
      */
     public function update(UpdateAttractionsRequest $request, Attraction $attraction)
     {
-        $validated = $request->validated();
-        // attributen
+        $attraction->facilitie->name = $request->name;
+        $attraction->facilitie->description = $request->description;
+        $attraction->facilitie->opening_time = $request->opening_time;
+        $attraction->facilitie->closing_time = $request->closing_time;
+        $attraction->facilitie->save();
+
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->categorie_id = $request->categorie_id;
         $attraction->facilitie_id = $request->facilitie_id;
-        // attractie bewaren in de database (update uitvoeren)
         $attraction->save();
 
-        return redirect ('/attractions')->with('status', 'Attractie gewijzigd');
+        return redirect()->route('attractions.index')->with('message','Attractie is aangepast');
     }
 
     /**
@@ -113,7 +116,7 @@ class AttractionsController extends Controller
      */
     public function delete(Attraction $attraction)
     {
-        return view('attractions.delete', compact('attraction'));
+        return view('park.attractions.delete', compact('attraction'));
     }
 
     /**
@@ -124,8 +127,8 @@ class AttractionsController extends Controller
      */
     public function destroy(Attraction $attraction)
     {
-        //
         $attraction->delete();
-        return redirect ('/attractions')->with('status', 'Attractie verwijderd');
+
+        return redirect()->route('attractions.index')->with('message','Attractie is verwijderd');
     }
 }

@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/attractions/{attraction}/delete', 'attractionsController@delete')
+Route::get('park/attractions/{attraction}/delete', 'attractionsController@delete')
     ->name('attractions.delete');
-Route::resource('/attractions' , 'AttractionsController');
+Route::resource('park/attractions' , 'AttractionsController');
 
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
     ->name('categories.delete');
