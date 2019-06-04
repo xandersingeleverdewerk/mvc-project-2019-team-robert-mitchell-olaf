@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('park/attractions/{attraction}/delete', 'attractionsController@delete')
+    ->name('attractions.delete');
+Route::resource('park/attractions' , 'AttractionsController');
+
+Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
+    ->name('categories.delete');
+Route::resource('/categories', 'CategoriesController');
+    
+
 Route::get('/contact', function () {
     return view('contact');
 });
