@@ -11,6 +11,6 @@ class RestaurantRulesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\RestaurantRule::class, 60)->create();
     }
 }

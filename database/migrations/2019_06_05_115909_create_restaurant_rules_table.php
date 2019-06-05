@@ -13,15 +13,15 @@ class CreateRestaurantRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('restaurantRules', function (Blueprint $table) {
+        Schema::create('restaurant_rules', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('restaurant_id')->unique();
+            $table->unsignedInteger('restaurant_id');
             $table->foreign('restaurant_id')
                 ->references('id')->on('restaurants')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->unsignedInteger('dish_id')->unique();
+            $table->unsignedInteger('dish_id');
             $table->foreign('dish_id')
                 ->references('id')->on('dishes')
                 ->onDelete('cascade')
