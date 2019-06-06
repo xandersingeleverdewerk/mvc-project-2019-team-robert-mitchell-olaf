@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dish;
+use App\Http\Requests\StoreDishesRequest;
 use Illuminate\Http\Request;
 
 class DishesController extends Controller
@@ -26,7 +27,7 @@ class DishesController extends Controller
      */
     public function create()
     {
-        //
+        return view('park.restaurants.dishes.create');
     }
 
     /**
@@ -35,9 +36,16 @@ class DishesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDishesRequest $request)
     {
-        //
+        $dish = new Dish();
+
+        $dish->name = $request->name;
+        $dish->description = $request->description;
+        $dish->price = $request->price;
+        $dish->save();
+
+        return redirect()->route('dishes.index')->with('message','Gerecht is toegevoegd');
     }
 
     /**
@@ -48,7 +56,7 @@ class DishesController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        return view('park.restaurants.dishes.show', compact('dish'));
     }
 
     /**
@@ -59,7 +67,7 @@ class DishesController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        return view('park.restaurants.dishes.edit', compact('dish'));
     }
 
     /**
@@ -69,9 +77,14 @@ class DishesController extends Controller
      * @param  \App\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(StoreDishesRequest $request, Dish $dish)
     {
-        //
+        $dish->name = $request->name;
+        $dish->description = $request->description;
+        $dish->price = $request->price;
+        $dish->save();
+
+        return redirect()->route('dishes.index')->with('message','Gerecht is aangepast');
     }
 
     /**
@@ -80,8 +93,15 @@ class DishesController extends Controller
      * @param  \App\Dish  $dish
      * @return \Illuminate\Http\Response
      */
+    public function delete(Dish $dish)
+    {
+        return view('park.restaurants.dishes.delete', compact('dish'));
+    }
+
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+
+        return redirect()->route('dishes.index')->with('message','Gerecht is verwijderd');
     }
 }

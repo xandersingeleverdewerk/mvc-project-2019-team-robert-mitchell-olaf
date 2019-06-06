@@ -15,29 +15,39 @@
                 </div>
             @endif
 
-            <h2>Restaurant aanmaken</h2>
+            <h2>Gerechten</h2>
 
-            <form class="form" action="{{route('restaurants.index')}}" method="POST">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                    </li>
+                </ul>
+
+            <form class="form" action="{{route('dishes.index')}}" method="POST">
                 @csrf
+                <h3>Gerecht aanmaken</h3>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input id="name" name="name" class="form-control" type="text" placeholder="Restaurant naam" />
+                    <input id="name" name="name" class="form-control" type="text" placeholder="Naam van gerecht" />
                 </div>
                 <div class="form-group">
                     <label for="description">Beschrijving</label>
-                    <textarea id="description" name="description" class="form-control" type="text" placeholder="Beschrijving restaurant"></textarea>
+                    <textarea id="description" name="description" class="form-control" type="text" placeholder="Beschrijving van het gerecht"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="opening_time">Openingstijd</label>
-                    <input id="opening_time" name="opening_time" class="form-control" type="time" placeholder="Openingstijd" />
+                    <label for="price">Prijs</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">&euro;</span>
+                        </div>
+                        <input id="price" name="price" class="form-control" type="number" step=".01" placeholder="Prijs" />
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="closing_time">Sluitingstijd</label>
-                    <input id="closing_time" name="closing_time" class="form-control" type="time" placeholder="Sluitingstijd" />
-                </div>
-                <button class="btn btn-primary" type="submit">Maak Restaurant</button>
+                <button class="btn btn-primary" type="submit">Maak Gerecht</button>
             </form>
-
         </div>
     </section>
 

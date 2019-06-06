@@ -86,13 +86,13 @@ ul {
 
 .nav {
   padding-top: 20px; }
-  .nav-link {
+  .nav-pills .nav-link {
     border: 1px solid #ffa31a;
     background: #ffffff;
     color: #ffa31a;
     transition: 0.2s all;
     margin: 10px; }
-    .nav-link:hover {
+    .nav-pills .nav-link:hover {
       border: 1px solid #ffffff;
       background: linear-gradient(to bottom right, #ff0000, #ffcc00);
       color: #ffffff;
@@ -307,6 +307,27 @@ ul {
       border: 1px solid #111;
       background: #ffffff;
       color: #111;
+      transition: 0.2s all; }
+
+.nav-tabs {
+  border-color: #ffa31a;
+  margin: 20px 0; }
+  .nav-tabs .nav-link {
+    color: #ffa31a;
+    margin: 0 10px; }
+    @media (max-width: 768px) {
+      .nav-tabs .nav-link {
+        margin: 0 2px;
+        padding: 10px 8px; } }
+    .nav-tabs .nav-link.active {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+    .nav-tabs .nav-link:hover {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
       transition: 0.2s all; }
 
 .btn {

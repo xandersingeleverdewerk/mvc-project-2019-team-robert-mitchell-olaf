@@ -13,7 +13,15 @@
 
             <h2>Gerechten</h2>
 
-            <a href="{{ url('/park/restaurants/dishes/create') }}" class="btn btn-success">Maak een Gerecht</a>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                    </li>
+                </ul>
+
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>

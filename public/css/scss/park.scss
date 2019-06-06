@@ -52,3 +52,26 @@
     }
   }
 }
+
+.nav-tabs {
+  border-color: $orange;
+  margin: 20px 0;
+
+  & .nav-link {
+    color: $orange;
+    margin: 0 10px;
+
+    @include md {
+      margin: 0 2px;
+      padding: 10px 8px;
+    }
+
+    &.active {
+      @include block($white, $red-to-yellow);
+    }
+
+    &:hover {
+      @include block($white, $red-to-yellow);
+    }
+  }
+}
