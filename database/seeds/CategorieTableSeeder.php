@@ -12,10 +12,6 @@ class CategorieTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Categorie::class, 10)->create()
-           ->each(function($categorie) {
-               $categorie->attraction()->saveMany(factory(\App\Attraction::class, rand(0,5))
-                   ->create(['categorie_id' => $categorie->id]));
-           });
+        factory(App\Categorie::class, 10)->create();
     }
 }

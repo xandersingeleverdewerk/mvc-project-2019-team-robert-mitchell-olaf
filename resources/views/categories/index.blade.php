@@ -26,7 +26,6 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">name</th>
-            <th scope="col">Categorie Details</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -34,14 +33,10 @@
         <tbody>
         @foreach($categories as $categorie)
             <tr>
-                <td Scope="row">{{ $categorie->id }}</td>
+                <td scope="row">{{ $categorie->id }}</td>
                 <td>{{ $categorie->name }}</td>
-                <td><a href="{{ route('categories.show',
-                                         ['categorie' => $categorie->id]) }}">Details</a></td>
-                <td><a href="{{ route('categories.edit',
-                                         ['categorie' => $categorie->id]) }}">Edit</a></td>
-                <td><a href="{{ route('categories.delete',
-                                         ['categorie' => $categorie->id]) }}">Delete</a></td>
+                <td><a href="{{ url('categories/'.$categorie->id).'/edit' }}">Edit</a></td>
+                <td><a href="{{ url('categories/'.$categorie->id).'/delete' }}">Delete</a></td>
             </tr>
         @endforeach
         </tbody>
