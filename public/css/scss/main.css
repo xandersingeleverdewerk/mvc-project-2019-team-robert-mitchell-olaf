@@ -11,6 +11,15 @@
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
@@ -45,6 +54,15 @@ ul {
       background: #ffffff;
       color: #ffa31a;
       transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
 
 ul {
   list-style: none; }
@@ -178,6 +196,15 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
@@ -211,10 +238,19 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
-.restaurantSection, .storeSection, .attractionSection {
+.restaurantSection, .storeSection, .attractionSection, .dishesSection {
   padding: 100px 0;
   width: 100%;
   background-color: #ffffff;
@@ -285,6 +321,15 @@ ul {
       background: #ffffff;
       color: #ffa31a;
       transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
 
 ul {
   list-style: none; }

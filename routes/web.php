@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('park/attractions/{attraction}/delete', 'attractionsController@delete')
     ->name('attractions.delete');
 Route::resource('park/attractions' , 'AttractionsController');
@@ -22,11 +26,14 @@ Route::resource('park/attractions' , 'AttractionsController');
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
     ->name('categories.delete');
 Route::resource('/categories', 'CategoriesController');
-    
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('park/restaurants/dishes/{dish}/delete', 'DishesController@delete')
+    ->name('park.restaurants.dishes.delete');
+Route::resource('/park/restaurants/dishes', 'DishesController');
+
+Route::get('park/restaurants/restaurantRules/{restaurantRule}/delete', 'RestaurantRulesController@delete')
+    ->name('park.restaurants.restaurantRules.delete');
+Route::resource('/park/restaurants/restaurantRules', 'RestaurantRulesController');
 
 Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete')
     ->name('park.restaurants.delete');
