@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCategorieRequest;
+use App\Http\Requests\StoreCategoriesRequest;
 use App\Http\Requests\UpdateCategoriesRequest;
 use App\Categorie;
 use Illuminate\Http\Request;
@@ -39,7 +39,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(storeCategorieRequest $request)
+    public function store(storeCategoriesRequest $request)
     {
         $categorie = new Categorie();
 
