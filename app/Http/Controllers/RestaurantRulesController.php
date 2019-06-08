@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Restaurant;
 use App\RestaurantRule;
 use Illuminate\Http\Request;
@@ -25,9 +26,11 @@ class RestaurantRulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Restaurant $restaurant)
     {
-        //
+        $dishes = Dish::all();
+
+        return view('park.restaurants.restaurantRules.create', compact('restaurant', 'dishes'));
     }
 
     /**
@@ -36,9 +39,17 @@ class RestaurantRulesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Restaurant $restaurant)
     {
-        //
+
+        $restaurantRule = new RestaurantRule();
+
+        $restaurantRule->restaurant_id = $request->restaurant_id;
+        $restaurantRule->dish_id = $request->dish_id;
+
+        $restaurantRule->save();
+
+        return redirect()->route( 'restaurantRules.index',compact('restaurant'))->with('message','Gerecht is toegevoegd aan menu');
     }
 
     /**
@@ -66,12 +77,15 @@ class RestaurantRulesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function delete() {
-
+    public function delete(Restaurant $restaurant, RestaurantRule $restaurantRule)
+    {
+        return view('park.restaurants.restaurantRules.delete', compact('restaurant','restaurantRule'));
     }
 
-    public function destroy(RestaurantRule $restaurantRule)
+    public function destroy(Restaurant $restaurant, RestaurantRule $restaurantRule)
     {
-        //
+        $restaurantRule->delete();
+
+        return redirect()->route('restaurantRules.index', compact('restaurant'))->with('message','Gerecht is van menu verwijderd');
     }
 }

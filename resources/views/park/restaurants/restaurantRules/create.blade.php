@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="restaurantSection">
+    <section class="menuSection">
         <div class="container">
 
             @if ($errors->any())
@@ -15,38 +15,34 @@
                 </div>
             @endif
 
-            <h2>Gerechten</h2>
+            <h2>Menu van {{ $restaurant->facilitie->name }}</h2>
 
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
+                        <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                        <a class="nav-link active" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen</a>
                     </li>
                 </ul>
 
-            <form class="form" action="{{route('dishes.index')}}" method="POST">
+            <form class="form" action="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules')}}" method="POST">
                 @csrf
-                <h3>Gerecht aanmaken</h3>
-                <div class="form-group">
-                    <label for="name">Naam</label>
-                    <input id="name" name="name" class="form-control" type="text" placeholder="Naam van gerecht" />
+                <h3>Gerecht toevoegen aan {{ $restaurant->facilitie->name }}</h3>
+                <div hidden class="form-group">
+                    <label for="restaurant_id">Kies een restaurant</label>
+                    <input id="restaurant_id" name="restaurant_id" class="form-control" type="text" value="{{ $restaurant->id }}" />
                 </div>
                 <div class="form-group">
-                    <label for="description">Beschrijving</label>
-                    <textarea id="description" name="description" class="form-control" type="text" placeholder="Beschrijving van het gerecht"></textarea>
+                    <label for="dish_id">Kies een gerecht</label>
+                    <select id="dish_id" name="dish_id" class="form-control">
+                        <option selected disabled>Kies een gerecht</option>
+                        @foreach($dishes as $dish)
+                            <option value="{{ $dish->id }}">{{ $dish->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="form-group">
-                    <label for="price">Prijs</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">&euro;</span>
-                        </div>
-                        <input id="price" name="price" class="form-control" type="number" step=".01" placeholder="Prijs" />
-                    </div>
-                </div>
-                <button class="btn btn-primary" type="submit">Maak Gerecht</button>
+                <button class="btn btn-primary" type="submit">Voeg toe aan menu</button>
             </form>
         </div>
     </section>

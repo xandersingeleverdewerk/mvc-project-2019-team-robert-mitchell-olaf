@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="dishesSection">
+    <section class="menuSection">
         <div class="container">
 
             @if (session('message'))
@@ -37,7 +37,7 @@
                             <td>{{ $restaurantRule->dish->name }}</td>
                             <td>&euro; {{ $restaurantRule->dish->price }}</td>
                             <td><a class="btn btn-info" href="{{ url('park/restaurants/dishes/'.$restaurantRule->dish->id) }}">Details</a></td>
-                            <td><a class="btn btn-danger" href="{{ url('park/restaurants/restaurantRules/'.$restaurantRule->id.'/delete') }}">Verwijderen</a></td>
+                            <td><a class="btn btn-danger" href="{{ url('park/restaurants/'.$restaurantRule->restaurant_id.'/restaurantRules/'.$restaurantRule->id.'/delete') }}">Verwijderen</a></td>
                         </tr>
                     @endforeach
                     </tbody>
