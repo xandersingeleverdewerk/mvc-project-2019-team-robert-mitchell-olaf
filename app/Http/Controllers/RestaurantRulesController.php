@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Restaurant;
 use App\RestaurantRule;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,11 @@ class RestaurantRulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Restaurant $restaurant)
     {
-        //
+        $restaurantRules = restaurantRule::all()->where('restaurant_id','=',$restaurant->id);
+
+        return view('park.restaurants.restaurantRules.index', compact('restaurantRules', 'restaurant'));
     }
 
     /**
@@ -55,22 +58,6 @@ class RestaurantRulesController extends Controller
      * @param  \App\RestaurantRule  $restaurantRule
      * @return \Illuminate\Http\Response
      */
-    public function edit(RestaurantRule $restaurantRule)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RestaurantRule  $restaurantRule
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, RestaurantRule $restaurantRule)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -78,6 +65,11 @@ class RestaurantRulesController extends Controller
      * @param  \App\RestaurantRule  $restaurantRule
      * @return \Illuminate\Http\Response
      */
+
+    public function delete() {
+
+    }
+
     public function destroy(RestaurantRule $restaurantRule)
     {
         //

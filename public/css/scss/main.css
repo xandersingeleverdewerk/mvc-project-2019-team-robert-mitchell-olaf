@@ -317,7 +317,7 @@ ul {
     margin: 0 10px; }
     @media (max-width: 768px) {
       .nav-tabs .nav-link {
-        margin: 0 2px;
+        margin: 0 1px;
         padding: 10px 8px; } }
     .nav-tabs .nav-link.active {
       border: 1px solid #ffffff;

@@ -31,9 +31,9 @@ Route::get('park/restaurants/dishes/{dish}/delete', 'DishesController@delete')
     ->name('park.restaurants.dishes.delete');
 Route::resource('/park/restaurants/dishes', 'DishesController');
 
-Route::get('park/restaurants/restaurantRules/{restaurantRule}/delete', 'RestaurantRulesController@delete')
+Route::get('park/restaurants/{restaurant}/restaurantRules/{restaurantRule}/delete', 'RestaurantRulesController@delete')
     ->name('park.restaurants.restaurantRules.delete');
-Route::resource('/park/restaurants/restaurantRules', 'RestaurantRulesController');
+Route::resource('/park/restaurants/{restaurant}/restaurantRules', 'RestaurantRulesController');
 
 Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete')
     ->name('park.restaurants.delete');
