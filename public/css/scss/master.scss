@@ -29,7 +29,7 @@
 .nav {
   padding-top: 20px;
 
-  &-link {
+  &-pills .nav-link {
     @include block($orange, $white);
     margin: 10px;
 
