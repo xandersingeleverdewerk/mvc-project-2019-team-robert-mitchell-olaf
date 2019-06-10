@@ -11,6 +11,15 @@
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
@@ -46,6 +55,15 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
@@ -68,13 +86,13 @@ ul {
 
 .nav {
   padding-top: 20px; }
-  .nav-link {
+  .nav-pills .nav-link {
     border: 1px solid #ffa31a;
     background: #ffffff;
     color: #ffa31a;
     transition: 0.2s all;
     margin: 10px; }
-    .nav-link:hover {
+    .nav-pills .nav-link:hover {
       border: 1px solid #ffffff;
       background: linear-gradient(to bottom right, #ff0000, #ffcc00);
       color: #ffffff;
@@ -178,6 +196,15 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
@@ -211,10 +238,19 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
-.restaurantSection, .storeSection, .attractionSection {
+.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection {
   padding: 100px 0;
   width: 100%;
   background-color: #ffffff;
@@ -273,6 +309,27 @@ ul {
       color: #111;
       transition: 0.2s all; }
 
+.nav-tabs {
+  border-color: #ffa31a;
+  margin: 20px 0; }
+  .nav-tabs .nav-link {
+    color: #ffa31a;
+    margin: 0 10px; }
+    @media (max-width: 768px) {
+      .nav-tabs .nav-link {
+        margin: 0 1px;
+        padding: 10px 8px; } }
+    .nav-tabs .nav-link.active {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+    .nav-tabs .nav-link:hover {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+
 .btn {
   margin-bottom: 15px; }
   .btn-primary {
@@ -285,6 +342,15 @@ ul {
       background: #ffffff;
       color: #ffa31a;
       transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
 
 ul {
   list-style: none; }
