@@ -1,17 +1,12 @@
+@import "standardStyling";
+
 .information {
-  padding: 100px 0;
-  width: 100%;
-  background-color: white;
-  color: #111;
+  padding: $standard-block-padding;
+  background-color: $white;
+  color: $black;
 }
 
-.btn-primary {
-  background-image:linear-gradient(to bottom right, red , yellow);
-  color:white;
-  border-style:none;
-}
-
-.rounded{
+.rounded {
   border-radius: 3.25px;
 }
 
@@ -21,7 +16,7 @@
 }
 
 .carousel-caption{
-  text-shadow: 1px 1px white;
-  color: #ff5325;
-  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px $black;
+  color: $orange;
+  background: rgba($white, 0.3);
 }

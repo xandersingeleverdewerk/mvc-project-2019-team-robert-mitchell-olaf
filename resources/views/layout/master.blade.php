@@ -32,7 +32,7 @@
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
                         <div class="input-group-append">
-                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
+                            <button class="btn btn-primary" type="submit">Zoeken</button>
                         </div>
                     </div>
                 </form>
@@ -58,7 +58,7 @@
                 Het park
             </li>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('/park/attracties') }}">Attracties</a>
+                <a class="dropdown-item" href="{{url('/park/attractions') }}">Attracties</a>
                 <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
                 <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
             </div>
@@ -94,7 +94,7 @@
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Zoeken voor iets">
                         <div class="input-group-append">
-                            <button disabled class="btn btn-primary" type="submit">Zoeken</button>
+                            <button class="btn btn-primary" type="submit">Zoeken</button>
                         </div>
                     </div>
                 </form>

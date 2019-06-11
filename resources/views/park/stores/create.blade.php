@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="restaurantSection">
+    <section class="storeSection">
         <div class="container">
 
             @if ($errors->any())
@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-            <h2>Restaurant aanmaken</h2>
+            <h2>Winkel aanmaken</h2>
 
             <form class="form" action="{{route('stores.index')}}" method="POST">
                 @csrf

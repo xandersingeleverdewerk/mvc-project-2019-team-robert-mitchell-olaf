@@ -39,37 +39,39 @@
             <div class="col-md-1"></div>
             <div class="col-md-6">
                 <h2>Openings Tijden</h2>
-                <table class="table table-hover table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Dag</th>
-                            <th>Openingstijd</th>
-                            <th>Sluitingstijd</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Maandag</td>
-                            <td>gesloten</td>
-                            <td>gesloten</td>
-                        </tr>
-                        <tr>
-                            <td>Dinsag t/m Donderdag</td>
-                            <td>10:00</td>
-                            <td>18:00</td>
-                        </tr>
-                        <tr>
-                            <td>Vrijdag en Zaterdag</td>
-                            <td>8:00</td>
-                            <td>22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Zondag</td>
-                            <td>10:00</td>
-                            <td>20:00</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Dag</th>
+                                <th>Openingstijd</th>
+                                <th>Sluitingstijd</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maandag</td>
+                                <td>gesloten</td>
+                                <td>gesloten</td>
+                            </tr>
+                            <tr>
+                                <td>Dinsag t/m Donderdag</td>
+                                <td>10:00</td>
+                                <td>18:00</td>
+                            </tr>
+                            <tr>
+                                <td>Vrijdag en Zaterdag</td>
+                                <td>8:00</td>
+                                <td>22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Zondag</td>
+                                <td>10:00</td>
+                                <td>20:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
