@@ -22,3 +22,6 @@ Route::get('/contact', function () {
 Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete')
     ->name('park.restaurants.delete');
 Route::resource('/park/restaurants', 'RestaurantsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
