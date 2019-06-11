@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="productRangeSection">
+    <section class="productsSection">
         <div class="container">
 
             @if ($errors->any())

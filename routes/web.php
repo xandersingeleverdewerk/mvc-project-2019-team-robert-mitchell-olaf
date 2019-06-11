@@ -39,10 +39,6 @@ Route::get('park/restaurants/{restaurant}/delete', 'RestaurantsController@delete
     ->name('park.restaurants.delete');
 Route::resource('/park/restaurants', 'RestaurantsController');
 
-Route::get('park/stores/{store}/delete', 'StoresController@delete')
-    ->name('park.stores.delete');
-Route::resource('/park/stores', 'StoresController');
-
 Route::get('park/stores/products/{product}/delete', 'ProductsController@delete')
     ->name('park.stores.products.delete');
 Route::resource('/park/stores/products', 'ProductsController');
@@ -50,3 +46,7 @@ Route::resource('/park/stores/products', 'ProductsController');
 Route::get('park/stores/{store}/storeRules/{storeRule}/delete', 'StoreRulesController@delete')
     ->name('park.stores.storeRules.delete');
 Route::resource('/park/stores/{store}/storeRules', 'StoreRulesController');
+
+Route::get('park/stores/{store}/delete', 'StoresController@delete')
+    ->name('park.stores.delete');
+Route::resource('/park/stores', 'StoresController');
