@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="dishesSection">
+    <section class="productsSection">
         <div class="container">
 
             @if (session('message'))
@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/restaurants/stores/products') }}">Maken</a>
+                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
                 </li>
             </ul>
 

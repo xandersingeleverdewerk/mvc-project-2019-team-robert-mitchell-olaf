@@ -20,7 +20,7 @@
 
             <h3>{{ $product->name }}</h3>
 
-            <p class="dishDescription">
+            <p class="productDescription">
                 {{ $product->description }}
             </p>
 

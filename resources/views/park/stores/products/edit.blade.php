@@ -15,30 +15,43 @@
                 </div>
             @endif
 
-            <h2>{{ $store->facilitie->name }} aanpassen</h2>
+                <h2>Producten</h2>
 
-            <form class="form" action="{{route('stores.update', $store)}}" method="POST">
-                @csrf
-                @method('PATCH')
-                <div class="form-group">
-                    <label for="name">Naam</label>
-                    <input id="name" name="name" class="form-control" type="text" value="{{ $store->facilitie->name }}" />
-                </div>
-                <div class="form-group">
-                    <label for="description">Beschrijving</label>
-                    <textarea id="description" name="description" class="form-control" type="text">{{ $store->facilitie->description }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="opening_time">Openingstijd</label>
-                    <input id="opening_time" name="opening_time" class="form-control" type="time" value="{{ $store->facilitie->opening_time }}" />
-                </div>
-                <div class="form-group">
-                    <label for="closing_time">Sluitingstijd</label>
-                    <input id="closing_time" name="closing_time" class="form-control" type="time" value="{{ $store->facilitie->closing_time }}" />
-                </div>
-                <button class="btn btn-primary" type="submit">Pas Winkel Aan</button>
-            </form>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/stores/products') }}">Overzicht</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active">Aanpassen</a>
+                    </li>
+                </ul>
 
+                <form class="form" action="{{route('products.update', $product)}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <h3>{{ $product->name }} aanpassen</h3>
+                    <div class="form-group">
+                        <label for="name">Naam</label>
+                        <input id="name" name="name" class="form-control" type="text" value="{{ $product->name }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Beschrijving</label>
+                        <textarea id="description" name="description" class="form-control" type="text">{{ $product->description }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Prijs</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">&euro;</span>
+                            </div>
+                            <input id="price" name="price" class="form-control" type="number" step=".01" value="{{ $product->price }}" />
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Pas Product Aan</button>
+                </form>
         </div>
     </section>
 
