@@ -26,7 +26,7 @@
                 </li>
             </ul>
 
-            <form class="form" action="{{ url('/park/stores/'.$store->id.'/storeRules')}}" method="POST">
+            <form class="form" action="{{ url('/park/stores/'.$store->id.'/storeRule')}}" method="POST">
                 @csrf
                 <h3>Product toevoegen aan {{ $store->facilitie->name }}</h3>
                 <div hidden class="form-group">

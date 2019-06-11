@@ -50,3 +50,7 @@ Route::resource('/park/stores/{store}/storeRules', 'StoreRulesController');
 Route::get('park/stores/{store}/delete', 'StoresController@delete')
     ->name('park.stores.delete');
 Route::resource('/park/stores', 'StoresController');
+
+Auth::routes();
+
+Route::get('/mypage', 'HomeController@index')->name('mypage');
