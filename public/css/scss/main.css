@@ -250,7 +250,7 @@ thead {
 ul {
   list-style: none; }
 
-.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection {
+.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
   padding: 100px 0;
   width: 100%;
   background-color: #ffffff;
