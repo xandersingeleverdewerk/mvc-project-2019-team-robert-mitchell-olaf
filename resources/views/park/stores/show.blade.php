@@ -12,7 +12,7 @@
 
                 <a href="{{$store->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
                 <a href="{{$store->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
-                <a href="#" class="btn btn-dark">Bekijk welke producten deze winkel heeft</a>
+                <a href="{{$store->id.'/storeRules'}}" class="btn btn-dark">Bekijk welke producten deze winkel heeft</a>
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
