@@ -29,7 +29,7 @@
                 </li>
             </ul>
 
-            <form class="form" action="{{ url('/park/stores/'.$store->id.'/storeRules',$storeRules)}}" method="POST">
+            <form class="form" action="{{ url('/park/stores/'.$store->id.'/storeRules',$storeRule)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <h3>Product verwijderen van {{ $store->facilitie->name }}</h3>
