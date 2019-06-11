@@ -23,6 +23,12 @@ thead {
 ul {
   list-style: none; }
 
+.authContainer {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #111; }
+
 .openingTimes, .travelJourney {
   padding: 100px 0;
   background-color: #ffffff;
@@ -66,6 +72,12 @@ thead {
 
 ul {
   list-style: none; }
+
+.authContainer {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #111; }
 
 @media (max-width: 768px) {
   #navigation .nav-item {
@@ -208,6 +220,12 @@ thead {
 ul {
   list-style: none; }
 
+.authContainer {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #111; }
+
 .information {
   padding: 100px 0;
   background-color: #ffffff;
@@ -249,6 +267,12 @@ thead {
 
 ul {
   list-style: none; }
+
+.authContainer {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #111; }
 
 .restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
   padding: 100px 0;
@@ -354,5 +378,11 @@ thead {
 
 ul {
   list-style: none; }
+
+.authContainer {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #111; }
 
 /*# sourceMappingURL=main.css.map */

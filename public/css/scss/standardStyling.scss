@@ -74,3 +74,10 @@ thead {
 ul {
   list-style: none;
 }
+
+.authContainer {
+  padding: $standard-block-padding;
+  width: 100%;
+  background-color: $white;
+  color: $black;
+}
