@@ -1,3 +1,5 @@
+// Responsive media queries
+
 $md: 768px;
 
 @mixin md {
@@ -12,10 +14,61 @@ $md: 768px;
   }
 }
 
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red , yellow);
-  color: white;
-  border: none;
+// colors
+
+$white: #ffffff;
+$black: #111;
+$red: #ff0000;
+$yellow: #ffcc00;
+$orange: #ffa31a;
+$red-to-yellow: linear-gradient(to bottom right, $red , $yellow);
+$black-gradient: linear-gradient(to bottom right, #444 , $black);
+$white-gradient: linear-gradient(to bottom right, #f3f3f3, $white);
+
+$facebook: #3B5998;
+$twitter: #55ACEE;
+$instagram: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+$email: #009999;
+$youtube: #bb0000;
+
+// margin and paddings
+
+$standard-block-padding: 100px 0;
+
+// Mixins
+
+@mixin block($accentColor, $backgroundColor) {
+  border: 1px solid $accentColor;
+  background: $backgroundColor;
+  color: $accentColor;
+  transition: 0.2s all;
+}
+
+// standardStyling
+
+.btn {
+  margin-bottom: 15px;
+
+  &-primary {
+    @include block($white, $red-to-yellow);
+
+    &:hover {
+      @include block($orange, $white);
+    }
+  }
+}
+
+.table {
+  text-align: center;
+
+  & .btn {
+    margin: 0;
+  }
+}
+
+thead {
+  background: $red-to-yellow;
+  color: $white
 }
 
 ul {

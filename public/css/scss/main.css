@@ -1,30 +1,68 @@
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+ul {
+  list-style: none; }
+
 .openingTimes, .travelJourney {
   padding: 100px 0;
-  background-color: white;
+  background-color: #ffffff;
   color: #111; }
+  .openingTimesImg {
+    margin-bottom: 20px; }
 
 .travelJourney {
-  background-image: linear-gradient(to bottom right, red, yellow); }
+  background-image: linear-gradient(to bottom right, #ff0000, #ffcc00); }
 
 .location {
   border-radius: 5px; }
 
-.btn {
-  margin-bottom: 15px; }
-
 .table {
   margin-top: 20px; }
-
-.openingTimesImg {
-  margin-bottom: 20px; }
 
 .dropdown {
   cursor: pointer; }
 
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red, yellow);
-  color: white;
-  border: none; }
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
 
 ul {
   list-style: none; }
@@ -38,7 +76,7 @@ ul {
 
 .navigation {
   padding: 20px 0;
-  background: linear-gradient(to bottom right, #ffffff, #f4f4f4); }
+  background: linear-gradient(to bottom right, #f3f3f3, #ffffff); }
   .navigation .search {
     margin: auto 0; }
     @media (max-width: 768px) {
@@ -48,18 +86,22 @@ ul {
 
 .nav {
   padding-top: 20px; }
-  .nav-link {
-    color: orange;
-    border: 1px solid orange;
+  .nav-pills .nav-link {
+    border: 1px solid #ffa31a;
+    background: #ffffff;
+    color: #ffa31a;
+    transition: 0.2s all;
     margin: 10px; }
-    .nav-link:hover {
-      background: linear-gradient(to bottom right, red, yellow);
-      color: white; }
+    .nav-pills .nav-link:hover {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
   .navTitle {
     width: 100%;
     text-align: center;
     font-family: cursive;
-    color: orange;
+    color: #ffa31a;
     margin-bottom: 30px; }
     @media (max-width: 768px) {
       .navTitle {
@@ -81,17 +123,17 @@ ul {
       cursor: pointer; }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  background-image: linear-gradient(to bottom right, red, yellow); }
+  background-image: linear-gradient(to bottom right, #ff0000, #ffcc00); }
 
 .footer {
   padding: 100px 0 50px;
-  background: linear-gradient(to top left, #111, #444); }
+  background: linear-gradient(to bottom right, #444, #111); }
   .footerLink {
-    color: white;
+    color: #ffffff;
     text-align: center;
     margin-left: -15px; }
     .footerLink:hover {
-      color: orange; }
+      color: #ffa31a; }
   .footer .links {
     width: 100%; }
     .footer .links h3, .footer .links ul {
@@ -100,47 +142,76 @@ ul {
     margin-top: 10px; }
     .footer .phone .fa {
       margin-right: 5px;
-      color: orange; }
+      color: #ffa31a; }
   .footer .copyright {
-    border-top: 1px solid orange;
+    border-top: 1px solid #ffa31a;
     padding-top: 10px;
     margin-top: 20px;
     text-align: center; }
   .footer .social-media .fa {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all;
     font-size: 28px;
     padding: 18px;
     margin: 15px 5px;
-    background-color: orange;
-    background-image: linear-gradient(to bottom right, red, yellow);
-    color: white;
-    border-radius: 50%;
-    transition: 0.5s all; }
+    border-radius: 50%; }
     .footer .social-media .fa-facebook:hover {
+      border: 1px solid #ffffff;
       background: #3B5998;
-      color: white; }
+      color: #ffffff;
+      transition: 0.2s all; }
     .footer .social-media .fa-twitter:hover {
+      border: 1px solid #ffffff;
       background: #55ACEE;
-      color: white; }
+      color: #ffffff;
+      transition: 0.2s all; }
     .footer .social-media .fa-instagram:hover {
-      background-image: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
-      color: white; }
-    .footer .social-media .fa-youtube:hover {
-      background: #bb0000;
-      color: white; }
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom left, #405DE6, #E1306C, #FFDC80);
+      color: #ffffff;
+      transition: 0.2s all; }
     .footer .social-media .fa-envelope:hover {
-      background: blue;
-      color: white; }
+      border: 1px solid #ffffff;
+      background: #009999;
+      color: #ffffff;
+      transition: 0.2s all; }
+    .footer .social-media .fa-youtube:hover {
+      border: 1px solid #ffffff;
+      background: #bb0000;
+      color: #ffffff;
+      transition: 0.2s all; }
+
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+ul {
+  list-style: none; }
 
 .information {
   padding: 100px 0;
-  width: 100%;
-  background-color: white;
+  background-color: #ffffff;
   color: #111; }
-
-.btn-primary {
-  background-image: linear-gradient(to bottom right, red, yellow);
-  color: white;
-  border-style: none; }
 
 .rounded {
   border-radius: 3.25px; }
@@ -150,21 +221,47 @@ ul {
   height: 100%; }
 
 .carousel-caption {
-  text-shadow: 1px 1px white;
-  color: #ff5325;
-  background: rgba(0, 0, 0, 0.3); }
+  text-shadow: 1px 1px #111;
+  color: #ffa31a;
+  background: rgba(255, 255, 255, 0.3); }
 
-.restaurantSection {
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+ul {
+  list-style: none; }
+
+.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
   padding: 100px 0;
   width: 100%;
-  background-color: white;
+  background-color: #ffffff;
   color: #111; }
 
 .block {
-  display: flex;
-  background-color: yellow;
+  border: 1px solid #111;
+  background: #ffcc00;
   color: #111;
-  border: 2px solid whitesmoke;
+  transition: 0.2s all;
+  display: flex;
   border-radius: 5px;
   margin: 10px;
   width: 200px;
@@ -172,35 +269,90 @@ ul {
   padding: 25px;
   text-align: center;
   text-decoration: none;
-  transition: 0.5s all;
   cursor: pointer; }
   .block h3 {
     font-size: 22px; }
   .block:hover {
-    border: 2px solid yellow;
-    background-color: whitesmoke;
-    color: yellow;
+    border: 1px solid #ffcc00;
+    background: #ffffff;
+    color: #ffcc00;
+    transition: 0.2s all;
     text-decoration: none; }
   .block:nth-of-type(2n + 1) {
-    background-color: orange;
-    color: white; }
+    border: 1px solid #ffffff;
+    background: #ffa31a;
+    color: #ffffff;
+    transition: 0.2s all; }
     .block:nth-of-type(2n + 1):hover {
-      border: 2px solid orange;
-      background-color: whitesmoke;
-      color: orange; }
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
   .block:nth-of-type(4n + 2) {
-    background-color: red;
-    color: white; }
+    border: 1px solid #ffffff;
+    background: #ff0000;
+    color: #ffffff;
+    transition: 0.2s all; }
     .block:nth-of-type(4n + 2):hover {
-      border: 2px solid red;
-      background-color: whitesmoke;
-      color: red; }
+      border: 1px solid #ff0000;
+      background: #ffffff;
+      color: #ff0000;
+      transition: 0.2s all; }
   .block:nth-of-type(3n + 1) {
-    background-color: #111;
-    color: white; }
+    border: 1px solid #ffffff;
+    background: #111;
+    color: #ffffff;
+    transition: 0.2s all; }
     .block:nth-of-type(3n + 1):hover {
-      border: 2px solid #111;
-      background-color: whitesmoke;
-      color: #111; }
+      border: 1px solid #111;
+      background: #ffffff;
+      color: #111;
+      transition: 0.2s all; }
+
+.nav-tabs {
+  border-color: #ffa31a;
+  margin: 20px 0; }
+  .nav-tabs .nav-link {
+    color: #ffa31a;
+    margin: 0 10px; }
+    @media (max-width: 768px) {
+      .nav-tabs .nav-link {
+        margin: 0 1px;
+        padding: 10px 8px; } }
+    .nav-tabs .nav-link.active {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+    .nav-tabs .nav-link:hover {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+ul {
+  list-style: none; }
 
 /*# sourceMappingURL=main.css.map */
