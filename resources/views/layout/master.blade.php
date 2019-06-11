@@ -87,7 +87,7 @@
                 <a class="nav-link {{ Request::url() == url('/contact') ? 'active' : '' }}" href="{{ url('/contact') }}">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" {{ Request::url() == url('/mijnpagina') ? 'active' : '' }} href="{{ url('/mijnpagina') }}">Mijn Pagina</a>
+                <a class="nav-link" {{ Request::url() == url('/mypage') ? 'active' : '' }} href="{{ url('/mypage') }}">Mijn Pagina</a>
             </li>
         </ul>
     </div>

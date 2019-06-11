@@ -53,4 +53,4 @@ Route::resource('/park/stores', 'StoresController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mypage', 'HomeController@index')->name('mypage');
