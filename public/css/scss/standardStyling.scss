@@ -44,6 +44,13 @@ $standard-block-padding: 100px 0;
   transition: 0.2s all;
 }
 
+@mixin section($background, $color) {
+  padding: $standard-block-padding;
+  width: 100%;
+  background: $background;
+  color: $color;
+}
+
 // standardStyling
 
 .btn {
@@ -76,8 +83,5 @@ ul {
 }
 
 .authContainer {
-  padding: $standard-block-padding;
-  width: 100%;
-  background-color: $white;
-  color: $black;
+  @include section($white, $black)
 }
