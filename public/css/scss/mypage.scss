@@ -18,7 +18,7 @@
 }
 
 .blockLink {
-  @include block($white, $black);
+  @include block($white, $black-gradient);
   display: flex;
   border-radius: 5px;
   margin: 10px;

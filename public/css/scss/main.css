@@ -406,7 +406,7 @@ ul {
 
 .blockLink {
   border: 1px solid #ffffff;
-  background: #111;
+  background: linear-gradient(to bottom right, #444, #111);
   color: #ffffff;
   transition: 0.2s all;
   display: flex;

@@ -33,7 +33,7 @@
         <div class="container">
             <div class="d-flex justify-content-around row">
                 <a class="blockLink" href="#">
-                    <h3 class="blockTitle">Dit is een linkje</h3>
+                    <h3 class="blockTitle">Dit is een vechtpartij</h3>
                 </a>
                 <a class="blockLink" href="#">
                     <h3 class="blockTitle">Dit is een linkje</h3>

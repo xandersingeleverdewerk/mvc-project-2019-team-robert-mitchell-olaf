@@ -95,5 +95,13 @@
 
 @yield('content')
 
+<footer class="footer text-white">
+    <div class="container">
+        <div class="copyright">
+            &copy; Mitchell, Robert, Xander, Olaf 2019
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
