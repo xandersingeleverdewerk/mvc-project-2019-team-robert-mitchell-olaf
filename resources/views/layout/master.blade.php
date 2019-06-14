@@ -75,7 +75,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
             </li>
-            <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
+            <li class="dropdown nav-item nav-link {{ Request::url() == url('park/restaurants') ? 'active' : '' }} {{ Request::url() == url('park/stores') ? 'active' : '' }} {{ Request::url() == url('park/attractions') ? 'active' : '' }}" data-toggle="dropdown">
                 Het park
             </li>
             <div class="dropdown-menu">
@@ -101,12 +101,31 @@
             <div class="col-md-3 links">
                 <h3>Belangrijke Links</h3>
                 <ul class="footerList">
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 1</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 2</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 3</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 4</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 5</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/link')}}">Link 6</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/park/restaurants')}}">Restaurants</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/park/attractions')}}">Attracties</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/park/stores')}}">Winkels</a></li>
+                    <li class="footerItem"><a class="footerLink" href="{{url('/mypage/reservations')}}">Tickets boeken</a></li>
+                    @guest
+                        <li class="footerItem">
+                            <a class="footerLink" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="footerItem">
+                                <a class="footerLink" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="footerItem">
+                            <a class="footerLink" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    @endguest
                 </ul>
             </div>
             <div class="col-md-6">
@@ -120,11 +139,11 @@
                     </div>
                 </form>
                 <div class="social-media d-flex justify-content-around flex-wrap">
-                    <a href="https://www.facebook.com"><span class="fa fa-facebook"></span></a>
-                    <a href="https://twitter.com"><span class="fa fa-twitter"></span></a>
-                    <a href="https://www.instagram.com"><span class="fa fa-instagram"></span></a>
-                    <a href="mailto:happyland@gmail.com"><span class="fa fa-envelope"></span></a>
-                    <a href="https://www.youtube.com/?gl=NL&hl=nl"><span class="fa fa-youtube"></span></a>
+                    <a target="_blank" href="https://www.facebook.com"><span class="fa fa-facebook"></span></a>
+                    <a target="_blank" href="https://twitter.com"><span class="fa fa-twitter"></span></a>
+                    <a target="_blank" href="https://www.instagram.com"><span class="fa fa-instagram"></span></a>
+                    <a target="_blank" href="mailto:happyland@gmail.com"><span class="fa fa-envelope"></span></a>
+                    <a target="_blank" href="https://www.youtube.com/?gl=NL&hl=nl"><span class="fa fa-youtube"></span></a>
                 </div>
                 <ul class="phone d-flex justify-content-around flex-wrap">
                     <li>
