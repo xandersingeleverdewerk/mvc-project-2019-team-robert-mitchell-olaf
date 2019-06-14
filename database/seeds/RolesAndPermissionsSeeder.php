@@ -24,21 +24,23 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'create dishes']);
         Permission::create(['name' => 'edit dishes']);
         Permission::create(['name' => 'delete dishes']);
+        Permission::create(['name' => 'show dishes']);
 
         Permission::create(['name' => 'create products']);
         Permission::create(['name' => 'edit products']);
         Permission::create(['name' => 'delete products']);
+        Permission::create(['name' => 'show products']);
 
         //rollen maken en toewijzen
        /* $role = Role::create(['name' => 'visitor']);
         $role->givePermissionTo('');
 
-        $role = Role::create(['name' => 'customer']);
-        $role->givePermissionTo('');
        */
+        $role = Role::create(['name' => 'customer']);
+        $role->givePermissionTo('show dishes', 'show products');
+
 
         $role = Role::create(['name' => 'admin']);
-        $role->givePermissionTo('create dishes, edit dishes, delete dishes');
-        $role->givePermissionTo('create products, edit products, delete products');
+        $role->givePermissionTo(Permission::all());
     }
 }
