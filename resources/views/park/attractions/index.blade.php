@@ -11,7 +11,7 @@
                 </div>
             @endif
 
-            <h2>Attractions</h2>
+            <h2>Attracties</h2>
 
             <a href="{{ url('/park/attractions/create') }}" class="btn btn-success">Maak een attractie</a>
 

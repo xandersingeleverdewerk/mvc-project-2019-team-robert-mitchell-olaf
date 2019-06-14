@@ -17,7 +17,9 @@
 
             <h2>{{ $attraction->facilitie->name }} aanpassen</h2>
 
-            <form class="form" action="{{route('attractions.update', $attraction)}}" method="POST">
+                <a href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info">Terug naar details</a>
+
+                <form class="form" action="{{route('attractions.update', $attraction)}}" method="POST">
                 @csrf
                 @method('PATCH')
                 <div class="form-group">

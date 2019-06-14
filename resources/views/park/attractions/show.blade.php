@@ -6,6 +6,8 @@
         <div class="container">
             <h2>{{ $attraction->facilitie->name }}</h2>
 
+            <a href="{{ url('/park/attractions') }}" class="btn btn-info">Terug naar overzicht</a>
+
             <p class="attractionDescription">
                 {{ $attraction->facilitie->description }}
             </p>

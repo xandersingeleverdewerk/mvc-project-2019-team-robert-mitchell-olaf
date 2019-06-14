@@ -17,6 +17,8 @@
 
             <h2>{{ $attraction->facilitie->name }} verwijderen</h2>
 
+                <a href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info">Terug naar details</a>
+
             <form class="form" action="{{route('attractions.destroy', $attraction)}}" method="POST">
                 @csrf
                 @method('DELETE')

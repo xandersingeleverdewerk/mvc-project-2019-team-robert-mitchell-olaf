@@ -15,7 +15,9 @@
                 </div>
             @endif
 
-            <h2>Attraction aanmaken</h2>
+            <h2>Attractie aammaken</h2>
+
+                <a href="{{ url('/park/attractions') }}" class="btn btn-info">Terug naar overzicht</a>
 
             <form class="form" action="{{route('attractions.index')}}" method="POST">
                 @csrf
