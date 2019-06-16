@@ -73,9 +73,9 @@
     <div class="container-fluid">
         <ul class="flex-column flex-md-row nav nav-pills nav-justified collapse navbar-collapse" id="navigation">
             <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                <a class="nav-link {{ Request::url() == url('/mypage') ? 'active' : '' }}" href="{{ url('/mypage') }}">Dashboard</a>
             </li>
-            <li class="dropdown nav-item nav-link {{ Request::url() == url('park/restaurants') ? 'active' : '' }} {{ Request::url() == url('park/stores') ? 'active' : '' }} {{ Request::url() == url('park/attractions') ? 'active' : '' }}" data-toggle="dropdown">
+            <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
                 Het park
             </li>
             <div class="dropdown-menu">
@@ -84,10 +84,10 @@
                 <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
             </div>
             <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/contact') ? 'active' : '' }}" href="{{ url('/contact') }}">Contact</a>
+                <a class="nav-link {{ Request::url() == url('/gegevens') ? 'active' : '' }}" href="{{ url('/gegevens') }}">Mijn gegevens</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" {{ Request::url() == url('/mypage') ? 'active' : '' }} href="{{ url('/mypage') }}">Mijn Pagina</a>
+                <a class="nav-link" {{ Request::url() == url('/') ? 'active' : '' }} href="{{ url('/') }}">Terug naar de Website</a>
             </li>
         </ul>
     </div>
@@ -97,71 +97,8 @@
 
 <footer class="footer text-white">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 links">
-                <h3>Belangrijke Links</h3>
-                <ul class="footerList">
-                    <li class="footerItem"><a class="footerLink" href="{{url('/park/restaurants')}}">Restaurants</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/park/attractions')}}">Attracties</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/park/stores')}}">Winkels</a></li>
-                    <li class="footerItem"><a class="footerLink" href="{{url('/mypage/reservations')}}">Tickets boeken</a></li>
-                    @guest
-                        <li class="footerItem">
-                            <a class="footerLink" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="footerItem">
-                                <a class="footerLink" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="footerItem">
-                            <a class="footerLink" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
-                    @endguest
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <form id="search" action="#" method="POST">
-                    @csrf
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Zoeken voor iets">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Zoeken</button>
-                        </div>
-                    </div>
-                </form>
-                <div class="social-media d-flex justify-content-around flex-wrap">
-                    <a target="_blank" href="https://www.facebook.com"><span class="fa fa-facebook"></span></a>
-                    <a target="_blank" href="https://twitter.com"><span class="fa fa-twitter"></span></a>
-                    <a target="_blank" href="https://www.instagram.com"><span class="fa fa-instagram"></span></a>
-                    <a target="_blank" href="mailto:happyland@gmail.com"><span class="fa fa-envelope"></span></a>
-                    <a target="_blank" href="https://www.youtube.com/?gl=NL&hl=nl"><span class="fa fa-youtube"></span></a>
-                </div>
-                <ul class="phone d-flex justify-content-around flex-wrap">
-                    <li>
-                        <span class="fa fa-phone"></span>
-                        + 31 6 123 45 678
-                    </li>
-                    <li>
-                        <span class="fa fa-envelope"></span>
-                        happyland@gmail.com
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 map">
-                <iframe class="mx-auto d-block map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2653.653681114115!2d16.327268215534342!3d48.30951172923757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0f035c8a624d%3A0x3300bbdf9986a3ed!2sHappyland!5e0!3m2!1snl!2snl!4v1558811216565!5m2!1snl!2snl" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-            <div class="col-12 copyright">
-                &copy; Mitchell, Robert, Xander, Olaf 2019
-            </div>
+        <div class="copyright">
+            &copy; Mitchell, Robert, Xander, Olaf 2019
         </div>
     </div>
 </footer>
@@ -171,5 +108,6 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
+
 </body>
 </html>

@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class DishesController extends Controller
 {
+   /* public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:create dishes',['only'  => ['create', 'store']]);
+        $this->middleware('permission:edit dishes',['only'  => ['edit', 'update']]);
+        $this->middleware('permission:delete dishes',['only'  => ['delete', 'destroy']]);
+    }
+   */
     /**
      * Display a listing of the resource.
      *

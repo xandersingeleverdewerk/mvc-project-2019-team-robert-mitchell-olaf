@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
@@ -18,7 +18,7 @@
                         <a class="nav-link active" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                        <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken <span class="fa fa-plus"></span></a>
                     </li>
                 </ul>
 
@@ -37,8 +37,8 @@
                             <td>{{ $dish->name }}</td>
                             <td> &euro; {{ $dish->price }}</td>
                             <td><a class="btn btn-info" href="{{ url('park/restaurants/dishes/'.$dish->id) }}">Details</a></td>
-                            <td><a class="btn btn-warning" href="{{ url('park/restaurants/dishes/'.$dish->id.'/edit') }}">Aanpassen</a></td>
-                            <td><a class="btn btn-danger" href="{{ url('park/restaurants/dishes/'.$dish->id.'/delete') }}">Verwijderen</a></td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/restaurants/dishes/'.$dish->id.'/edit') }}"><span class="fa fa-edit"></span></a></td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/restaurants/dishes/'.$dish->id.'/delete') }}"><span class="fa fa-trash-o"></span></a></td>
                         </tr>
                     @endforeach
                     </tbody>

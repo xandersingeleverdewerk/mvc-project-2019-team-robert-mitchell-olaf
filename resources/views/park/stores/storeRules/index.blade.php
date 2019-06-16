@@ -11,14 +11,19 @@
                 </div>
             @endif
 
-            <h2>Menu van {{ $store->facilitie->name }}</h2>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                    <h2 class="parkTitle">Assortiment van {{ $store->facilitie->name }}</h2>
+                </div>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ url('/park/stores/'.$store->id.'/storeRules') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen</a>
+                    @can('create products')
+                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
+                        @endcan
                 </li>
             </ul>
 
@@ -28,7 +33,9 @@
                     <tr>
                         <th>Product</th>
                         <th>Prijs</th>
+                        @can('show products')
                         <th colspan="2">Linkjes</th>
+                            @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -36,8 +43,12 @@
                         <tr>
                             <td>{{ $storeRule->product->name }}</td>
                             <td>&euro; {{ $storeRule->product->price }}</td>
-                            <td><a class="btn btn-info" href="{{ url('park/stores/products/'.$storeRule->product->id) }}">Details</a></td>
-                            <td><a class="btn btn-danger" href="{{ url('park/stores/'.$storeRule->store_id.'/storeRules/'.$storeRule->id.'/delete') }}">Verwijderen</a></td>
+                            @can('show products')
+                                <td><a class="btn btn-info" href="{{ url('park/stores/'.$storeRule->store_id.'/storeRules/'.$storeRule->id) }}">Bekijk product</a></td>
+                            @endcan
+                            @can('delete products')
+                                <td><a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/stores/'.$storeRule->store_id.'/storeRules/'.$storeRule->id.'/delete') }}"><span class="fa fa-trash-o"></span></a></td>
+                                @endcan
                         </tr>
                     @endforeach
                     </tbody>

@@ -11,9 +11,10 @@
                 </div>
             @endif
 
-            <h2>Winkels</h2>
-
-            <a href="{{ url('/park/stores/create') }}" class="btn btn-success">Maak een winkel</a>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Maak een winkel" href="{{ url('/park/stores/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    <h2 class="parkTitle">Winkels</h2>
+                </div>
 
             <div class="d-flex justify-content-around row">
             @foreach($stores as $store)

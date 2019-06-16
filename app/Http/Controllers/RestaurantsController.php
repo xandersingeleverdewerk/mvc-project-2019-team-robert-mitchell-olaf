@@ -112,6 +112,6 @@ class RestaurantsController extends Controller
         $restaurant->delete();
         $restaurant->facilitie->delete();
 
-        return redirect()->route('restaurants.index')->with('message','Restaurant is aangepast');
+        return redirect()->route('restaurants.index')->with('message','Restaurant is verwijderd');
     }
 }

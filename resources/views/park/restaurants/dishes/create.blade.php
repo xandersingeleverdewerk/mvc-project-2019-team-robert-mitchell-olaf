@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
@@ -22,7 +22,7 @@
                         <a class="nav-link" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                        <a class="nav-link active" href="{{ url('/park/restaurants/dishes/create') }}">Maken <span class="fa fa-plus"></span></a>
                     </li>
                 </ul>
 
