@@ -25,6 +25,9 @@
                         <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/restaurants/dishes/'.$dish->id) }}">Details</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active">Aanpassen</a>
                     </li>
                 </ul>

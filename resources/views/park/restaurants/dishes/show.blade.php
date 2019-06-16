@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active">Details</a>
+                    <a class="nav-link active" href="{{ url('/park/restaurants/dishes/'.$dish->id) }}">Details</a>
                 </li>
             </ul>
 
@@ -24,8 +24,8 @@
                 {{ $dish->description }}
             </p>
 
-                <a href="{{$dish->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
-                <a href="{{$dish->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
+            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/restaurants/dishes/'.$dish->id.'/edit') }}"><span class="fa fa-edit"></span></a>
+            <a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/restaurants/dishes/'.$dish->id.'/delete') }}"><span class="fa fa-trash-o"></span></a>
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
