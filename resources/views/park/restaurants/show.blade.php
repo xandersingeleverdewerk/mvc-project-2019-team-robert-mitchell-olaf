@@ -4,14 +4,17 @@
 
     <section class="restaurantSection">
         <div class="container">
-            <h2>{{ $restaurant->facilitie->name }}</h2>
+            <div class="d-flex flex">
+                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/restaurants') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                <h2 class="parkTitle">{{ $restaurant->facilitie->name }}</h2>
+            </div>
 
             <p class="restaurantDescription">
                 {{ $restaurant->facilitie->description }}
             </p>
 
-                <a href="{{$restaurant->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
-                <a href="{{$restaurant->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
+            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$restaurant->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
+            <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$restaurant->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
                 <a href="{{$restaurant->id.'/restaurantRules'}}" class="btn btn-dark">Bekijk het menu</a>
 
             <h3>Aanvullende gegevens</h3>
