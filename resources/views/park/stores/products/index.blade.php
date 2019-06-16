@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
+                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken <span class="fa fa-plus"></span></a>
                 </li>
             </ul>
 
@@ -37,8 +37,8 @@
                             <td>{{ $product->name }}</td>
                             <td> &euro; {{ $product->price }}</td>
                             <td><a class="btn btn-info" href="{{ url('park/stores/products/'.$product->id) }}">Details</a></td>
-                            <td><a class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}">Aanpassen</a></td>
-                            <td><a class="btn btn-danger" href="{{ url('park/stores/products/'.$product->id.'/delete') }}">Verwijderen</a></td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}"><span class="fa fa-edit"></span></a></td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/stores/products/'.$product->id.'/delete') }}"><span class="fa fa-trash-o"></span></a></td>
                         </tr>
                     @endforeach
                     </tbody>

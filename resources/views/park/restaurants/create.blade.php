@@ -15,7 +15,10 @@
                 </div>
             @endif
 
-            <h2>Restaurant aanmaken</h2>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/restaurants') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                    <h2 class="parkTitle">Restaurant aanmaken</h2>
+                </div>
 
             <form class="form" action="{{route('restaurants.index')}}" method="POST">
                 @csrf

@@ -15,17 +15,20 @@
                 </div>
             @endif
 
-            <h2>Menu van {{ $store->facilitie->name }}</h2>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                    <h2 class="parkTitle">Assortiment van {{ $store->facilitie->name }}</h2>
+                </div>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen</a>
+                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active">Verwijderen</a>
+                    <a class="nav-link active">Verwijderen <span class="fa fa-trash-o"></span></a>
                 </li>
             </ul>
 
@@ -41,7 +44,7 @@
                     <label for="product_id">Product</label>
                     <input disabled id="product_id" name="product_id" class="form-control" type="text" value="{{ $storeRule->product->name }}">
                 </div>
-                <button class="btn btn-primary" type="submit">Verwijder van assortiment</button>
+                <button class="btn btn-primary" type="submit">Verwijder uit assortiment</button>
             </form>
         </div>
     </section>
