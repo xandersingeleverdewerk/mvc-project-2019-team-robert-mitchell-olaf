@@ -18,7 +18,9 @@
                     <a class="nav-link active" href="{{ url('/park/stores/'.$store->id.'/storeRules') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
+                    @can('create products')
                     <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen</a>
+                        @endcan
                 </li>
             </ul>
 
@@ -28,7 +30,9 @@
                     <tr>
                         <th>Product</th>
                         <th>Prijs</th>
+                        @can('show products')
                         <th colspan="2">Linkjes</th>
+                            @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -36,8 +40,12 @@
                         <tr>
                             <td>{{ $storeRule->product->name }}</td>
                             <td>&euro; {{ $storeRule->product->price }}</td>
+                            @can('show products')
                             <td><a class="btn btn-info" href="{{ url('park/stores/products/'.$storeRule->product->id) }}">Details</a></td>
+                            @endcan
+                            @can('delete products')
                             <td><a class="btn btn-danger" href="{{ url('park/stores/'.$storeRule->store_id.'/storeRules/'.$storeRule->id.'/delete') }}">Verwijderen</a></td>
+                                @endcan
                         </tr>
                     @endforeach
                     </tbody>
