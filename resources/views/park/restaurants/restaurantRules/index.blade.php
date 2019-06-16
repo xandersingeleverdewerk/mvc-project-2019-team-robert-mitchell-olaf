@@ -18,7 +18,9 @@
                         <a class="nav-link active" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                     </li>
                     <li class="nav-item">
+                        @can('create dishes')
                         <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen</a>
+                        @endcan
                     </li>
                 </ul>
 
@@ -28,7 +30,9 @@
                         <tr>
                             <th>Gerecht</th>
                             <th>Prijs</th>
+                            @can('show dishes')
                             <th colspan="2">Linkjes</th>
+                                @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -36,8 +40,12 @@
                         <tr>
                             <td>{{ $restaurantRule->dish->name }}</td>
                             <td>&euro; {{ $restaurantRule->dish->price }}</td>
+                            @can('show dishes')
                             <td><a class="btn btn-info" href="{{ url('park/restaurants/dishes/'.$restaurantRule->dish->id) }}">Details</a></td>
+                            @endcan
+                            @can('delete dishes')
                             <td><a class="btn btn-danger" href="{{ url('park/restaurants/'.$restaurantRule->restaurant_id.'/restaurantRules/'.$restaurantRule->id.'/delete') }}">Verwijderen</a></td>
+                            @endcan
                         </tr>
                     @endforeach
                     </tbody>
