@@ -22,7 +22,7 @@
                     <a class="nav-link" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
+                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/stores/products/'.$product->id) }}">Details</a>

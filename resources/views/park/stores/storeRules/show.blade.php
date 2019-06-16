@@ -15,7 +15,7 @@
                 </li>
                 <li class="nav-item">
                     @can('create stores')
-                        <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen</a>
+                        <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                     @endcan
                 </li>
                 <li class="nav-item">

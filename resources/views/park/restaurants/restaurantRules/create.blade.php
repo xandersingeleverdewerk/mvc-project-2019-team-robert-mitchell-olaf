@@ -25,7 +25,7 @@
                         <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen</a>
+                        <a class="nav-link active" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                     </li>
                 </ul>
 

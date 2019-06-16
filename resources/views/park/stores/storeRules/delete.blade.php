@@ -25,7 +25,7 @@
                     <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen</a>
+                    <a class="nav-link" href="{{ url('/park/stores/'.$store->id.'/storeRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active">Verwijderen</a>

@@ -15,7 +15,7 @@
                 </li>
                 <li class="nav-item">
                     @can('create dishes')
-                        <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen</a>
+                        <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                     @endcan
                 </li>
                 <li class="nav-item">
