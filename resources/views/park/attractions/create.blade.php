@@ -15,9 +15,10 @@
                 </div>
             @endif
 
-            <h2>Attractie aammaken</h2>
-
-                <a href="{{ url('/park/attractions') }}" class="btn btn-info">Terug naar overzicht</a>
+            <div class="d-flex flex">
+                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                <h2 class="parkTitle">Attractie aammaken</h2>
+            </div>
 
             <form class="form" action="{{route('attractions.index')}}" method="POST">
                 @csrf

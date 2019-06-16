@@ -15,9 +15,10 @@
                 </div>
             @endif
 
-            <h2>{{ $attraction->facilitie->name }} verwijderen</h2>
-
-                <a href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info">Terug naar details</a>
+            <div class="d-flex">
+                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                <h2 class="parkTitle">{{ $attraction->facilitie->name }} verwijderen</h2>
+            </div>
 
             <form class="form" action="{{route('attractions.destroy', $attraction)}}" method="POST">
                 @csrf

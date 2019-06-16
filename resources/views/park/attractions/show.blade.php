@@ -4,16 +4,17 @@
 
     <section class="attractionSection">
         <div class="container">
-            <h2>{{ $attraction->facilitie->name }}</h2>
-
-            <a href="{{ url('/park/attractions') }}" class="btn btn-info">Terug naar overzicht</a>
+            <div class="d-flex flex">
+                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                <h2 class="parkTitle">{{ $attraction->facilitie->name }}</h2>
+            </div>
 
             <p class="attractionDescription">
                 {{ $attraction->facilitie->description }}
             </p>
 
-            <a href="{{$attraction->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
-            <a href="{{$attraction->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
+            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$attraction->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
+            <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$attraction->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
