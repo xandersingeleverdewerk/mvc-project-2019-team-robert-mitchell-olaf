@@ -15,7 +15,7 @@
 
             <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$store->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
             <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$store->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
-                <a href="{{$store->id.'/storeRules'}}" class="btn btn-dark">Bekijk de producten</a>
+                <a href="{{$store->id.'/storeRules'}}" class="btn btn-dark">Bekijk assortiment</a>
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">

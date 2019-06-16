@@ -25,6 +25,9 @@
                         <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/park/stores/products/'.$product->id) }}">Details</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active">Aanpassen</a>
                     </li>
                 </ul>
