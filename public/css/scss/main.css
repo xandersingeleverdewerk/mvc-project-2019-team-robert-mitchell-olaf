@@ -411,18 +411,23 @@ ul {
   transition: 0.2s all;
   display: flex;
   border-radius: 5px;
-  margin: 10px;
-  width: 200px;
-  height: 200px;
-  padding: 25px;
+  margin: 40px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 20px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   transform: rotate(10deg); }
   @media (max-width: 768px) {
     .blockLink {
-      width: 135px;
-      height: 135px; } }
+      margin: 10px;
+      min-width: 150px;
+      min-height: 150px;
+      max-width: 150px;
+      max-height: 150px; } }
   .blockLink h3 {
     font-size: 22px;
     transform: rotate(-10deg); }
