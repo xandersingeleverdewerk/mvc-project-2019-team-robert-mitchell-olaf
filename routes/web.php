@@ -57,5 +57,4 @@ Route::resource('/park/stores/{store}/storeRules', 'StoreRulesController');
     Route::resource('/park/stores', 'StoresController');
 
 Auth::routes();
-
 Route::get('/mypage', 'HomeController@index')->name('mypage');

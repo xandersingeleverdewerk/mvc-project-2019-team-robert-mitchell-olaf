@@ -58,9 +58,9 @@ class RestaurantRulesController extends Controller
      * @param  \App\RestaurantRule  $restaurantRule
      * @return \Illuminate\Http\Response
      */
-    public function show(RestaurantRule $restaurantRule)
+    public function show(Restaurant $restaurant, RestaurantRule $restaurantRule)
     {
-        //
+        return view('park.restaurants.restaurantRules.show', compact('restaurant','restaurantRule'));
     }
 
     /**

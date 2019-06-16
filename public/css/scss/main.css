@@ -354,6 +354,9 @@ ul {
       color: #ffffff;
       transition: 0.2s all; }
 
+.parkTitle {
+  margin-left: 20px; }
+
 .btn {
   margin-bottom: 15px; }
   .btn-primary {

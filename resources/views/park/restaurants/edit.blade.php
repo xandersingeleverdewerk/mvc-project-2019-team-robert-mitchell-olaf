@@ -15,7 +15,10 @@
                 </div>
             @endif
 
-            <h2>{{ $restaurant->facilitie->name }} aanpassen</h2>
+                <div class="d-flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                    <h2 class="parkTitle">{{ $restaurant->facilitie->name }} aanpassen</h2>
+                </div>
 
             <form class="form" action="{{route('restaurants.update', $restaurant)}}" method="POST">
                 @csrf

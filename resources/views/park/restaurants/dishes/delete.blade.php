@@ -22,10 +22,13 @@
                     <a class="nav-link" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken</a>
+                    <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active">Verwijderen</a>
+                    <a class="nav-link" href="{{ url('/park/restaurants/dishes/'.$dish->id) }}">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active">Verwijderen <span class="fa fa-trash-o"></span></a>
                 </li>
             </ul>
 
