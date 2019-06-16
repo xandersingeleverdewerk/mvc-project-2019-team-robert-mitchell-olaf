@@ -60,9 +60,9 @@ class StoreRulesController extends Controller
      * @param  \App\StoreRule  $storeRule
      * @return \Illuminate\Http\Response
      */
-    public function show(StoreRule $storeRule)
+    public function show(Store $store, StoreRule $storeRule)
     {
-        //
+        return view('park.stores.storeRules.show', compact('store','storeRule'));
     }
 
     /**

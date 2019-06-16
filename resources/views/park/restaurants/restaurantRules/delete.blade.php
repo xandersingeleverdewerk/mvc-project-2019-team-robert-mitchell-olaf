@@ -15,17 +15,20 @@
                 </div>
             @endif
 
-            <h2>Menu van {{ $restaurant->facilitie->name }}</h2>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                    <h2 class="parkTitle">Menu van {{ $restaurant->facilitie->name }}</h2>
+                </div>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen</a>
+                    <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active">Verwijderen</a>
+                    <a class="nav-link active">Verwijderen <span class="fa fa-trash-o"></span></a>
                 </li>
             </ul>
 
