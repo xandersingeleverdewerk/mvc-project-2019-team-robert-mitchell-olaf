@@ -28,7 +28,7 @@
                         <a class="nav-link" href="{{ url('/park/restaurants/dishes/'.$dish->id) }}">Details</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active">Aanpassen</a>
+                        <a class="nav-link active">Aanpassen <span class="fa fa-edit"></span></a>
                     </li>
                 </ul>
 
