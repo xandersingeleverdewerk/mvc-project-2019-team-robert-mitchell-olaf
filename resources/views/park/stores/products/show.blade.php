@@ -39,10 +39,12 @@
                     <th>Prijs</th>
                     <td>&euro; {{ $product->price}}</td>
                 </tr>
+                @can('show productId')
                 <tr>
                     <th>Product id</th>
                     <td>{{ $product->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>

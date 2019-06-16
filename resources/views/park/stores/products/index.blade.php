@@ -18,7 +18,9 @@
                     <a class="nav-link active" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
+                    @can('create products')
                     <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
+                        @endcan
                 </li>
             </ul>
 

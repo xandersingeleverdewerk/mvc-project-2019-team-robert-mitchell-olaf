@@ -30,10 +30,12 @@
                     <th>Sluitingstijd</th>
                     <td>{{ $store->facilitie->closing_time }}</td>
                 </tr>
+                @can('show storeId')
                 <tr>
                     <th>Winkel id</th>
                     <td>{{ $store->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>
