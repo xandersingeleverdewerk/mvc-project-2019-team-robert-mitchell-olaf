@@ -295,7 +295,8 @@ ul {
   text-decoration: none;
   cursor: pointer; }
   .block h3 {
-    font-size: 22px; }
+    font-size: 22px;
+    margin: 0 auto; }
   .block:hover {
     border: 1px solid #ffcc00;
     background: #ffffff;
@@ -433,7 +434,8 @@ ul {
       max-height: 150px; } }
   .blockLink h3 {
     font-size: 22px;
-    transform: rotate(-10deg); }
+    transform: rotate(-10deg);
+    margin: 0 auto; }
     @media (max-width: 768px) {
       .blockLink h3 {
         font-size: 19px; } }

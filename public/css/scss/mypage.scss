@@ -43,6 +43,7 @@
   & h3 {
     font-size: 22px;
     transform: rotate(-10deg);
+    margin: 0 auto;
 
     @include md {
       font-size: 19px;
