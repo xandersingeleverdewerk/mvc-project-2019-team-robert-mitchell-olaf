@@ -13,7 +13,9 @@
 
             <h2>Winkels</h2>
 
+                @can('create store')
             <a href="{{ url('/park/stores/create') }}" class="btn btn-success">Maak een winkel</a>
+                @endcan
 
             <div class="d-flex justify-content-around row">
             @foreach($stores as $store)

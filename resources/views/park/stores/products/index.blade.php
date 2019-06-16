@@ -37,8 +37,12 @@
                             <td>{{ $product->name }}</td>
                             <td> &euro; {{ $product->price }}</td>
                             <td><a class="btn btn-info" href="{{ url('park/stores/products/'.$product->id) }}">Details</a></td>
+                            @can('edit products')
                             <td><a class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}">Aanpassen</a></td>
+                            @endcan
+                            @can('delete products')
                             <td><a class="btn btn-danger" href="{{ url('park/stores/products/'.$product->id.'/delete') }}">Verwijderen</a></td>
+                                @endcan
                         </tr>
                     @endforeach
                     </tbody>

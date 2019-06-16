@@ -11,8 +11,10 @@
                     <a class="nav-link" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
+                    @can('create products')
                     <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
                 </li>
+                @endcan
                 <li class="nav-item">
                     <a class="nav-link active">Details</a>
                 </li>
@@ -24,8 +26,12 @@
                 {{ $product->description }}
             </p>
 
+            @can('edit products')
             <a href="{{$product->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
+            @endcan
+            @can('delete products')
             <a href="{{$product->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
+            @endcan
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
