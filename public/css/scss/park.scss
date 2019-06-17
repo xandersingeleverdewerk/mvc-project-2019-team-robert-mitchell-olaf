@@ -1,10 +1,7 @@
 @import "standardStyling";
 
 .restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
-  padding: $standard-block-padding;
-  width: 100%;
-  background-color: $white;
-  color: $black;
+  @include section($white, $black);
 }
 
 .block {
@@ -21,6 +18,7 @@
 
   & h3 {
     font-size: 22px;
+    margin: 0 auto;
   }
 
   &:hover {
