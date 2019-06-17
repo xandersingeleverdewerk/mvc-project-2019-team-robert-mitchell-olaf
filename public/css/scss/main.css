@@ -23,7 +23,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -73,7 +73,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -220,7 +220,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -268,7 +268,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -383,7 +383,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -475,7 +475,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;

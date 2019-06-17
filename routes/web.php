@@ -56,5 +56,9 @@ Route::resource('/park/stores/{store}/storeRules', 'StoreRulesController');
         ->name('park.stores.delete');
     Route::resource('/park/stores', 'StoresController');
 
+Route::get('reviews/{review}/delete', 'ReviewsController@delete')
+    ->name('reviews.delete');
+Route::resource('reviews' , 'ReviewsController');
+
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');

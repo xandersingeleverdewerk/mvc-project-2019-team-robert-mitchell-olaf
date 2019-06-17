@@ -75,6 +75,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/mypage') ? 'active' : '' }}" href="{{ url('/mypage') }}">Dashboard</a>
             </li>
+            @can('home customer')
             <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
                 Het park
             </li>
@@ -83,6 +84,12 @@
                 <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
                 <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
             </div>
+            @endcan
+            @can('home admin')
+            <li class="nav-item">
+                <a class="nav-link {{ Request::url() == url('/reviews') ? 'active' : '' }}" href="{{ url('/reviews') }}">Reviews</a>
+            </li>
+            @endcan
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/gegevens') ? 'active' : '' }}" href="{{ url('/gegevens') }}">Mijn gegevens</a>
             </li>
