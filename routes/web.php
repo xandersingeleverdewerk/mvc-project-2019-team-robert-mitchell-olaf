@@ -20,8 +20,10 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('park/attractions/{attraction}/delete', 'attractionsController@delete')
+Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
     ->name('attractions.delete');
+Route::get('park/attractions/{attraction}/storeReview', 'AttractionsController@delete')
+    ->name('attractions.storeReview');
 Route::resource('park/attractions' , 'AttractionsController');
 
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')

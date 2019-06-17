@@ -43,6 +43,42 @@
                     <td>{{ $attraction->id }}</td>
                 </tr>
             </table>
+
+            <h3>Reviews</h3>
+
+            <div id="accordion">
+                <form class="form" action="{{route('attractions.storeReview')}}" method="POST">
+                    @csrf
+                    <div class="card">
+                        <div class="card-header">
+                            <input id="name" name="name" class="form-control" type="text" placeholder="Review naam" />
+                        </div>
+                        <div class="card-body">
+                            <textarea id="review" name="review" class="form-control" type="text" placeholder="Plaats hier uw review"></textarea>
+                            <button class="btn btn-primary" type="submit">Plaats Review</button>
+                            <input id="user_id" name="user_id" class="form-control" type="text" value="{{ Auth::user()->id }}" />
+                            <input id="facilitie_id" name="facilitie_id" class="form-control" type="text" value="{{ $attraction->facilitie->id }}" />
+                        </div>
+
+                    </div>
+                </form>
+                @foreach($reviews as $review)
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapse{{ $review->id }}">
+                            {{ $review->name }}
+                        </a>
+                    </div>
+                    <div id="collapse{{ $review->id }}" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>{{ $review->review }}</p>
+
+                            <p class="reviewName">{{ $review->user->name }}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
     </section>
 

@@ -77,3 +77,21 @@
 .parkTitle {
   margin-left: 20px;
 }
+
+.card {
+  margin: 1px 0;
+
+
+  & a {
+    color: $orange;
+    font-weight: bold;
+  }
+
+  & .reviewName {
+    font-style: italic;
+  }
+
+  & textarea.form-control {
+    margin-bottom: 20px;
+  }
+}
