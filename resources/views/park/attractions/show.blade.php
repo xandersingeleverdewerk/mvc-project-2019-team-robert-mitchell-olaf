@@ -53,8 +53,7 @@
             <h3>Reviews</h3>
 
             <div id="accordion">
-                @guest
-                @else
+                @auth
                 <form class="form" action="{{ route('attractions.storeReview')}}" method="POST">
                     @method('HEAD')
                     @csrf
@@ -70,7 +69,7 @@
                         </div>
                     </div>
                 </form>
-                @endguest
+                @endauth
                 @foreach($reviews as $review)
                 <div class="card">
                     <div class="card-header">
@@ -78,13 +77,12 @@
                             {{ $review->name  }}
                         </a>
                         <div class="cardLinks">
-                            @guest
-                            @else
+                            @auth
                                 @if(Auth::user()->id == $review->user->id or Auth::user()->getRoleNames() == '["admin"]')
                                 <button data-toggle="modal" data-target="#edit{{ $review->id }}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></button>
                                 <button data-toggle="modal" data-target="#delete{{ $review->id }}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></button>
                                 @endif
-                            @endguest
+                            @endauth
                     </div>
                 </div>
                     <div id="collapse{{ $review->id }}" class="collapse" data-parent="#accordion">
