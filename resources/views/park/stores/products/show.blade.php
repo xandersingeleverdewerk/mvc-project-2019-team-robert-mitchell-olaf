@@ -26,15 +26,15 @@
                 {{ $product->description }}
             </p>
 
+
+
             @can('edit products')
-            <a href="{{$product->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
-            @endcan
-            @can('delete products')
-            <a href="{{$product->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
+            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}"><span class="fa fa-edit"></span></a>
             @endcan
 
-            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}"><span class="fa fa-edit"></span></a>
+            @can('delete products')
             <a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/stores/products/'.$product->id.'/delete') }}"><span class="fa fa-trash-o"></span></a>
+            @endcan
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">

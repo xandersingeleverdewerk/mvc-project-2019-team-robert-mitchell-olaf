@@ -35,10 +35,12 @@
                     <th>Prijs</th>
                     <td>&euro; {{ $storeRule->product->price}}</td>
                 </tr>
+                @can('show productId')
                 <tr>
                     <th>Product id</th>
                     <td>{{ $storeRule->product->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>
