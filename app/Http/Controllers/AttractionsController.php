@@ -147,8 +147,20 @@ class AttractionsController extends Controller
         return redirect()->back()->with('message','Review is geplaatst');
     }
 
-    public function editReview(Review $review)
+    public function updateReview(ReviewsRequest $request, Review $review)
     {
-        return view ('park.attractions.edit', compact('review'));
+        $review->name = $request->name;
+        $review->review = $request->review;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is aangepast');
+    }
+
+    public function destroyReview(Review $review)
+    {
+        $review->delete();
+
+        return redirect()->back()->with('message','Review is verwijderd');
     }
 }

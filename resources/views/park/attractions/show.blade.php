@@ -76,18 +76,78 @@
                             {{ $review->name }}
                         </a>
                         <div class="cardLinks">
-                            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$attraction->id.'/'.$review->id.'/edit'}}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></a>
-                        <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$attraction->id.'/'.$review->id.'/delete'}}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></a>
+                            <button data-toggle="modal" data-target="#edit{{ $review->id }}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></button>
+                            <button data-toggle="modal" data-target="#delete{{ $review->id }}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></button>
                     </div>
                 </div>
                     <div id="collapse{{ $review->id }}" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <p>{{ $review->review }}</p>
-
                             <p class="reviewName">{{ $review->user->name }}</p>
                         </div>
                     </div>
                 </div>
+
+                    <div class="modal fade" id="edit{{ $review->id }}">
+                        <div class="modal-dialog  modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title"> {{ $review->name }} aanpassen</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form" action="{{ route('attractions.updateReview', $review)}}" method="POST">
+                                        @method('HEAD')
+                                        @csrf
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <input id="name" name="name" class="form-control" type="text" value="{{ $review->name }}" />
+                                            </div>
+                                            <div class="card-body">
+                                                <textarea id="review" name="review" class="form-control" type="text">{{ $review->review }}</textarea>
+                                                <p class="reviewName">{{ $review->user->name }}</p>
+                                                <button class="btn btn-primary" type="submit">Pas Review aan</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuleer</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="delete{{ $review->id }}">
+                        <div class="modal-dialog  modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title"> {{ $review->name }} verwijderen</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form" action="{{ route('attractions.destroyReview', $review)}}" method="POST">
+                                        @method('HEAD')
+                                        @csrf
+                                        <div class="card">
+                                            <div class="card-header">
+                                                {{ $review->name }}
+                                            </div>
+                                            <div class="card-body">
+                                                <p>{{ $review->review }}</p>
+                                                <p class="reviewName">{{ $review->user->name }}</p>
+                                                <button class="btn btn-primary" type="submit">Verwijder</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuleer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>
