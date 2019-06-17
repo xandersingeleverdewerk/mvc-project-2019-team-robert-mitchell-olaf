@@ -367,6 +367,11 @@ ul {
     font-style: italic; }
   .card textarea.form-control {
     margin-bottom: 20px; }
+  .card-header {
+    display: flex;
+    justify-content: space-between; }
+    .card-header .btn {
+      margin-bottom: 0; }
 
 .btn {
   margin-bottom: 15px; }

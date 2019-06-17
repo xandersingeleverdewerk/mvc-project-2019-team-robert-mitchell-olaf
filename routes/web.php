@@ -22,8 +22,10 @@ Route::get('/contact', function () {
 
 Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
     ->name('attractions.delete');
-Route::get('park/attractions/{attraction}/storeReview', 'AttractionsController@delete')
+Route::get('park/attractions/storeReview', 'AttractionsController@storeReview')
     ->name('attractions.storeReview');
+Route::get('park/attractions/{attraction}/{review}/editReview', 'AttractionsController@editReview')
+    ->name('attractions.editReview');
 Route::resource('park/attractions' , 'AttractionsController');
 
 Route::get('/categories/{categorie}/delete', 'categoriesController@delete')

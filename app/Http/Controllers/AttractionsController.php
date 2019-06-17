@@ -68,7 +68,7 @@ class AttractionsController extends Controller
      * @param  \App\Attraction  $attraction
      * @return \Illuminate\Http\Response
      */
-    public function show(Attraction $attraction, Review $reviews)
+    public function show(Attraction $attraction)
     {
         $reviews = Review::all()->where('facilitie_id','=',$attraction->facilitie->id);
         return view('park.attractions.show', compact('attraction','reviews'));
@@ -144,9 +144,11 @@ class AttractionsController extends Controller
 
         $review->save();
 
-        return redirect()->route('attractions/'.$review->facilitie->attraction->id)->with('message','Review is geplaatst is toegevoegd');
+        return redirect()->back()->with('message','Review is geplaatst');
     }
 
-
-
+    public function editReview(Review $review)
+    {
+        return view ('park.attractions.edit', compact('review'));
+    }
 }

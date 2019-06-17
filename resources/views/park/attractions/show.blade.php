@@ -4,6 +4,12 @@
 
     <section class="attractionSection">
         <div class="container">
+            @if (session('message'))
+                <div class='alert alert-success'>
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">{{ $attraction->facilitie->name }}</h2>
@@ -47,7 +53,8 @@
             <h3>Reviews</h3>
 
             <div id="accordion">
-                <form class="form" action="{{route('attractions.storeReview')}}" method="POST">
+                <form class="form" action="{{ route('attractions.storeReview')}}" method="POST">
+                    @method('HEAD')
                     @csrf
                     <div class="card">
                         <div class="card-header">
@@ -56,8 +63,8 @@
                         <div class="card-body">
                             <textarea id="review" name="review" class="form-control" type="text" placeholder="Plaats hier uw review"></textarea>
                             <button class="btn btn-primary" type="submit">Plaats Review</button>
-                            <input id="user_id" name="user_id" class="form-control" type="text" value="{{ Auth::user()->id }}" />
-                            <input id="facilitie_id" name="facilitie_id" class="form-control" type="text" value="{{ $attraction->facilitie->id }}" />
+                            <input hidden id="user_id" name="user_id" class="form-control" type="text" value="{{ Auth::user()->id }}" />
+                            <input hidden id="facilitie_id" name="facilitie_id" class="form-control" type="text" value="{{ $attraction->facilitie->id }}" />
                         </div>
 
                     </div>
@@ -68,7 +75,11 @@
                         <a class="collapsed card-link" data-toggle="collapse" href="#collapse{{ $review->id }}">
                             {{ $review->name }}
                         </a>
+                        <div class="cardLinks">
+                            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$attraction->id.'/'.$review->id.'/edit'}}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></a>
+                        <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$attraction->id.'/'.$review->id.'/delete'}}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></a>
                     </div>
+                </div>
                     <div id="collapse{{ $review->id }}" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <p>{{ $review->review }}</p>
