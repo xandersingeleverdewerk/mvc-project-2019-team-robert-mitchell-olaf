@@ -53,6 +53,8 @@
             <h3>Reviews</h3>
 
             <div id="accordion">
+                @guest
+                @else
                 <form class="form" action="{{ route('attractions.storeReview')}}" method="POST">
                     @method('HEAD')
                     @csrf
@@ -66,18 +68,23 @@
                             <input hidden id="user_id" name="user_id" class="form-control" type="text" value="{{ Auth::user()->id }}" />
                             <input hidden id="facilitie_id" name="facilitie_id" class="form-control" type="text" value="{{ $attraction->facilitie->id }}" />
                         </div>
-
                     </div>
                 </form>
+                @endguest
                 @foreach($reviews as $review)
                 <div class="card">
                     <div class="card-header">
                         <a class="collapsed card-link" data-toggle="collapse" href="#collapse{{ $review->id }}">
-                            {{ $review->name }}
+                            {{ $review->name  }}
                         </a>
                         <div class="cardLinks">
-                            <button data-toggle="modal" data-target="#edit{{ $review->id }}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></button>
-                            <button data-toggle="modal" data-target="#delete{{ $review->id }}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></button>
+                            @guest
+                            @else
+                                @if(Auth::user()->id == $review->user->id or Auth::user()->getRoleNames() == '["admin"]')
+                                <button data-toggle="modal" data-target="#edit{{ $review->id }}" class="btn btn-outline-warning"><span class="fa fa-edit"></span></button>
+                                <button data-toggle="modal" data-target="#delete{{ $review->id }}" class="btn btn-outline-danger"><span class="fa fa-trash-o"></span></button>
+                                @endif
+                            @endguest
                     </div>
                 </div>
                     <div id="collapse{{ $review->id }}" class="collapse" data-parent="#accordion">
