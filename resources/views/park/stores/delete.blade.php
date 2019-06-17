@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+                @can('delete stores')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $store->facilitie->name }} verwijderen</h2>
@@ -45,6 +46,18 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Winkel</button>
             </form>
+                    @endcan
+
+                @cannot('delete stores')
+                    <div class="alert alert-danger">
+                        <ul>
+                            U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
+                        </ul>
+                    </div>
+                    <a href="{{ url('/') }}">
+                        <button type="button" class="btn btn-primary">Home</button>
+                    </a>
+                @endcannot
         </div>
     </section>
 

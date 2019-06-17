@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-            @can('create store'))
+            @can('create stores')
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/stores') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">Winkel aanmaken</h2>
@@ -43,15 +43,16 @@
             </form>
                 @endcan
 
-                @if (Auth::user()->cannot('create store'))
+                @cannot('create stores')
                     <div class="alert alert-danger">
                         <ul>
                     U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
                         </ul>
                     </div>
-                    <a {{ Request::url() == url('/') ? 'active' : '' }} href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/') }}">
                 <button type="button" class="btn btn-primary">Home</button>
-                    @endif
+                    </a>
+                    @endcannot
 
         </div>
     </section>
