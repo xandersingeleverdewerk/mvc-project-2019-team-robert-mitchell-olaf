@@ -11,14 +11,10 @@
                     <a class="nav-link" href="{{ url('/park/stores/products') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     @can('create products')
-                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken</a>
-=======
                     <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken <span class="fa fa-plus"></span></a>
->>>>>>> 6e61c06a1be115890a73de2139c440eece6a9e48
-                </li>
                 @endcan
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ url('/park/stores/products/'.$product->id) }}">Details</a>
                 </li>
@@ -30,17 +26,15 @@
                 {{ $product->description }}
             </p>
 
-<<<<<<< HEAD
             @can('edit products')
             <a href="{{$product->id.'/edit'}}" class="btn btn-warning">Aanpassen</a>
             @endcan
             @can('delete products')
             <a href="{{$product->id.'/delete'}}" class="btn btn-danger">Verwijderen</a>
             @endcan
-=======
+
             <a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/stores/products/'.$product->id.'/edit') }}"><span class="fa fa-edit"></span></a>
             <a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/stores/products/'.$product->id.'/delete') }}"><span class="fa fa-trash-o"></span></a>
->>>>>>> 6e61c06a1be115890a73de2139c440eece6a9e48
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">

@@ -12,14 +12,10 @@
             @endif
 
 
-            <h2>Winkels</h2>
-
-                @can('create store')
-            <a href="{{ url('/park/stores/create') }}" class="btn btn-success">Maak een winkel</a>
-                @endcan
-
                 <div class="d-flex flex">
+                    @can('create stores')
                     <a data-toggle="tooltip" data-placement="right" title="Maak een winkel" href="{{ url('/park/stores/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    @endcan
                     <h2 class="parkTitle">Winkels</h2>
                 </div>
 
