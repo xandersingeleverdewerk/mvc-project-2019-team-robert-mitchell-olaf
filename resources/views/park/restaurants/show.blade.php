@@ -32,6 +32,7 @@
                     <td>{{ $restaurant->id }}</td>
                 </tr>
             </table>
+
             <h3>Reviews</h3>
 
             <div id="accordion">
