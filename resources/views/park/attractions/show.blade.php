@@ -92,7 +92,8 @@
                         </div>
                     </div>
                 </div>
-
+                 @auth
+                     @if(Auth::user()->id == $review->user->id or Auth::user()->getRoleNames() == '["admin"]')
                     <div class="modal fade" id="edit{{ $review->id }}">
                         <div class="modal-dialog  modal-dialog-centered">
                             <div class="modal-content">
@@ -153,6 +154,8 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+                  @endauth
                 @endforeach
             </div>
         </div>
