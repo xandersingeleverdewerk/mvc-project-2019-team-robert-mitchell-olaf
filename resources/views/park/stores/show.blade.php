@@ -12,11 +12,17 @@
             <p class="storeDescription">
                 {{ $store->facilitie->description }}
             </p>
-
+            
+            @can('edit stores')
             <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$store->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
-            <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$store->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
-                <a href="{{$store->id.'/storeRules'}}" class="btn btn-dark">Bekijk assortiment</a>
+            @endcan
+            @can('delete stores')
 
+                <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$store->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
+            @endcan
+            @can('show storeRules')
+                <a href="{{$store->id.'/storeRules'}}" class="btn btn-dark">Bekijk assortiment</a>
+            @endcan
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
                 <tr>
@@ -27,10 +33,12 @@
                     <th>Sluitingstijd</th>
                     <td>{{ $store->facilitie->closing_time }}</td>
                 </tr>
+                @can('show storeId')
                 <tr>
                     <th>Winkel id</th>
                     <td>{{ $store->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>
