@@ -46,13 +46,15 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'home admin']);
         Permission::create(['name' => 'home customer']);
 
+        Permission::create(['name' => 'edit customer']);
+
         //rollen maken en toewijzen
        /* $role = Role::create(['name' => 'visitor']);
         $role->givePermissionTo('');
 
        */
         $role = Role::create(['name' => 'customer']);
-        $role->givePermissionTo('show dishes', 'show products', 'home customer', 'show storeRules');
+        $role->givePermissionTo('show dishes', 'show products', 'home customer', 'show storeRules', 'edit customer');
 
 
         $role = Role::create(['name' => 'admin']);
