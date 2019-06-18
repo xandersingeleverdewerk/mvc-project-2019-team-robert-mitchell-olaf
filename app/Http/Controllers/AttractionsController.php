@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewsRequest;
 use App\Http\Requests\StoreAttractionsRequest;
 use App\Http\Requests\UpdateAttractionsRequest;
 use App\Attraction;
 use App\Facilitie;
+use App\Review;
 use Illuminate\Http\Request;
 
 class AttractionsController extends Controller
@@ -68,7 +70,8 @@ class AttractionsController extends Controller
      */
     public function show(Attraction $attraction)
     {
-        return view('park.attractions.show', compact('attraction'));
+        $reviews = Review::all()->where('facilitie_id','=',$attraction->facilitie->id);
+        return view('park.attractions.show', compact('attraction','reviews'));
     }
 
     /**
@@ -128,5 +131,36 @@ class AttractionsController extends Controller
         $attraction->facilitie->delete();
 
         return redirect()->route('attractions.index')->with('message','Attractie is verwijderd');
+    }
+
+    public function storeReview(ReviewsRequest $request)
+    {
+        $review = new Review();
+
+        $review->name = $request->name;
+        $review->review = $request->review;
+        $review->user_id = $request->user_id;
+        $review->facilitie_id = $request->facilitie_id;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is geplaatst');
+    }
+
+    public function updateReview(ReviewsRequest $request, Review $review)
+    {
+        $review->name = $request->name;
+        $review->review = $request->review;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is aangepast');
+    }
+
+    public function destroyReview(Review $review)
+    {
+        $review->delete();
+
+        return redirect()->back()->with('message','Review is verwijderd');
     }
 }

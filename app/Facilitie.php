@@ -17,4 +17,8 @@ class Facilitie extends Model
     public function attraction() {
         return $this->hasMany('App\Attraction');
     }
+
+    public function review() {
+        return $this->hasMany('App\Review');
+    }
 }

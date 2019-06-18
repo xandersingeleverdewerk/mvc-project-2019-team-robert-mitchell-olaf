@@ -1,0 +1,63 @@
+@import "standardStyling";
+
+.jumbotron {
+  text-align: center;
+}
+
+.form-inline {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.welcomesSection {
+  @include section($white, $black);
+}
+
+.blockSection {
+  @include section($red-to-yellow, $white);
+}
+
+.blockLink {
+  @include block($white, $black-gradient);
+  display: flex;
+  border-radius: 5px;
+  margin: 40px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transform: rotate(10deg);
+
+  @include md {
+    margin: 10px;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  & h3 {
+    font-size: 22px;
+    transform: rotate(-10deg);
+    margin: 0 auto;
+
+    @include md {
+      font-size: 19px;
+    }
+  }
+
+  &:hover {
+    @include block($orange, $white);
+    text-decoration: none;
+    transform: rotate(0deg);
+
+    & h3 {
+      transform: rotate(0deg);
+      transition: 0.5s all;
+    }
+  }
+}

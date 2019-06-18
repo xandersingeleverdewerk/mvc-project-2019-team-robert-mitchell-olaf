@@ -1,10 +1,7 @@
 @import "standardStyling";
 
-.restaurantSection, .storeSection, .attractionSection {
-  padding: $standard-block-padding;
-  width: 100%;
-  background-color: $white;
-  color: $black;
+.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
+  @include section($white, $black);
 }
 
 .block {
@@ -21,6 +18,7 @@
 
   & h3 {
     font-size: 22px;
+    margin: 0 auto;
   }
 
   &:hover {
@@ -49,6 +47,60 @@
 
     &:hover {
       @include block($black, $white);
+    }
+  }
+}
+
+.nav-tabs {
+  border-color: $orange;
+  margin: 20px 0;
+
+  & .nav-link {
+    color: $orange;
+    margin: 0 10px;
+
+    @include md {
+      margin: 0 1px;
+      padding: 10px 8px;
+    }
+
+    &.active {
+      @include block($white, $red-to-yellow);
+    }
+
+    &:hover {
+      @include block($white, $red-to-yellow);
+    }
+  }
+}
+
+.parkTitle {
+  margin-left: 20px;
+}
+
+.card {
+  margin: 1px 0;
+
+
+  & a {
+    color: $orange;
+    font-weight: bold;
+  }
+
+  & .reviewName {
+    font-style: italic;
+  }
+
+  & textarea.form-control {
+    margin-bottom: 20px;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    & .btn {
+      margin-bottom: 0;
     }
   }
 }

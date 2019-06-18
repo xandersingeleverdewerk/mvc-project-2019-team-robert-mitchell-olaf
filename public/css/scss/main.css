@@ -11,8 +11,23 @@
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
+
+.authContainer, .reviewSection, .errorSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
 
 .openingTimes, .travelJourney {
   padding: 100px 0;
@@ -46,8 +61,23 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
+
+.authContainer, .reviewSection, .errorSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
 
 @media (max-width: 768px) {
   #navigation .nav-item {
@@ -68,13 +98,13 @@ ul {
 
 .nav {
   padding-top: 20px; }
-  .nav-link {
+  .nav-pills .nav-link {
     border: 1px solid #ffa31a;
     background: #ffffff;
     color: #ffa31a;
     transition: 0.2s all;
     margin: 10px; }
-    .nav-link:hover {
+    .nav-pills .nav-link:hover {
       border: 1px solid #ffffff;
       background: linear-gradient(to bottom right, #ff0000, #ffcc00);
       color: #ffffff;
@@ -178,8 +208,23 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
+
+.authContainer, .reviewSection, .errorSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
 
 .information {
   padding: 100px 0;
@@ -211,13 +256,28 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
 
-.restaurantSection, .storeSection, .attractionSection {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
-  background-color: #ffffff;
+  background: #ffffff;
+  color: #111; }
+
+.restaurantSection, .menuSection, .storeSection, .attractionSection, .dishesSection, .productsSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
   color: #111; }
 
 .block {
@@ -235,7 +295,8 @@ ul {
   text-decoration: none;
   cursor: pointer; }
   .block h3 {
-    font-size: 22px; }
+    font-size: 22px;
+    margin: 0 auto; }
   .block:hover {
     border: 1px solid #ffcc00;
     background: #ffffff;
@@ -273,6 +334,45 @@ ul {
       color: #111;
       transition: 0.2s all; }
 
+.nav-tabs {
+  border-color: #ffa31a;
+  margin: 20px 0; }
+  .nav-tabs .nav-link {
+    color: #ffa31a;
+    margin: 0 10px; }
+    @media (max-width: 768px) {
+      .nav-tabs .nav-link {
+        margin: 0 1px;
+        padding: 10px 8px; } }
+    .nav-tabs .nav-link.active {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+    .nav-tabs .nav-link:hover {
+      border: 1px solid #ffffff;
+      background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+      color: #ffffff;
+      transition: 0.2s all; }
+
+.parkTitle {
+  margin-left: 20px; }
+
+.card {
+  margin: 1px 0; }
+  .card a {
+    color: #ffa31a;
+    font-weight: bold; }
+  .card .reviewName {
+    font-style: italic; }
+  .card textarea.form-control {
+    margin-bottom: 20px; }
+  .card-header {
+    display: flex;
+    justify-content: space-between; }
+    .card-header .btn {
+      margin-bottom: 0; }
+
 .btn {
   margin-bottom: 15px; }
   .btn-primary {
@@ -286,7 +386,114 @@ ul {
       color: #ffa31a;
       transition: 0.2s all; }
 
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
 ul {
   list-style: none; }
+
+.authContainer, .reviewSection, .errorSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
+
+.jumbotron {
+  text-align: center; }
+
+.form-inline {
+  justify-content: center;
+  margin-top: 30px; }
+
+.welcomesSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
+
+.blockSection {
+  padding: 100px 0;
+  width: 100%;
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+.blockLink {
+  border: 1px solid #ffffff;
+  background: linear-gradient(to bottom right, #444, #111);
+  color: #ffffff;
+  transition: 0.2s all;
+  display: flex;
+  border-radius: 5px;
+  margin: 40px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transform: rotate(10deg); }
+  @media (max-width: 768px) {
+    .blockLink {
+      margin: 10px;
+      min-width: 150px;
+      min-height: 150px;
+      max-width: 150px;
+      max-height: 150px; } }
+  .blockLink h3 {
+    font-size: 22px;
+    transform: rotate(-10deg);
+    margin: 0 auto; }
+    @media (max-width: 768px) {
+      .blockLink h3 {
+        font-size: 19px; } }
+  .blockLink:hover {
+    border: 1px solid #ffa31a;
+    background: #ffffff;
+    color: #ffa31a;
+    transition: 0.2s all;
+    text-decoration: none;
+    transform: rotate(0deg); }
+    .blockLink:hover h3 {
+      transform: rotate(0deg);
+      transition: 0.5s all; }
+
+.btn {
+  margin-bottom: 15px; }
+  .btn-primary {
+    border: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+    color: #ffffff;
+    transition: 0.2s all; }
+    .btn-primary:hover {
+      border: 1px solid #ffa31a;
+      background: #ffffff;
+      color: #ffa31a;
+      transition: 0.2s all; }
+
+.table {
+  text-align: center; }
+  .table .btn {
+    margin: 0; }
+
+thead {
+  background: linear-gradient(to bottom right, #ff0000, #ffcc00);
+  color: #ffffff; }
+
+ul {
+  list-style: none; }
+
+.authContainer, .reviewSection, .errorSection {
+  padding: 100px 0;
+  width: 100%;
+  background: #ffffff;
+  color: #111; }
 
 /*# sourceMappingURL=main.css.map */

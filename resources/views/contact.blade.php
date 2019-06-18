@@ -7,9 +7,10 @@
             <div class="col-md-6">
                 <h2 class="text-white">Adres & Route</h2>
                 <p class="text-white">
-                    Dit wordt de beste route die er bestaat. Ga eerst naar links daarna rechts. Geef volle gas
-                    rechtdoor, trek aan de handrem en als er geen andere auto staat geparkeerd, staat u mooi
-                    netjes in het parkeervak.
+                    Er staan allemaal bordjes om de route aan te komen bij het pretpark. Om er te komen neemt u afrit 15
+                    van de A14. Dan volgt u de bordjes richting Happyland en die richting rijdt u op. Daarna is het 2 keer
+                    rechts af slaan en u bent op de parkeerplaats. Vanaf hier is het ongeveer 10 minuutjes lopen naar de
+                    ingang.
                 </p>
                 <a target="_blank" href="https://www.google.nl/maps/dir//Happyland,+3400+Klosterneuburg,+Oostenrijk/@48.3095117,16.3272682,17z/data=!4m17!1m7!3m6!1s0x476d0f035c8a624d:0x3300bbdf9986a3ed!2sHappyland!3b1!8m2!3d48.3094917!4d16.3293934!4m8!1m0!1m5!1m1!1s0x476d0f035c8a624d:0x3300bbdf9986a3ed!2m2!1d16.3293935!2d48.3094917!3e3">
                     <button class="btn btn-light">Plan uw route</button>
@@ -34,42 +35,44 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <img alt="openings tijden" class="openingTimesImg img-fluid rounded-circle" src="{{asset('images/openingTimes.jpg')}}">
+                <img alt="openingstijden" class="openingTimesImg img-fluid rounded-circle" src="{{asset('images/openingTimes.jpg')}}">
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-6">
-                <h2>Openings Tijden</h2>
-                <table class="table table-hover table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Dag</th>
-                            <th>Openingstijd</th>
-                            <th>Sluitingstijd</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Maandag</td>
-                            <td>gesloten</td>
-                            <td>gesloten</td>
-                        </tr>
-                        <tr>
-                            <td>Dinsag t/m Donderdag</td>
-                            <td>10:00</td>
-                            <td>18:00</td>
-                        </tr>
-                        <tr>
-                            <td>Vrijdag en Zaterdag</td>
-                            <td>8:00</td>
-                            <td>22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Zondag</td>
-                            <td>10:00</td>
-                            <td>20:00</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h2>Openingstijden</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Dag</th>
+                                <th>Openingstijd</th>
+                                <th>Sluitingstijd</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maandag</td>
+                                <td>gesloten</td>
+                                <td>gesloten</td>
+                            </tr>
+                            <tr>
+                                <td>Dinsdag t/m Donderdag</td>
+                                <td>10:00</td>
+                                <td>18:00</td>
+                            </tr>
+                            <tr>
+                                <td>Vrijdag en Zaterdag</td>
+                                <td>8:00</td>
+                                <td>22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Zondag</td>
+                                <td>10:00</td>
+                                <td>20:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

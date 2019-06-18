@@ -11,9 +11,10 @@
                 </div>
             @endif
 
-            <h2>Restaurants</h2>
-
-            <a href="{{ url('/park/restaurants/create') }}" class="btn btn-success">Maak een restaurant</a>
+                <div class="d-flex flex">
+                    <a data-toggle="tooltip" data-placement="right" title="Maak een restaurant" href="{{ url('/park/restaurants/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    <h2 class="parkTitle">Restaurants</h2>
+                </div>
 
             <div class="d-flex justify-content-around row">
             @foreach($restaurants as $restaurant)

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewsRequest;
 use App\Http\Requests\StoreRestaurantsRequest;
+use App\Review;
 use App\Restaurant;
 use App\Facilitie;
 use Illuminate\Http\Request;
+
 
 class RestaurantsController extends Controller
 {
@@ -61,9 +64,11 @@ class RestaurantsController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
+
     public function show(Restaurant $restaurant)
     {
-        return view('park.restaurants.show', compact('restaurant'));
+        $reviews = Review::all()->where('facilitie_id','=',$restaurant->facilitie->id);
+        return view('park.restaurants.show', compact('restaurant','reviews'));
     }
 
     /**
@@ -112,6 +117,37 @@ class RestaurantsController extends Controller
         $restaurant->delete();
         $restaurant->facilitie->delete();
 
-        return redirect()->route('restaurants.index')->with('message','Restaurant is aangepast');
+        return redirect()->route('restaurants.index')->with('message','Restaurant is verwijderd');
+    }
+
+    public function storeReview(ReviewsRequest $request)
+    {
+        $review = new Review();
+
+        $review->name = $request->name;
+        $review->review = $request->review;
+        $review->user_id = $request->user_id;
+        $review->facilitie_id = $request->facilitie_id;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is geplaatst');
+    }
+
+    public function updateReview(ReviewsRequest $request, Review $review)
+    {
+        $review->name = $request->name;
+        $review->review = $request->review;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is aangepast');
+    }
+
+    public function destroyReview(Review $review)
+    {
+        $review->delete();
+
+        return redirect()->back()->with('message','Review is verwijderd');
     }
 }

@@ -14,7 +14,7 @@ class CreateStoresTable extends Migration
     public function up()
     {
         Schema::create('stores', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('facilitie_id')->unique();
             $table->foreign('facilitie_id')
                 ->references('id')->on('facilities')
