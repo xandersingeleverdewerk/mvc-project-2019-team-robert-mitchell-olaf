@@ -74,9 +74,11 @@ Route::get('park/stores/destroyReview/{review}', 'StoresController@destroyReview
     ->name('stores.destroyReview');
 Route::resource('/park/stores', 'StoresController');
 
-Route::get('reviews/{review}/delete', 'ReviewsController@delete')
-    ->name('reviews.delete');
-Route::resource('reviews' , 'ReviewsController');
+Route::group(['middleware' => ['role:admin']], function() {
+    Route::get('reviews/{review}/delete', 'ReviewsController@delete')
+        ->name('reviews.delete');
+    Route::resource('reviews' , 'ReviewsController');
+});
 
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');

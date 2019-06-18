@@ -59,8 +59,6 @@ class ReviewsController extends Controller
     {
         $review->name = $request->name;
         $review->review = $request->review;
-        $review->facilitie_id = $request->facilitie_id;
-        $review->user_id = $request->user;
         $review->save();
 
         return redirect()->route('reviews.index')->with('message','Review is aangepast');
