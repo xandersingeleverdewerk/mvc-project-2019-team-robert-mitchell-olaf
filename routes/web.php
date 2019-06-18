@@ -32,7 +32,7 @@ Route::resource('park/attractions' , 'AttractionsController');
 
 Route::get('/categories/{categorie}/delete', 'CategoriesController@delete')
     ->name('categories.delete');
-Route::resource('/categories', 'CategoriesController');
+Route::resource('park/attractions/categories' , 'CategoriesController');
 
 Route::group(['middleware' => ['role:admin|customer']], function () {
     Route::get('park/restaurants/dishes/{dish}/delete', 'DishesController@delete')
