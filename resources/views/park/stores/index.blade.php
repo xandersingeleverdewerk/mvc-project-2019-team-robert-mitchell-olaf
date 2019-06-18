@@ -11,10 +11,14 @@
                 </div>
             @endif
 
+
                 <div class="d-flex flex">
+                    @can('create stores')
                     <a data-toggle="tooltip" data-placement="right" title="Maak een winkel" href="{{ url('/park/stores/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    @endcan
                     <h2 class="parkTitle">Winkels</h2>
                 </div>
+
 
             <div class="d-flex justify-content-around row">
             @foreach($stores as $store)

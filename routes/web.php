@@ -80,5 +80,6 @@ Route::group(['middleware' => ['role:admin']], function() {
     Route::resource('reviews' , 'ReviewsController');
 });
 
+
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');

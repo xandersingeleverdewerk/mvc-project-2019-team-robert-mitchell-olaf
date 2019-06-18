@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @can('show storeRules')
     <section class="productsSection">
         <div class="container">
             <div class="d-flex flex">
@@ -35,12 +36,25 @@
                     <th>Prijs</th>
                     <td>&euro; {{ $storeRule->product->price}}</td>
                 </tr>
+                @can('show productId')
                 <tr>
                     <th>Product id</th>
                     <td>{{ $storeRule->product->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>
+    @endcan
+    @cannot('show storeRules')
+        <div class="alert alert-danger">
+            <ul>
+                U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
+            </ul>
+        </div>
+        <a href="{{ url('/') }}">
+            <button type="button" class="btn btn-primary">Home</button>
+        </a>
+    @endcannot
 
 @endsection

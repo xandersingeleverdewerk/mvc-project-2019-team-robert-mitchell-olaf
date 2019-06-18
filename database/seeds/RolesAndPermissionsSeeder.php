@@ -26,10 +26,22 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete dishes']);
         Permission::create(['name' => 'show dishes']);
 
+        Permission::create(['name' => 'create stores']);
+        Permission::create(['name' => 'edit stores']);
+        Permission::create(['name' => 'delete stores']);
+        Permission::create(['name' => 'show stores']);
+        Permission::create(['name' => 'show storeId']);
+
+        Permission::create(['name' => 'create storeRules']);
+        Permission::create(['name' => 'edit storeRules']);
+        Permission::create(['name' => 'delete storeRules']);
+        Permission::create(['name' => 'show storeRules']);
+
         Permission::create(['name' => 'create products']);
         Permission::create(['name' => 'edit products']);
         Permission::create(['name' => 'delete products']);
         Permission::create(['name' => 'show products']);
+        Permission::create(['name' => 'show productId']);
 
         Permission::create(['name' => 'home admin']);
         Permission::create(['name' => 'home customer']);
@@ -40,7 +52,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
        */
         $role = Role::create(['name' => 'customer']);
-        $role->givePermissionTo('show dishes', 'show products', 'home customer');
+        $role->givePermissionTo('show dishes', 'show products', 'home customer', 'show storeRules');
 
 
         $role = Role::create(['name' => 'admin']);
