@@ -56,7 +56,7 @@
                 </table>
             </div>
                     @endcan
-                @cannot('create stores')
+                @cannot('show storeRules')
                     <div class="alert alert-danger">
                         <ul>
                             U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
