@@ -23,7 +23,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -73,7 +73,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -220,7 +220,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -268,7 +268,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -358,6 +358,21 @@ ul {
 .parkTitle {
   margin-left: 20px; }
 
+.card {
+  margin: 1px 0; }
+  .card a {
+    color: #ffa31a;
+    font-weight: bold; }
+  .card .reviewName {
+    font-style: italic; }
+  .card textarea.form-control {
+    margin-bottom: 20px; }
+  .card-header {
+    display: flex;
+    justify-content: space-between; }
+    .card-header .btn {
+      margin-bottom: 0; }
+
 .btn {
   margin-bottom: 15px; }
   .btn-primary {
@@ -383,7 +398,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -475,7 +490,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer {
+.authContainer, .reviewSection, .errorSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
