@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Facilitie extends Model
 {
+
+    protected $table='facilities';
+
+    protected $primaryKey='id';
+
+    protected $fillable=['name, description, opening_time, closing_time'];
+
     public function restaurant() {
         return $this->hasOne('App\Restaurant');
     }

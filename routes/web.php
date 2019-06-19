@@ -83,3 +83,6 @@ Route::group(['middleware' => ['role:admin']], function() {
 
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');
+
+Route::get('search','searchController@index')->name('search');
+Route::get('autocomplete', 'searchController@autocomplete')->name('autocomplete');
