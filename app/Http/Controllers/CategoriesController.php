@@ -20,7 +20,7 @@ class CategoriesController extends Controller
         $categories = Categorie::all();
 
         // een view returnen en de variabele $categories meesturen naar de view
-        return view('categories.index', compact('categories'));
+        return view('park.attractions.categories', compact('categories'));
     }
 
     /**
