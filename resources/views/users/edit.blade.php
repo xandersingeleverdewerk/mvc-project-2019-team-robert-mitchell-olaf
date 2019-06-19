@@ -17,7 +17,7 @@
 
 
                 @auth
-                    @if(Auth::user()->id == $review->user->id or Auth::user()->getRoleNames() == '["admin"]')
+                    @if(Auth::user()->getRoleNames() == '["customer"]')
 
                 <form class="form" action="{{route('users.update', $user)}}" method="POST">
                     @csrf
@@ -27,8 +27,8 @@
                         <input id="name" name="name" class="form-control" type="text" value="{{ $user->name }}" />
                     </div>
                     <div class="form-group">
-                        <label for="description">Geboortedatum</label>
-                        <textarea id="description" name="description" class="form-control" type="text">{{ $user->name }}</textarea>
+                        <label for="date_of_birth">Geboortedatum</label>
+                        <input id="date_of_birth" name="description" class="form-control" type="text">{{ $user->date_of_birth }}/>
                     </div>
                     <div class="form-group">
                         <label for="adress">Adres</label>
