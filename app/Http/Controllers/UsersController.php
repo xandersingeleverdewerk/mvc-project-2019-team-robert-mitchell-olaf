@@ -95,7 +95,7 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->route('users.index')->with('message','Gebruiker is aangepast');
+        return redirect()->route('users.edit')->with('message','Gebruiker is aangepast');
     }
 
     /**

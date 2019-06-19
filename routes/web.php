@@ -23,9 +23,9 @@ Route::get('/mydetails', function () {
     return view('mydetails');
 });
 
-Route::get('/users/edit', function () {
-    return view('users/edit');
-});
+Route::get('/users/edit', 'UsersController@edit')
+    ->name('users.edit');
+;
 
 
 Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
