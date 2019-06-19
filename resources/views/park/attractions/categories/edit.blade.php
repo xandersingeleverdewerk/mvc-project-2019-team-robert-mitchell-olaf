@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <<section class="attractionSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
@@ -32,13 +32,13 @@
                 {{--</li>--}}
             {{--</ul>--}}
 
-            <form class="form" action="{{route('categories.update', $categorie)}}" method="POST">
+            <form class="form" action="{{route('categories.update', $category)}}" method="POST">
                 @csrf
                 @method('PATCH')
-                <h3>{{ $categorie->name }} aanpassen</h3>
+                <h3>{{ $category->name }} aanpassen</h3>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input id="name" name="name" class="form-control" type="text" value="{{ $categorie->name }}" />
+                    <input id="name" name="name" class="form-control" type="text" value="{{ $category->name }}" />
                 </div>
                 <button class="btn btn-primary" type="submit">Pas Categorie Aan</button>
             </form>

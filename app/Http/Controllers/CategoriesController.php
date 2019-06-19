@@ -20,7 +20,7 @@ class CategoriesController extends Controller
         $categories = Categorie::all();
 
         // een view returnen en de variabele $categories meesturen naar de view
-        return view('park.attractions.categories', compact('categories'));
+        return view('park.attractions.categories.index', compact('categories'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('park.attractions.categories.create');
     }
 
     /**
@@ -41,12 +41,12 @@ class CategoriesController extends Controller
      */
     public function store(storeCategoriesRequest $request)
     {
-        $categorie = new Categorie();
+        $category = new Categorie();
 
-        $categorie->name = $request->name;
-        $categorie->save();
+        $category->name = $request->name;
+        $category->save();
 
-        return redirect()->route('categories.index')->with('message','Categories is toegevoegd');
+        return redirect()->route('categories.index')->with('message','Categorie is toegevoegd');
     }
 
     /**
@@ -55,9 +55,9 @@ class CategoriesController extends Controller
      * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Categorie $category)
     {
-        return view('categories.edit', compact('categorie'));
+        return view('park.attractions.categories.edit', compact('category'));
     }
 
     /**
@@ -67,10 +67,10 @@ class CategoriesController extends Controller
      * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoriesRequest $request, Categorie $categorie)
+    public function update(UpdateCategoriesRequest $request, Categorie $category)
     {
-        $categorie->name = $request->name;
-        $categorie->save();
+        $category->name = $request->name;
+        $category->save();
 
         return redirect()->route('categories.index')->with('message','Categorie is aangepast');
     }
@@ -81,9 +81,9 @@ class CategoriesController extends Controller
      * @param \App\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function delete(Categorie $categorie)
+    public function delete(Categorie $category)
     {
-        return view('categories.delete', compact('categorie'));
+        return view('park.attractions.categories.delete', compact('category'));
     }
 
     /**
@@ -92,10 +92,10 @@ class CategoriesController extends Controller
      * @param  \App\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy($categorie_id)
+    public function destroy(Categorie $category)
     {
-        $categorie = Categorie::find($categorie_id);
-        $categorie ->delete();
-        return redirect('categories')->with('message', 'Categorie is verwijderd');
+        $category->delete();
+
+        return redirect()->route('categories.index')->with('message', 'Categorie is verwijderd');
     }
 }
