@@ -18,7 +18,6 @@
 
                 <h2>Gegevens</h2>
                 @auth
-                    @if(Auth::user()->getRoleNames() == '["customer"]')
 
                 <form class="form" action="{{route('users.update', $user)}}" method="POST">
                     @csrf
@@ -55,7 +54,7 @@
                 </form>
 
                     @endif
-                @endauth
+
 
         </div>
     </section>
