@@ -1,45 +1,46 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
-    <h1 class="mt-5">Categories</h1>
+    <section class="productsSection">
+        <div class="container">
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
+            @if (session('message'))
+                <div class='alert alert-success'>
+                    {{ session('message') }}
+                </div>
+            @endif
+
+            <h2>categoriën</h2>
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url('/park/attractions/categories') }}">Overzicht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/park/attractions/categories/create') }}">Maken <span class="fa fa-plus"></span></a>
+                </li>
+            </ul>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th colspan=3>Linkjes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($categories as $categorie)
+                        <tr>
+                            <td>{{ $categorie->name }}</td>
+                                <td><a data-toggle="tooltip" data-placement="top" title="Aanpassen" class="btn btn-warning" href="{{ url('park/attractions/categories'.$categorie->id.'/edit') }}"><span class="fa fa-edit"></span></a></td>
+                                <td><a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/attractions/categories/'.$categorie->id.'/delete') }}"><span class="fa fa-trash-o"></span></a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
-    @endif
-
-    <nav class="nav">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ route('categories.index') }}">Index</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('categories.create') }}">Create</a>
-            </li>
-        </ul>
-    </nav>
-
-    <table class="table .table-striped">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">name</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($categories as $categorie)
-            <tr>
-                <td scope="row">{{ $categorie->id }}</td>
-                <td>{{ $categorie->name }}</td>
-                <td><a href="{{ url('categories/'.$categorie->id).'/edit' }}">Edit</a></td>
-                <td><a href="{{ url('categories/'.$categorie->id).'/delete' }}">Delete</a></td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-
+    </section>
 @endsection
