@@ -8,7 +8,7 @@
             <div class="alert alert-danger">
                 Deze pagina bestaat niet. Klik op de knop om terug te gaan naar de Home pagina
             </div>
-            <a href="{{ back() }}">
+            <a href="{{ url('/') }}">
                 <button type="button" class="btn btn-primary">Home</button>
             </a>
         </div>
