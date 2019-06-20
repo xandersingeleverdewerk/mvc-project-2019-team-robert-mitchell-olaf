@@ -82,6 +82,6 @@ ul {
   list-style: none;
 }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   @include section($white, $black)
 }

@@ -83,7 +83,7 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUsersRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
         //
         $user->name = $request->name;
@@ -95,7 +95,7 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->route('users.edit')->with('message','Gebruiker is aangepast');
+        return redirect()->back()->with('message','Gebruiker is aangepast');
     }
 
     /**

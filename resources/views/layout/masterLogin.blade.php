@@ -91,7 +91,7 @@
             </li>
             @endcan
             <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/edit') }}">Mijn gegevens</a>
+                <a class="nav-link {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" {{ Request::url() == url('/') ? 'active' : '' }} href="{{ url('/') }}">Terug naar de Website</a>

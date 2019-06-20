@@ -23,10 +23,6 @@ Route::get('/mydetails', function () {
     return view('mydetails');
 });
 
-Route::get('/users/edit', 'UsersController@edit')
-    ->name('users.edit');
-;
-
 
 Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
     ->name('attractions.delete');
@@ -86,6 +82,12 @@ Route::group(['middleware' => ['role:admin']], function() {
     Route::get('reviews/{review}/delete', 'ReviewsController@delete')
         ->name('reviews.delete');
     Route::resource('reviews' , 'ReviewsController');
+});
+
+Route::group(['middleware' => ['role:admin|customer']], function () {
+    Route::get('users/{user}/edit', 'UsersController@edit')
+        ->name('users.edit');
+    Route::resource('users', 'UsersController');
 });
 
 

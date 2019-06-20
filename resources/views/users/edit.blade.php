@@ -16,19 +16,20 @@
             @endif
 
 
+                <h2>Gegevens</h2>
                 @auth
                     @if(Auth::user()->getRoleNames() == '["customer"]')
 
-                <form class="form" action="{{route('users.edit', $user->id)}}" method="POST">
+                <form class="form" action="{{route('users.update', $user)}}" method="POST">
                     @csrf
-                    @method('HEAD')
+                    @method('PATCH')
                     <div class="form-group">
                         <label for="name">Naam</label>
                         <input id="name" name="name" class="form-control" type="text" value="{{ Auth::user()->name }}" />
                     </div>
                     <div class="form-group">
                         <label for="date_of_birth">Geboortedatum</label>
-                        <input id="date_of_birth" name="description" class="form-control" type="text" value="{{ Auth::user()->date_of_birth }}"/>
+                        <input id="date_of_birth" name="date_of_birth" class="form-control" type="text" value="{{ Auth::user()->date_of_birth }}"/>
                     </div>
                     <div class="form-group">
                         <label for="adress">Adres</label>
