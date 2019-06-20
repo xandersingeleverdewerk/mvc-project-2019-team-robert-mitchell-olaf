@@ -39,7 +39,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function review() {
+    public function review()
+    {
         return $this->hasMany('App\Review');
     }
+
+
+        public function roles()
+        {
+            return $this->belongsToMany(Role::class);
+        }
+
+        public function assignRole(Role $role)
+        {
+            return $this->roles()->save($role);
+        }
 }
