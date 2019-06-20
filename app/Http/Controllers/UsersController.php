@@ -116,4 +116,8 @@ class UsersController extends Controller
         $user->delete();
         return redirect ('/users')->with('message', 'Gebruiker verwijderd');
     }
+
+    public function showChangePasswordForm(){
+        return view('auth.changepassword');
+    }
 }
