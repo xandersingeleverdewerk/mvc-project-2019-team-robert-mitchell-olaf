@@ -85,8 +85,8 @@ Route::group(['middleware' => ['role:admin']], function() {
 });
 
 Route::group(['middleware' => ['role:admin|customer']], function () {
-    Route::get('users/{user}/edit', 'UsersController@edit')
-        ->name('users.edit');
+    Route::get('users/{user}/delete', 'UsersController@delete')
+        ->name('users.delete');
     Route::resource('users', 'UsersController');
 });
 

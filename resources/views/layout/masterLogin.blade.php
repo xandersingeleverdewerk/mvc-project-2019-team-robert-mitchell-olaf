@@ -90,9 +90,14 @@
                 <a class="nav-link {{ Request::url() == url('/reviews') ? 'active' : '' }}" href="{{ url('/reviews') }}">Reviews</a>
             </li>
             @endcan
-            <li class="nav-item">
-                <a class="nav-link {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+            <li class="dropdown nav-item nav-link {{ Request::url() == url('/user') ? 'active' : '' }}" data-toggle="dropdown">
+                Gegevens
             </li>
+            <div class="dropdown-menu">
+                <a class="dropdown-item {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+                <a class="dropdown-item" href="{{ url('/users') }}">Gebruikers gegevens</a>
+            </div>
+                </li>
             <li class="nav-item">
                 <a class="nav-link" {{ Request::url() == url('/') ? 'active' : '' }} href="{{ url('/') }}">Terug naar de Website</a>
             </li>

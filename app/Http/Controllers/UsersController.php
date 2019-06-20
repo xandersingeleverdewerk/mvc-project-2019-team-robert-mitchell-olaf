@@ -104,8 +104,16 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+
+    public function delete(User $user)
+    {
+        return view('users.delete', compact('user'));
+    }
+
     public function destroy(User $user)
     {
         //
+        $user->delete();
+        return redirect ('/users')->with('message', 'Gebruiker verwijderd');
     }
 }
