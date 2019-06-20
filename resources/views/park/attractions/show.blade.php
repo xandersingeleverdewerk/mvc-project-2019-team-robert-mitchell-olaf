@@ -30,10 +30,12 @@
                     <th>Sluitingstijd</th>
                     <td>{{ $attraction->facilitie->closing_time }}</td>
                 </tr>
-                <tr>
-                    <th>Wachttijd</th>
-                    <td>{{ $attraction->waitTime }}</td>
-                </tr>
+                @can('show attractionsWaitTime')
+                    <tr>
+                        <th>Wachttijd</th>
+                        <td>{{ $attraction->waitTime }}</td>
+                    </tr>
+                @endcan
                 <tr>
                     <th>Minimale leeftijd</th>
                     <td>{{ $attraction->minAge }}</td>
