@@ -12,7 +12,9 @@
             @endif
 
                 <div class="d-flex flex">
+                    @can('create restaurants')
                     <a data-toggle="tooltip" data-placement="right" title="Maak een restaurant" href="{{ url('/park/restaurants/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    @endcan
                     <h2 class="parkTitle">Restaurants</h2>
                 </div>
 
