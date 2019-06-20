@@ -15,6 +15,8 @@
                 </div>
             @endif
 
+            @can('create dishes')
+
             <h2>Gerechten</h2>
 
                 <ul class="nav nav-tabs">
@@ -48,6 +50,10 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Maak Gerecht</button>
             </form>
+            @endcan
+            @cannot('create dishes')
+                @yield('content', View::make('errors.noPermission'))
+            @endcannot
         </div>
     </section>
 
