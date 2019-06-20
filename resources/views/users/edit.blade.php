@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-
+@can('edit users')
                 <h2>Gegevens</h2>
                 @auth
 
@@ -52,7 +52,10 @@
                     </div>
                     <button class="btn btn-primary" type="submit">Pas gegevens aan</button>
                 </form>
-
+                    @endcan
+    @cannot('edit users')
+                        @yield('content', View::make('errors.noPermission'))
+                    @endcannot
                     @endif
 
 

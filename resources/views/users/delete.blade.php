@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-            @can('delete stores')
+            @can('delete users')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('users/'.$user->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $user->name }} verwijderen</h2>
@@ -60,7 +60,7 @@
                 </form>
             @endcan
 
-            @cannot('delete stores')
+            @cannot('delete users')
                 @yield('content', View::make('errors.noPermission'))
             @endcannot
         </div>

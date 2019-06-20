@@ -17,6 +17,12 @@ class RolesAndPermissionsSeeder extends Seeder
         app()['cache']->forget('spatie.permission.cache');
 
         //create permissions
+        Permission::create(['name' => 'create users']);
+        Permission::create(['name' => 'edit users']);
+        Permission::create(['name' => 'delete users']);
+        Permission::create(['name' => 'show users']);
+        Permission::create(['name' => 'show users']);
+
         Permission::create(['name' => 'create attractions']);
         Permission::create(['name' => 'edit attractions']);
         Permission::create(['name' => 'delete attractions']);
@@ -67,7 +73,7 @@ class RolesAndPermissionsSeeder extends Seeder
        */
         $role = Role::create(['name' => 'customer']);
         $role->givePermissionTo('show dishes', 'show products', 'show storeRules',
-            'show restaurantRules','home customer');
+            'show restaurantRules','home customer','edit users');
 
 
         $role = Role::create(['name' => 'admin']);
