@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewsRequest;
 use App\Http\Requests\StoreStoresRequest;
+use App\Review;
 use App\Store;
 use App\Facilitie;
 use Illuminate\Http\Request;
@@ -65,8 +67,8 @@ class StoresController extends Controller
      */
     public function show(Store $store)
     {
-        //
-        return view('park.stores.show', compact('store'));
+        $reviews = Review::all()->where('facilitie_id','=',$store->facilitie->id);
+        return view('park.stores.show', compact('store','reviews'));
     }
 
     /**
@@ -119,5 +121,36 @@ class StoresController extends Controller
         $store->facilitie->delete();
 
         return redirect()->route('stores.index')->with('message','Winkel is aangepast');
+    }
+
+    public function storeReview(ReviewsRequest $request)
+    {
+        $review = new Review();
+
+        $review->name = $request->name;
+        $review->review = $request->review;
+        $review->user_id = $request->user_id;
+        $review->facilitie_id = $request->facilitie_id;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is geplaatst');
+    }
+
+    public function updateReview(ReviewsRequest $request, Review $review)
+    {
+        $review->name = $request->name;
+        $review->review = $request->review;
+
+        $review->save();
+
+        return redirect()->back()->with('message','Review is aangepast');
+    }
+
+    public function destroyReview(Review $review)
+    {
+        $review->delete();
+
+        return redirect()->back()->with('message','Review is verwijderd');
     }
 }

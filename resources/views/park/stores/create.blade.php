@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+            @can('create stores')
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/stores') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">Winkel aanmaken</h2>
@@ -40,6 +41,11 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Maak Winkel</button>
             </form>
+                @endcan
+
+                @cannot('create stores')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
 
         </div>
     </section>

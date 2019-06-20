@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+                @can('delete stores')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $store->facilitie->name }} verwijderen</h2>
@@ -45,6 +46,11 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Winkel</button>
             </form>
+                    @endcan
+
+                @cannot('delete stores')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 

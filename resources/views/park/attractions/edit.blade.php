@@ -15,6 +15,8 @@
                 </div>
             @endif
 
+                @can('edit attractions')
+
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $attraction->facilitie->name }} aanpassen</h2>
@@ -53,6 +55,10 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Pas Attractie Aan</button>
             </form>
+                @endcan
+                @cannot('edit attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 

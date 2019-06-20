@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @can('show storeRules')
     <section class="productsSection">
         <div class="container">
             <div class="d-flex flex">
@@ -35,12 +36,18 @@
                     <th>Prijs</th>
                     <td>&euro; {{ $storeRule->product->price}}</td>
                 </tr>
+                @can('show productId')
                 <tr>
                     <th>Product id</th>
                     <td>{{ $storeRule->product->id }}</td>
                 </tr>
+                    @endcan
             </table>
         </div>
     </section>
+    @endcan
+    @cannot('show storeRules')
+        @yield('content', View::make('errors.noPermission'))
+    @endcannot
 
 @endsection

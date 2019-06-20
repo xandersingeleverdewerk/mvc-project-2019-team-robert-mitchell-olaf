@@ -11,6 +11,7 @@
                 </div>
             @endif
 
+                @can('show storeRules')
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">Assortiment van {{ $store->facilitie->name }}</h2>
@@ -54,6 +55,10 @@
                     </tbody>
                 </table>
             </div>
+                    @endcan
+                @cannot('show storeRules')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 
