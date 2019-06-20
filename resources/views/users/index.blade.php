@@ -14,7 +14,7 @@
 
             <div class="d-flex flex">
                 @can('create users')
-                    <a data-toggle="tooltip" data-placement="right" title="Maak een winkel" href="{{ url('/users/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
+                    <a data-toggle="tooltip" data-placement="right" title="Maak een gebruiker" href="{{ url('/users/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
                 @endcan
                 <h2 class="userTitle">Gebruikers</h2>
             </div>

@@ -15,10 +15,11 @@
                 </div>
             @endif
 
-            <div class="d-flex">
-                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
-                <h2 class="parkTitle">{{ $attraction->facilitie->name }} verwijderen</h2>
-            </div>
+            @can('delete attractions')
+              <div class="d-flex">
+                  <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                  <h2 class="parkTitle">{{ $attraction->facilitie->name }} verwijderen</h2>
+              </div>
 
             <form class="form" action="{{route('attractions.destroy', $attraction)}}" method="POST">
                 @csrf
@@ -57,7 +58,13 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Attractie</button>
             </form>
+
+                @endcan
+                @cannot('delete attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 
 @endsection
+

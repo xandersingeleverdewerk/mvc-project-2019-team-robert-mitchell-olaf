@@ -355,7 +355,7 @@ ul {
       color: #ffffff;
       transition: 0.2s all; }
 
-.parkTitle {
+.parkTitle, .userTitle {
   margin-left: 20px; }
 
 .card {

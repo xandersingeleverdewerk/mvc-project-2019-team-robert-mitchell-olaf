@@ -18,7 +18,7 @@
             @can('create users')
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/users') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
-                    <h2 class="parkTitle">Gebruiker aanmaken</h2>
+                    <h2 class="userTitle">Gebruiker aanmaken</h2>
                 </div>
 
                 <form class="form" action="{{route('users.index')}}" method="POST">

@@ -79,17 +79,18 @@
             <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
                 Het park
             </li>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('/park/attractions') }}">Attracties</a>
-                <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
-                <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
-            </div>
+                <li class="dropdown nav-item nav-link {{ Request::url() == url('/user') ? 'active' : '' }}" data-toggle="dropdown">
+                    Gegevens
+                </li>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+                </div>
             @endcan
             @can('home admin')
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/reviews') ? 'active' : '' }}" href="{{ url('/reviews') }}">Reviews</a>
             </li>
-            @endcan
+
             <li class="dropdown nav-item nav-link {{ Request::url() == url('/user') ? 'active' : '' }}" data-toggle="dropdown">
                 Gegevens
             </li>
@@ -97,7 +98,7 @@
                 <a class="dropdown-item {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
                 <a class="dropdown-item" href="{{ url('/users') }}">Gebruikers gegevens</a>
             </div>
-                </li>
+                @endcan
             <li class="nav-item">
                 <a class="nav-link" {{ Request::url() == url('/') ? 'active' : '' }} href="{{ url('/') }}">Terug naar de Website</a>
             </li>
