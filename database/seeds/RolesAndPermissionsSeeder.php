@@ -66,7 +66,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
        */
         $role = Role::create(['name' => 'customer']);
-        $role->givePermissionTo('show dishes', 'show attractions', 'show attractionsWaitTime', 'show products', 'show storeRules',
+        $role->givePermissionTo('show dishes', 'show attractionsWaitTime', 'show products', 'show storeRules',
             'show restaurantRules','home customer');
 
 
