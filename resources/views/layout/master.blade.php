@@ -31,8 +31,9 @@
             </div>
             <div class="col-12 col-md-6 search">
                 <h1 class="navTitle">Pretpark HappyLand</h1>
-                <form id="search" action="#" method="POST">
-                    <input type="hidden" name="_token" value="0ulY8jc3oSohE19OO44KTJ3sVJYWThrFKXmGGrYV">                    <div class="input-group">
+                <form id="search" action="" method="GET">
+                    <input type="hidden" name="_token" value="0ulY8jc3oSohE19OO44KTJ3sVJYWThrFKXmGGrYV">
+                    <div class="input-group">
                         <input type="text" class="typeahead form-control" name="name" placeholder="zoeken voor een faciliteit">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">Zoeken</button>
