@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="attractionSection">
-        <div class="container">=
+        <div class="container">
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">{{ $attraction->facilitie->name }}</h2>
