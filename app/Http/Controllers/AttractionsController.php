@@ -59,6 +59,7 @@ class AttractionsController extends Controller
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->facilitie_id = $facilitie->id;
+        $attraction->categorie_id = $request->categorie_id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is toegevoegd');
@@ -78,7 +79,7 @@ class AttractionsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+
      * @param  \App\Attraction  $attraction
      * @return \Illuminate\Http\Response
      */
@@ -106,6 +107,7 @@ class AttractionsController extends Controller
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
+        $attraction->categorie_id = $request->categorie_id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is aangepast');

@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <label for="categorie_id">Categorie</label>
-                    <input disabled id="categorie_id" name="categorie_id" class="form-control" type="text" value="{{ $attraction->categories->name }}">
+                    <input disabled id="categorie_id" name="categorie_id" class="form-control" type="text" value="{{ $attraction->categorie->name }}">
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Attractie</button>
             </form>

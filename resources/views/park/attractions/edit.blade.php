@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label for="categorie_id">Kies een Categorie</label>
                         <select id="categorie_id" name="categorie_id" class="form-control">
-                            <option selected disabled value="{{ $attraction->category->id }}">Kies een categorie</option>
+                            <option value="{{ $attraction->categorie->id }}" selected>{{ $attraction->categorie->name }}</option>
                             @foreach($categories as $id => $categorie)
                                 <option value="{{ $id }}">{{ $categorie }}</option>
                             @endforeach
