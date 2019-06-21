@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
@@ -9,7 +9,6 @@
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/users') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="userTitle">{{ $user->name }}</h2>
             </div>
-
 
             @can('edit users')
                 <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$user->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
@@ -45,12 +44,11 @@
                     <td>{{ $user->email }}</td>
                 </tr>
             </table>
+            @endcan
+                @cannot('show users')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
-        @endcan
-        @cannot('show users')
-            @yield('content', View::make('errors.noPermission'))
-        @endcannot
-
     </section>
 
 @endsection

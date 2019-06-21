@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="date_of_birth">Geboortedatum</label>
-                        <textarea id="date_of_birth" name="date_of_birth" class="form-control" type="text" placeholder="Geboortedatum"></textarea>
+                        <input id="date_of_birth" name="date_of_birth" class="form-control" type="date" placeholder="Geboortedatum"/>
                     </div>
                     <div class="form-group">
                         <label for="adress">Adres</label>
@@ -51,7 +51,7 @@
                         <label for="email">Email</label>
                         <input id="email" name="email" class="form-control" type="text" placeholder="Email" />
                     </div>
-                    <button class="btn btn-primary" type="submit">Maak Winkel</button>
+                    <button class="btn btn-primary" type="submit">Maak Gebruiker</button>
                 </form>
             @endcan
 
