@@ -76,26 +76,28 @@
                 <a class="nav-link {{ Request::url() == url('/mypage') ? 'active' : '' }}" href="{{ url('/mypage') }}">Dashboard</a>
             </li>
             @can('home customer')
-            <li class="dropdown nav-item nav-link {{ Request::url() == url('/park') ? 'active' : '' }}" data-toggle="dropdown">
+                <li class="dropdown nav-item nav-link {{ Request::url() == url('park/restaurants') ? 'active' : '' }} {{ Request::url() == url('park/stores') ? 'active' : '' }} {{ Request::url() == url('park/attractions') ? 'active' : '' }}" data-toggle="dropdown">
                 Het park
             </li>
-                <li class="dropdown nav-item nav-link {{ Request::url() == url('/user') ? 'active' : '' }}" data-toggle="dropdown">
-                    Gegevens
-                </li>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+                    <a class="dropdown-item" href="{{url('/park/attractions') }}">Attracties</a>
+                    <a class="dropdown-item" href="{{url('/park/restaurants') }}">Restaurants</a>
+                    <a class="dropdown-item" href="{{url('/park/stores') }}">Winkels</a>
                 </div>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::url() == url('/users/'.Auth::user()->id.'/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+            </li>
             @endcan
             @can('home admin')
             <li class="nav-item">
                 <a class="nav-link {{ Request::url() == url('/reviews') ? 'active' : '' }}" href="{{ url('/reviews') }}">Reviews</a>
             </li>
 
-            <li class="dropdown nav-item nav-link {{ Request::url() == url('/user') ? 'active' : '' }}" data-toggle="dropdown">
+            <li class="dropdown nav-item nav-link {{ Request::url() == url('/users/'.Auth::user()->id.'/edit') ? 'active' : '' }} {{ Request::url() == url('/users') ? 'active' : '' }}" data-toggle="dropdown">
                 Gegevens
             </li>
             <div class="dropdown-menu">
-                <a class="dropdown-item {{ Request::url() == url('/users/edit') ? 'active' : '' }}" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
+                <a class="dropdown-item" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">Mijn gegevens</a>
                 <a class="dropdown-item" href="{{ url('/users') }}">Gebruikers gegevens</a>
             </div>
                 @endcan
