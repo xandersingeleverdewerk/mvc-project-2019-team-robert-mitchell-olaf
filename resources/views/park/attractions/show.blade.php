@@ -48,6 +48,10 @@
                     <th>Attractie id</th>
                     <td>{{ $attraction->id }}</td>
                 </tr>
+                <tr>
+                    <th>Categorie</th>
+                    <td>{{ $attraction->categorie->name }}</td>
+                </tr>
             </table>
 
             <h3>Reviews</h3>
