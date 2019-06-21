@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="restaurantSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
