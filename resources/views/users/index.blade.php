@@ -12,9 +12,9 @@
             @endif
 @can('show users')
             <div class="d-flex flex">
-                @can('create users2')
-                    <a data-toggle="tooltip" data-placement="right" title="Maak een gebruiker" href="{{ url('/users/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>
-                @endcan
+
+                    {{--<a data-toggle="tooltip" data-placement="right" title="Maak een gebruiker" href="{{ url('/users/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>--}}
+
                 <h2 class="userTitle">Gebruikers</h2>
             </div>
 
