@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+            @can('create attractions')
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">Attractie aanmaken</h2>
@@ -61,7 +62,10 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Maak Attractie</button>
             </form>
-
+                @endcan
+                @cannot('create attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 

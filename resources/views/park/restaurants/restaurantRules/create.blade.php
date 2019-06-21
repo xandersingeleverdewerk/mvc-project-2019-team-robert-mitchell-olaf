@@ -15,6 +15,8 @@
                 </div>
             @endif
 
+            @can('create restaurantRules')
+
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">Menu van {{ $restaurant->facilitie->name }}</h2>
@@ -47,6 +49,10 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Voeg toe aan menu</button>
             </form>
+                @endcan
+            @cannot('create restaurantRules')
+                @yield('content', View::make('errors.noPermission'))
+            @endcannot
         </div>
     </section>
 

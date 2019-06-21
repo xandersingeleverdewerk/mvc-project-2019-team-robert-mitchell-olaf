@@ -4,6 +4,7 @@
 
     <section class="menuSection">
         <div class="container">
+            @can('show dishes')
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">Menu van {{ $restaurant->facilitie->name }}</h2>
@@ -13,11 +14,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                 </li>
+                @can('create restaurantRules')
                 <li class="nav-item">
-                    @can('create dishes')
-                        <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
-                    @endcan
+                    <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
                 </li>
+                @endcan
                 <li class="nav-item">
                     <a class="nav-link active">Gerecht</a>
                 </li>
@@ -40,6 +41,10 @@
                     <td>{{ $restaurantRule->dish->id }}</td>
                 </tr>
             </table>
+                @endcan
+            @cannot('show dishes')
+                @yield('content', View::make('errors.noPermission'))
+            @endcannot
         </div>
     </section>
 
