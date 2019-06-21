@@ -27,5 +27,17 @@ class UsersTableSeeder extends Seeder
             ->each(function (User $user){
                 $user->assignRole('customer');
             });
+
+        factory(App\User::class, 1)->create(['name' => 'John Brink',
+            'email' => 'john@mail.nl',
+            'date_of_birth' =>'2000-06-19',
+            'adress' =>'wegisweg 12',
+            'house_number' =>'19',
+            'postal_code' =>'1234',
+            'phone_number' =>'0101234567',
+            'password' => bcrypt( 'john123')])
+            ->each(function (User $user){
+                $user->assignRole('customer');
+            });
     }
 }

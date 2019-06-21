@@ -19,6 +19,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/mydetails', function () {
+    return view('mydetails');
+});
+
 
 Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
     ->name('attractions.delete');
@@ -78,6 +82,12 @@ Route::group(['middleware' => ['role:admin']], function() {
     Route::get('reviews/{review}/delete', 'ReviewsController@delete')
         ->name('reviews.delete');
     Route::resource('reviews' , 'ReviewsController');
+});
+
+Route::group(['middleware' => ['role:admin|customer']], function () {
+    Route::get('users/{user}/delete', 'UsersController@delete')
+        ->name('users.delete');
+    Route::resource('users', 'UsersController');
 });
 
 
