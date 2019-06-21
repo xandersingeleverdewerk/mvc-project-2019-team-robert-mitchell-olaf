@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
@@ -18,7 +18,7 @@
             @can('delete users')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('users/'.$user->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
-                    <h2 class="parkTitle">{{ $user->name }} verwijderen</h2>
+                    <h2 class="userTitle">{{ $user->name }} verwijderen</h2>
                 </div>
 
                 <form class="form" action="{{route('users.destroy', $user)}}" method="POST">

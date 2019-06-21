@@ -12,7 +12,6 @@
             @endif
 @can('show users')
             <div class="d-flex flex">
-
                     {{--<a data-toggle="tooltip" data-placement="right" title="Maak een gebruiker" href="{{ url('/users/create') }}" class="btn btn-success"><span class="fa fa-plus"></span></a>--}}
 
                 <h2 class="userTitle">Gebruikers</h2>

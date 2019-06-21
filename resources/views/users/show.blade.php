@@ -12,7 +12,7 @@
 
             @can('edit users')
                 <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$user->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
-            @endcan
+                    @endcan
             @can('delete users')
 
                 <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$user->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
