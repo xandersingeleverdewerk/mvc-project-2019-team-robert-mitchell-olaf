@@ -13,7 +13,7 @@ class Attraction extends Model
         return $this->belongsTo('App\Facilitie');
     }
 
-    public function categorie() {
+    public function category() {
         return $this->belongsTo('App\Categorie');
     }
 }

@@ -50,6 +50,15 @@
                     <label for="minLength">Minimale grootte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" placeholder="Minimale grootte" />
                 </div>
+                <div class="form-group">
+                    <label for="categorie_id">Kies een Categorie</label>
+                    <select id="categorie_id" name="categorie_id" class="form-control">
+                        <option selected disabled>Kies een categorie</option>
+                        @foreach($categories as $id => $categorie)
+                            <option value="{{ $id }}">{{ $categorie }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <button class="btn btn-primary" type="submit">Maak Attractie</button>
             </form>
 

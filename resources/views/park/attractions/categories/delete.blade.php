@@ -1,8 +1,8 @@
-@extends('layout.master')
+@extends('layout.masterLogin')
 
 @section('content')
 
-    <section class="categorieSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
@@ -15,20 +15,29 @@
                 </div>
             @endif
 
-            <h2>{{ $category->name }} verwijderen</h2>
+            <h2>Categories</h2>
 
-            <form class="form" action="{{route('categories.destroy', $category)}}" method="POST">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/park/attractions/categories') }}">Overzicht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/park/attractions/categories/create') }}">Maken <span class="fa fa-plus"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active">Verwijderen <span class="fa fa-trash-o"></span></a>
+                </li>
+            </ul>
+
+            <form class="form" action="{{route('categories.destroy', $categorie)}}" method="POST">
                 @csrf
                 @method('DELETE')
-                <div class="form-group">
-                    <label for="id"> id</label>
-                    <input disabled id="id" name="id" class="form-control" type="text" value="{{ $category->id }}" />
-                </div>
+                <h3>{{ $categorie->name }} verwijderen</h3>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input disabled id="name" name="name" class="form-control" type="text" value="{{ $category->name }}" />
+                    <input disabled id="name" name="name" class="form-control" type="text" value="{{ $categorie->name }}" />
                 </div>
-                <button class="btn btn-primary" type="submit">Verwijder Categorie</button>
+                <button class="btn btn-primary" type="submit">Verwijder categorie</button>
             </form>
         </div>
     </section>

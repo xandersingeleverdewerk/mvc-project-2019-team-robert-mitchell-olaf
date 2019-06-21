@@ -99,3 +99,4 @@ class CategoriesController extends Controller
         return redirect()->route('categories.index')->with('message', 'Categorie is verwijderd');
     }
 }
+

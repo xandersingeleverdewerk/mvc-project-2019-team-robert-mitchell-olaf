@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Http\Requests\ReviewsRequest;
 use App\Http\Requests\StoreAttractionsRequest;
 use App\Http\Requests\UpdateAttractionsRequest;
@@ -33,7 +34,8 @@ class AttractionsController extends Controller
      */
     public function create()
     {
-        return view('park.attractions.create');
+        $categories = Categorie::pluck('name', 'id');
+        return view('park.attractions.create', compact('categories'));
     }
 
     /**
@@ -82,7 +84,8 @@ class AttractionsController extends Controller
      */
     public function edit(Attraction $attraction)
     {
-        return view ('park.attractions.edit', compact('attraction'));
+        $categories = Categorie::pluck('name', 'id');
+        return view ('park.attractions.edit', compact('attraction', 'categories'));
     }
 
     /**

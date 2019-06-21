@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="AttractionSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
@@ -15,45 +15,29 @@
                 </div>
             @endif
 
-            <h2>Producten</h2>
+            <h2>Categories</h2>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/at/products') }}">Overzicht</a>
+                    <a class="nav-link" href="{{ url('/park/attractions/categories') }}">Overzicht</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/products/create') }}">Maken <span class="fa fa-plus"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/park/stores/products/'.$product->id) }}">Details</a>
+                    <a class="nav-link" href="{{ url('/park/attractions/categories/create') }}">Maken <span class="fa fa-plus"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active">Aanpassen <span class="fa fa-edit"></span></a>
                 </li>
             </ul>
 
-            <form class="form" action="{{route('products.update', $product)}}" method="POST">
+            <form class="form" action="{{route('categories.update', $category)}}" method="POST">
                 @csrf
                 @method('PATCH')
-                <h3>{{ $product->name }} aanpassen</h3>
+                <h3>{{ $category->name }} aanpassen</h3>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input id="name" name="name" class="form-control" type="text" value="{{ $product->name }}" />
+                    <input id="name" name="name" class="form-control" type="text" value="{{ $category->name }}" />
                 </div>
-                <div class="form-group">
-                    <label for="description">Beschrijving</label>
-                    <textarea id="description" name="description" class="form-control" type="text">{{ $product->description }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="price">Prijs</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">&euro;</span>
-                        </div>
-                        <input id="price" name="price" class="form-control" type="number" step=".01" value="{{ $product->price }}" />
-                    </div>
-                </div>
-                <button class="btn btn-primary" type="submit">Pas Product Aan</button>
+                <button class="btn btn-primary" type="submit">Pas categorie Aan</button>
             </form>
         </div>
     </section>
