@@ -37,7 +37,14 @@
                     <label for="name">Naam</label>
                     <input disabled id="name" name="name" class="form-control" type="text" value="{{ $categorie->name }}" />
                 </div>
-                <button class="btn btn-primary" type="submit">Verwijder categorie</button>
+            @if( count($categorie->attraction) > 0)
+                    <button disabled class="btn btn-primary" type="submit">Verwijder categorie</button>
+                    <div class="alert alert-danger">
+                        Categorie wordt nog gebruikt door een attractie, dus kan niet verwijderd worden
+                    </div>
+                @else
+                    <button class="btn btn-primary" type="submit">Verwijder categorie</button>
+            @endif
             </form>
         </div>
     </section>

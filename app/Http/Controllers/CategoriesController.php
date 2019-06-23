@@ -81,9 +81,9 @@ class CategoriesController extends Controller
      * @param \App\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function delete(Categorie $category)
+    public function delete(Categorie $categorie)
     {
-        return view('park.attractions.categories.delete', compact('category'));
+        return view('park.attractions.categories.delete', compact('categorie'));
     }
 
     /**

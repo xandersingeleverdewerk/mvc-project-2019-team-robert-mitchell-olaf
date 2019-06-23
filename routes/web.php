@@ -23,7 +23,7 @@ Route::get('/mydetails', function () {
     return view('mydetails');
 });
 
-Route::group(['middleware' => ['role:admin|admin']], function () {
+Route::group(['middleware' => ['role:admin']], function () {
     Route::get('park/attractions/categories/{categorie}/delete', 'CategoriesController@delete')
         ->name('park.attractions.categories.delete');
     Route::resource('park/attractions/categories' , 'CategoriesController');
