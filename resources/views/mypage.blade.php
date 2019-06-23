@@ -41,7 +41,7 @@
                     <h3 class="blockTitle">Producten</h3>
                 </a>
                 @can('home admin')
-                    <a class="blockLink" href="#">
+                    <a class="blockLink" href={{ url('/park/attractions/categories') }}>
                         <h3 class="blockTitle">Attractie Categorieën</h3>
                     </a>
                     <a class="blockLink" href="#">

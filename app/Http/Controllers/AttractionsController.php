@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Http\Requests\ReviewsRequest;
 use App\Http\Requests\StoreAttractionsRequest;
 use App\Http\Requests\UpdateAttractionsRequest;
@@ -33,7 +34,8 @@ class AttractionsController extends Controller
      */
     public function create()
     {
-        return view('park.attractions.create');
+        $categories = Categorie::pluck('name', 'id');
+        return view('park.attractions.create', compact('categories'));
     }
 
     /**
@@ -57,6 +59,7 @@ class AttractionsController extends Controller
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
         $attraction->facilitie_id = $facilitie->id;
+        $attraction->categorie_id = $request->categorie_id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is toegevoegd');
@@ -76,13 +79,14 @@ class AttractionsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+
      * @param  \App\Attraction  $attraction
      * @return \Illuminate\Http\Response
      */
     public function edit(Attraction $attraction)
     {
-        return view ('park.attractions.edit', compact('attraction'));
+        $categories = Categorie::pluck('name', 'id');
+        return view ('park.attractions.edit', compact('attraction', 'categories'));
     }
 
     /**
@@ -103,6 +107,7 @@ class AttractionsController extends Controller
         $attraction->waitTime = $request->waitTime;
         $attraction->minAge = $request->minAge;
         $attraction->minLength = $request->minLength;
+        $attraction->categorie_id = $request->categorie_id;
         $attraction->save();
 
         return redirect()->route('attractions.index')->with('message','Attractie is aangepast');

@@ -15,7 +15,7 @@ class Facilitie extends Model
     }
 
     public function attraction() {
-        return $this->hasMany('App\Attraction');
+        return $this->hasOne('App\Attraction');
     }
 
     public function review() {
