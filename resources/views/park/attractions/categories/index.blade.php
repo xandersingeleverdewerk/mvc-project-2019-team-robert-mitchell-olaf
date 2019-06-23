@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="categoriesSection">
+    <section class="attractionSectio">
         <div class="container">
 
             @if (session('message'))
