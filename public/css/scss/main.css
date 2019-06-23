@@ -23,7 +23,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -73,7 +73,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -220,7 +220,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -268,7 +268,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -355,7 +355,7 @@ ul {
       color: #ffffff;
       transition: 0.2s all; }
 
-.parkTitle {
+.parkTitle, .userTitle {
   margin-left: 20px; }
 
 .card {
@@ -398,7 +398,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;
@@ -490,7 +490,7 @@ thead {
 ul {
   list-style: none; }
 
-.authContainer, .reviewSection, .errorSection {
+.authContainer, .reviewSection, .errorSection, .userSection {
   padding: 100px 0;
   width: 100%;
   background: #ffffff;

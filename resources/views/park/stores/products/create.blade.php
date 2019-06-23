@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             @endif
-
+@can('create products')
             <h2>Producten</h2>
 
             <ul class="nav nav-tabs">
@@ -48,6 +48,17 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Maak Product</button>
             </form>
+    @endcan
+            @cannot('create products')
+                    <div class="alert alert-danger">
+                        <ul>
+                            U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
+                        </ul>
+                    </div>
+                    <a href="{{ url('/') }}">
+                        <button type="button" class="btn btn-primary">Home</button>
+                    </a>
+                @endcannot
         </div>
     </section>
 

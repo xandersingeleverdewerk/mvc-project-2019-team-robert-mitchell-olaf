@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-                @can('create stores')
+                @can('edit stores')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/stores/'.$store->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $store->facilitie->name }} aanpassen</h2>

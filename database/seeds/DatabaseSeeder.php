@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -13,12 +13,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RolesAndPermissionsSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call( CategoriesTableSeeder::class);
         $this->call( FacilitiesTableSeeder::class);
         $this->call( DishesTableSeeder::class);
         $this->call( RestaurantRulesTableSeeder::class);
-//        $this->call( CategorieTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(StoreRulesTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
+
     }
 }

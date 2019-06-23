@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="restaurantSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
@@ -53,6 +53,15 @@
                     <label for="minLength">Minimale grootte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" value="{{ $attraction->minLength }}" />
                 </div>
+                    <div class="form-group">
+                        <label for="categorie_id">Kies een Categorie</label>
+                        <select id="categorie_id" name="categorie_id" class="form-control">
+                            <option value="{{ $attraction->categorie->id }}" selected>{{ $attraction->categorie->name }}</option>
+                            @foreach($categories as $id => $categorie)
+                                <option value="{{ $id }}">{{ $categorie }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 <button class="btn btn-primary" type="submit">Pas Attractie Aan</button>
             </form>
                 @endcan

@@ -5,7 +5,7 @@
     <section class="storeSection">
         <div class="container">
             <h2>Producten</h2>
-
+@can('show products')
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/stores/products') }}">Overzicht</a>
@@ -49,6 +49,17 @@
                 </tr>
                     @endcan
             </table>
+    @endcan
+            @cannot('show products')
+                <div class="alert alert-danger">
+                    <ul>
+                        U heeft niet de juiste rechten tot dit deel van de site. Keer a.u.b. terug naar de hoofdpagina.
+                    </ul>
+                </div>
+                <a href="{{ url('/') }}">
+                    <button type="button" class="btn btn-primary">Home</button>
+                </a>
+                @endcannot
         </div>
     </section>
 

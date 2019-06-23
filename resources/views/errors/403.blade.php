@@ -8,9 +8,9 @@
             <div class="alert alert-danger">
                 {{ $exception->getMessage() }}
             </div>
+            <a href="{{ url('/') }}">
+                <button type="button" class="btn btn-primary">Home</button>
+            </a>
         </div>
-        <a href="{{ url('/') }}">
-            <button type="button" class="btn btn-primary">Home</button>
-        </a>
     </div>
 @endsection

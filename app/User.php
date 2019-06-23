@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','date_of_birth','adress','house_number','postal_code','phone_number', 'email', 'password',
     ];
 
     /**
@@ -39,7 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function review() {
+    public function review()
+    {
         return $this->hasMany('App\Review');
     }
+
 }
