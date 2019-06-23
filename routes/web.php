@@ -85,5 +85,11 @@ Route::group(['middleware' => ['role:admin']], function() {
     Route::resource('reviews' , 'ReviewsController');
 });
 
+Route::group(['middleware' => ['role:admin|customer']], function () {
+    Route::get('users/{user}/delete', 'UsersController@delete')
+        ->name('users.delete');
+    Route::resource('users', 'UsersController');
+});
+
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');
