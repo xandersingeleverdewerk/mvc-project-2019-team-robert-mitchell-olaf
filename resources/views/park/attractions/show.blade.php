@@ -49,10 +49,12 @@
                     <th>Minimale lengte</th>
                     <td>{{ $attraction->minLength }}</td>
                 </tr>
-                <tr>
-                    <th>Attractie id</th>
-                    <td>{{ $attraction->id }}</td>
-                </tr>
+                @can('show attractionsId')
+                    <tr>
+                        <th>Attractie id</th>
+                        <td>{{ $attraction->id }}</td>
+                    <tr>
+                @endcan
                 <tr>
                     <th>Categorie</th>
                     <td>{{ $attraction->categorie->name }}</td>
