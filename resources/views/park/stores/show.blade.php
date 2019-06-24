@@ -4,6 +4,13 @@
 
     <section class="storeSection">
         <div class="container">
+
+            @if (session('message'))
+                <div class='alert alert-success'>
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/stores') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">{{ $store->facilitie->name }}</h2>
