@@ -50,7 +50,7 @@
                     <input id="minAge" name="minAge" class="form-control" type="number" value="{{ $attraction->minAge }}" />
                 </div>
                 <div class="form-group">
-                    <label for="minLength">Minimale grootte</label>
+                    <label for="minLength">Minimale lengte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" value="{{ $attraction->minLength }}" />
                 </div>
                     <div class="form-group">
