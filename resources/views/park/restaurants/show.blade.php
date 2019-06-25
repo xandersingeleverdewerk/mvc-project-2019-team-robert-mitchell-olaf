@@ -4,6 +4,13 @@
 
     <section class="restaurantSection">
         <div class="container">
+
+            @if (session('message'))
+                <div class='alert alert-success'>
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/restaurants') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">{{ $restaurant->facilitie->name }}</h2>
@@ -13,9 +20,15 @@
                 {{ $restaurant->facilitie->description }}
             </p>
 
-            <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$restaurant->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
-            <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$restaurant->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
+            @can('edit restaurants')
+                <a data-toggle="tooltip" data-placement="top" title="Aanpassen" href="{{$restaurant->id.'/edit'}}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
+            @endcan
+            @can('delete restaurants')
+                <a data-toggle="tooltip" data-placement="top" title="Verwijderen" href="{{$restaurant->id.'/delete'}}" class="btn btn-danger"><span class="fa fa-trash-o"></span></a>
+            @endcan
+            @can('show restaurantRules')
                 <a href="{{$restaurant->id.'/restaurantRules'}}" class="btn btn-dark">Bekijk het menu</a>
+            @endcan
 
             <h3>Aanvullende gegevens</h3>
             <table class="table table-responsive">
@@ -27,10 +40,12 @@
                     <th>Sluitingstijd</th>
                     <td>{{ $restaurant->facilitie->closing_time }}</td>
                 </tr>
+                @can('show restaurantsId')
                 <tr>
                     <th>Restaurant id</th>
                     <td>{{ $restaurant->id }}</td>
                 </tr>
+                @endcan
             </table>
 
             <h3>Reviews</h3>

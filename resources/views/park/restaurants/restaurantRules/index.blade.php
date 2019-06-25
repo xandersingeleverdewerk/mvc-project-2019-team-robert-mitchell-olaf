@@ -11,6 +11,8 @@
                 </div>
             @endif
 
+            @can('show restaurantRules')
+
                 <div class="d-flex flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('/park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">Menu van {{ $restaurant->facilitie->name }}</h2>
@@ -20,11 +22,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules') }}">Overzicht</a>
                     </li>
+                    @can('create restaurantRules')
                     <li class="nav-item">
-                        @can('create dishes')
                         <a class="nav-link" href="{{ url('/park/restaurants/'.$restaurant->id.'/restaurantRules/create') }}">Toevoegen <span class="fa fa-plus"></span></a>
-                        @endcan
                     </li>
+                    @endcan
                 </ul>
 
             <div class="table-responsive">
@@ -46,7 +48,7 @@
                             @can('show dishes')
                             <td><a class="btn btn-info" href="{{ url('park/restaurants/'.$restaurantRule->restaurant_id.'/restaurantRules/'.$restaurantRule->id) }}">Bekijk gerecht</a></td>
                             @endcan
-                            @can('delete dishes')
+                            @can('delete restaurantRules')
                             <td><a data-toggle="tooltip" data-placement="top" title="Verwijderen" class="btn btn-danger" href="{{ url('park/restaurants/'.$restaurantRule->restaurant_id.'/restaurantRules/'.$restaurantRule->id.'/delete') }}"><span class="fa fa-trash-o"></span></a></td>
                             @endcan
                         </tr>
@@ -54,6 +56,10 @@
                     </tbody>
                 </table>
             </div>
+                @endcan
+                @cannot('show restaurantRules')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcan
         </div>
     </section>
 

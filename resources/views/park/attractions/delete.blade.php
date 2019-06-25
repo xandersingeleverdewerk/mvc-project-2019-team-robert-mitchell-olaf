@@ -15,10 +15,11 @@
                 </div>
             @endif
 
-            <div class="d-flex">
-                <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
-                <h2 class="parkTitle">{{ $attraction->facilitie->name }} verwijderen</h2>
-            </div>
+            @can('delete attractions')
+              <div class="d-flex">
+                  <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
+                  <h2 class="parkTitle">{{ $attraction->facilitie->name }} verwijderen</h2>
+              </div>
 
             <form class="form" action="{{route('attractions.destroy', $attraction)}}" method="POST">
                 @csrf
@@ -55,9 +56,19 @@
                     <label for="minLength">Minimale hoogte</label>
                     <input disabled id="minLength" name="minLength" class="form-control" type="number" step="any" value="{{ $attraction->minLength }}" />
                 </div>
+                <div class="form-group">
+                    <label for="categorie_id">Categorie</label>
+                    <input disabled id="categorie_id" name="categorie_id" class="form-control" type="text" value="{{ $attraction->categorie->name }}">
+                </div>
                 <button class="btn btn-primary" type="submit">Verwijder Attractie</button>
             </form>
+
+                @endcan
+                @cannot('delete attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 
 @endsection
+

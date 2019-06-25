@@ -33,3 +33,8 @@ Binnenkort wordt er een nieuw pretpark gebouwd met de originele naam Pretpark Ha
     <li>Laat je user-story controleren door ieder teamlid voordat het naar <code>development</code> gaat</li>
     <li>Push nooit in <code>master</code></li>
 </ul>
+
+<h2>Gebruikers</h2>
+<p>
+    Er zijn 2 standaard gebruikers om te kunnen testen. De een heeft als email admin@mail.com met wachtwoord admin123. Verder is er een     customer en die heeft als email customer@mail.com met wachtwoord customer123.
+</p>

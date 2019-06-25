@@ -19,6 +19,15 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/mydetails', function () {
+    return view('mydetails');
+});
+
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('park/attractions/categories/{categorie}/delete', 'CategoriesController@delete')
+        ->name('park.attractions.categories.delete');
+    Route::resource('park/attractions/categories' , 'CategoriesController');
+});
 
 Route::get('park/attractions/{attraction}/delete', 'AttractionsController@delete')
     ->name('attractions.delete');
@@ -26,13 +35,9 @@ Route::get('park/attractions/storeReview', 'AttractionsController@storeReview')
     ->name('attractions.storeReview');
 Route::get('park/attractions/updateReview/{review}', 'AttractionsController@updateReview')
     ->name('attractions.updateReview');
-Route::get('park/attractions/destroyReview/{review}', 'AttractionsController@destroyReview')
+    Route::get('park/attractions/destroyReview/{review}', 'AttractionsController@destroyReview')
     ->name('attractions.destroyReview');
 Route::resource('park/attractions' , 'AttractionsController');
-
-Route::get('/categories/{categorie}/delete', 'categoriesController@delete')
-    ->name('categories.delete');
-Route::resource('/categories', 'CategoriesController');
 
 Route::group(['middleware' => ['role:admin|customer']], function () {
     Route::get('park/restaurants/dishes/{dish}/delete', 'DishesController@delete')
@@ -80,6 +85,11 @@ Route::group(['middleware' => ['role:admin']], function() {
     Route::resource('reviews' , 'ReviewsController');
 });
 
+Route::group(['middleware' => ['role:admin|customer']], function () {
+    Route::get('users/{user}/delete', 'UsersController@delete')
+        ->name('users.delete');
+    Route::resource('users', 'UsersController');
+});
 
 Auth::routes();
 Route::get('/mypage', 'HomeController@index')->name('mypage');

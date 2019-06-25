@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+            @can('delete restaurants')
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/restaurants/'.$restaurant->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                     <h2 class="parkTitle">{{ $restaurant->facilitie->name }} verwijderen</h2>
@@ -45,6 +46,11 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Restaurant</button>
             </form>
+
+            @endcan
+            @cannot('delete restaurants')
+                @yield('content', View::make('errors.noPermission'))
+            @endcannot
         </div>
     </section>
 

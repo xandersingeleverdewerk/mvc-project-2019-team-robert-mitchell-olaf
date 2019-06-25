@@ -15,6 +15,7 @@
                 </div>
             @endif
 
+            @can('create attractions')
             <div class="d-flex flex">
                 <a data-toggle="tooltip" data-placement="right" title="Ga terug naar overzicht" href="{{ url('/park/attractions') }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
                 <h2 class="parkTitle">Attractie aanmaken</h2>
@@ -50,9 +51,21 @@
                     <label for="minLength">Minimale grootte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" placeholder="Minimale grootte" />
                 </div>
+                <div class="form-group">
+                    <label for="categorie_id">Kies een Categorie</label>
+                    <select id="categorie_id" name="categorie_id" class="form-control">
+                        <option selected disabled>Kies een categorie</option>
+                        @foreach($categories as $id => $categorie)
+                            <option value="{{ $id }}">{{ $categorie }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <button class="btn btn-primary" type="submit">Maak Attractie</button>
             </form>
-
+                @endcan
+                @cannot('create attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 

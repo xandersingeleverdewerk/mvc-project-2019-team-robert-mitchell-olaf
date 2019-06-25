@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="restaurantSection">
+    <section class="attractionSection">
         <div class="container">
 
             @if ($errors->any())
@@ -14,6 +14,8 @@
                     </ul>
                 </div>
             @endif
+
+                @can('edit attractions')
 
                 <div class="d-flex">
                     <a data-toggle="tooltip" data-placement="right" title="Ga terug naar details" href="{{ url('park/attractions/'.$attraction->id) }}" class="btn btn-info "><span class="fa fa-arrow-left"></span></a>
@@ -48,11 +50,24 @@
                     <input id="minAge" name="minAge" class="form-control" type="number" value="{{ $attraction->minAge }}" />
                 </div>
                 <div class="form-group">
-                    <label for="minLength">Minimale grootte</label>
+                    <label for="minLength">Minimale lengte</label>
                     <input id="minLength" name="minLength" class="form-control" type="number" step="any" value="{{ $attraction->minLength }}" />
                 </div>
+                    <div class="form-group">
+                        <label for="categorie_id">Kies een Categorie</label>
+                        <select id="categorie_id" name="categorie_id" class="form-control">
+                            <option value="{{ $attraction->categorie->id }}" selected>{{ $attraction->categorie->name }}</option>
+                            @foreach($categories as $id => $categorie)
+                                <option value="{{ $id }}">{{ $categorie }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 <button class="btn btn-primary" type="submit">Pas Attractie Aan</button>
             </form>
+                @endcan
+                @cannot('edit attractions')
+                    @yield('content', View::make('errors.noPermission'))
+                @endcannot
         </div>
     </section>
 

@@ -15,18 +15,24 @@
                 </div>
             @endif
 
+            @can('delete dishes')
+
             <h2>Gerechten</h2>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/restaurants/dishes') }}">Overzicht</a>
                 </li>
+                @can('create dishes')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/restaurants/dishes/create') }}">Maken <span class="fa fa-plus"></span></a>
                 </li>
+                @endcan
+                @can('show dishes')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/park/restaurants/dishes/'.$dish->id) }}">Details</a>
                 </li>
+                @endcan
                 <li class="nav-item">
                     <a class="nav-link active">Verwijderen <span class="fa fa-trash-o"></span></a>
                 </li>
@@ -55,6 +61,10 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Verwijder Gerecht</button>
             </form>
+            @endcan
+            @cannot('delete dishes')
+                @yield('content', View::make('errors.noPermission'))
+            @endcannot
         </div>
     </section>
 
