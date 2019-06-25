@@ -198,6 +198,9 @@ ul {
       color: #ffffff;
       transition: 0.2s all; }
 
+.text-align-center {
+  text-align: center; }
+
 .btn {
   margin-bottom: 15px; }
   .btn-primary {

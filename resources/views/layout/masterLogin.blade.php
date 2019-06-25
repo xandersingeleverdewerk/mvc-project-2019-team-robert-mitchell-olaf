@@ -27,15 +27,15 @@
             </div>
             <div class="col-12 col-md-6 search">
                 <h1 class="navTitle">Pretpark HappyLand</h1>
-                <form id="search" action="#" method="POST">
-                    @csrf
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Zoeken voor iets">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Zoeken</button>
-                        </div>
-                    </div>
-                </form>
+                {{--<form id="search" action="#" method="POST">--}}
+                    {{--@csrf--}}
+                    {{--<div class="input-group">--}}
+                        {{--<input class="form-control" type="text" placeholder="Zoeken voor iets">--}}
+                        {{--<div class="input-group-append">--}}
+                            {{--<button class="btn btn-primary" type="submit">Zoeken</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</form>--}}
             </div>
             <div class="col-4 col-md-3 register">
                 <div class="dropdown dropleft">
